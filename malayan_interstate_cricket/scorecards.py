@@ -77,9 +77,27 @@ OTHER RULES:
 - "(N)" before a dismissal in 2nd innings indicates batting position changed from 1st innings
 - Bowling columns are O M R W (Overs Maidens Runs Wickets), sometimes with nb (no-balls) and w (wides)
 - Bowling figures appear under team headers: "Selangor O M R W" means Selangor's bowlers bowling in that innings
+- CRITICAL: The bowling section often has INTERLEAVED columns for multiple innings, \
+e.g. "O M R W nb w O M R W nb w" (two innings side by side). The numbers after each \
+bowler's name fill these columns left to right. With two innings, a bowler with full data \
+has 8+ numbers; a bowler with partial data has fewer.
+- SPARSE BOWLING DATA: When a bowler has very few numbers (1-3) relative to the column \
+headers, the data is likely INCOMPLETE. In this case:
+  - CROSS-CHECK against the batting dismissals to determine wickets. Count how many \
+batsmen were dismissed "b <Bowler>", "c ... b <Bowler>", "c&b <Bowler>", "st ... b <Bowler>", \
+or "lbw b <Bowler>" in each innings. This gives the true wicket count.
+  - If a bowler has only 2 numbers and there are 2 innings columns, those numbers are \
+likely wickets per innings (1st, 2nd), NOT overs and maidens.
+  - If a bowler has only 1 number, it is likely their wickets for a single innings.
+  - Set any column you cannot determine to null rather than guessing.
+  - The dismissal-derived wicket count is AUTHORITATIVE — if the numbers in the bowling \
+section conflict with the dismissal count, trust the dismissals.
 - fow = fall of wickets. The data appears as columns: wicket number, then cumulative run totals \
 for each innings. E.g. "fow Sel (1) Pen (1) Sel (2) 1 15 11 4 2 51 93 11" means \
 wicket 1 fell at 15 runs in Sel(1), 11 in Pen(1), 4 in Sel(2); wicket 2 at 51, 93, 11 respectively.
+- fow numbers are often INTERLEAVED with or adjacent to bowling data. Do not confuse \
+fow run totals with bowling figures. fow values tend to be ascending sequences within \
+each innings column.
 - fow values are CUMULATIVE RUN TOTALS at which each wicket fell, NOT wicket numbers
 - fow data may appear interleaved between bowling sections
 - Extras include byes (b), leg byes (lb), wides (w), no-balls (nb)
@@ -148,6 +166,15 @@ Rules:
 - Include all notes at the bottom of the scorecard
 - Do NOT include navigation text, FlippingBook text, or page numbers
 - If a section is not present in the text, use null
+- VALIDATE bowling wickets using this TWO-PASS approach:
+  PASS 1: Before filling in the bowling section, scan ALL batting dismissals to build \
+a wicket tally per bowler per innings. Any dismissal containing "b <Bowler>" credits \
+that bowler with a wicket: "b Fox", "c X b Fox", "c&b Fox", "lbw b Fox", "st X b Fox", \
+"ht wkt b Fox" all give Fox one wicket. "run out" and "not out" give no bowler a wicket.
+  PASS 2: Use the tally from Pass 1 as the AUTHORITATIVE wicket count in the bowling \
+section. If the bowling numbers in the text are ambiguous or sparse, set overs/maidens/runs \
+to null but ALWAYS set wickets from the dismissal tally — never guess wickets from \
+the bowling number stream alone.
 
 RAW SCORECARD TEXT:
 {text}"""
@@ -195,6 +222,46 @@ def detect_max_page(client: httpx.Client) -> int:
     return MAX_PAGE
 
 
+def _bowler_from_dismissal(dismissal: str) -> str | None:
+    """Extract the bowler's name from a batting dismissal string."""
+    d = dismissal.strip()
+    if not d or d.lower() in ("not out", "retired"):
+        return None
+    if "run out" in d.lower():
+        return None
+    m = re.search(r"\bb\s+(.+)$", d, re.IGNORECASE)
+    return m.group(1).strip() if m else None
+
+
+def _normalize_name(name: str) -> str:
+    return re.sub(r"\s+", " ", name.strip()).lower()
+
+
+def validate_bowling_wickets(scorecard: dict) -> dict:
+    """Patch bowling wickets to match dismissal counts from batting data."""
+    for innings in scorecard.get("innings", []):
+        tally: dict[str, int] = {}
+        for bat in innings.get("batting", []):
+            bowler = _bowler_from_dismissal(bat.get("dismissal", ""))
+            if bowler:
+                key = _normalize_name(bowler)
+                tally[key] = tally.get(key, 0) + 1
+
+        for bowl in innings.get("bowling", []):
+            if not bowl.get("name"):
+                continue
+            key = _normalize_name(bowl["name"])
+            matched = tally.get(key)
+            if matched is None:
+                for tally_key, count in tally.items():
+                    if tally_key.endswith(key) or key.endswith(tally_key):
+                        matched = count
+                        break
+            bowl["wickets"] = matched if matched is not None else 0
+
+    return scorecard
+
+
 def parse_scorecard(model, text: str) -> dict:
     prompt = USER_PROMPT_TEMPLATE.format(text=text)
     response = model.prompt(prompt, system=SYSTEM_PROMPT)
@@ -202,7 +269,8 @@ def parse_scorecard(model, text: str) -> dict:
     raw = raw.strip()
     raw = re.sub(r"^```(?:json)?\s*", "", raw)
     raw = re.sub(r"\s*```$", "", raw)
-    return json.loads(raw)
+    scorecard = json.loads(raw)
+    return validate_bowling_wickets(scorecard)
 
 
 def parse_page_range(spec: str) -> set[int]:
