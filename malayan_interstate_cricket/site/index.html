@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Malayan Interstate Cricket Scorecards 1889–1957</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #faf9f6;
+  --card-bg: #fff;
+  --border: #d4c9b8;
+  --text: #2c2416;
+  --text-muted: #6b5d4d;
+  --accent: #8b4513;
+  --accent-light: #f5ebe0;
+  --highlight: #fff3cd;
+  --innings-header: #f0ead6;
+}
+
+body {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+header {
+  background: var(--accent);
+  color: #faf9f6;
+  padding: 1.5rem 2rem;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  font-weight: normal;
+  letter-spacing: 0.02em;
+}
+
+header p {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin-top: 0.25rem;
+}
+
+.controls {
+  padding: 1rem 2rem;
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.controls input[type="search"] {
+  flex: 1 1 250px;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+
+.controls select {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  background: var(--card-bg);
+}
+
+.controls .count {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-left: auto;
+}
+
+main {
+  max-width: 960px;
+  margin: 1.5rem auto;
+  padding: 0 1rem;
+}
+
+.scorecard {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+.scorecard-header {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  user-select: none;
+}
+
+.scorecard-header:hover {
+  background: var(--accent-light);
+}
+
+.match-teams {
+  font-size: 1.15rem;
+  font-weight: bold;
+}
+
+.match-meta {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+.match-result {
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-top: 0.25rem;
+  color: var(--accent);
+}
+
+.scorecard-body {
+  display: none;
+  padding: 0 1.25rem 1.25rem;
+}
+
+.scorecard.open .scorecard-body {
+  display: block;
+}
+
+.scorecard-header .toggle {
+  float: right;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+}
+
+.innings {
+  margin-top: 1rem;
+}
+
+.innings-title {
+  background: var(--innings-header);
+  padding: 0.5rem 0.75rem;
+  font-weight: bold;
+  font-size: 0.9rem;
+  border: 1px solid var(--border);
+  border-bottom: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  border: 1px solid var(--border);
+}
+
+th, td {
+  padding: 0.3rem 0.5rem;
+  text-align: left;
+  border-bottom: 1px solid #ece6d8;
+}
+
+th {
+  background: #f8f5ee;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--text-muted);
+}
+
+td.runs, th.runs { text-align: right; width: 50px; }
+td.num, th.num { text-align: right; }
+
+tr.extras td, tr.total td {
+  font-weight: bold;
+  border-top: 2px solid var(--border);
+}
+
+.bowling-section {
+  margin-top: 0.75rem;
+}
+
+.bowling-section h4 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.fow {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+}
+
+.fow span { font-weight: bold; }
+
+.match-notes {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: var(--accent-light);
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+.match-notes p {
+  margin-bottom: 0.25rem;
+}
+
+.match-footer {
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.highlight {
+  background: var(--highlight);
+}
+
+.no-results {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.source-link {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+}
+
+.source-link a {
+  color: var(--accent);
+}
+
+a.player-link {
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--border);
+}
+
+a.player-link:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.player-panel {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+.player-panel-header {
+  background: var(--accent);
+  color: #faf9f6;
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.player-panel-header h2 {
+  font-size: 1.1rem;
+  font-weight: normal;
+}
+
+.player-panel-header .close-btn {
+  background: none;
+  border: none;
+  color: #faf9f6;
+  font-size: 1.2rem;
+  cursor: pointer;
+  opacity: 0.7;
+  padding: 0 0.25rem;
+}
+
+.player-panel-header .close-btn:hover { opacity: 1; }
+
+.player-panel-body {
+  padding: 1rem 1.25rem;
+}
+
+.player-panel-body h3 {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+}
+
+.player-panel-body h3:first-child { margin-top: 0; }
+
+.player-panel table { margin-bottom: 0.5rem; }
+
+.player-panel .summary-line {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+  font-style: italic;
+}
+
+.player-suggestions {
+  padding: 0.5rem 1.25rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.player-suggestions button {
+  background: var(--accent-light);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.35rem 0.75rem;
+  font-family: inherit;
+  font-size: 0.85rem;
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.player-suggestions button:hover {
+  background: var(--accent);
+  color: #faf9f6;
+}
+
+@media (max-width: 600px) {
+  header { padding: 1rem; }
+  .controls { padding: 0.75rem 1rem; }
+  main { padding: 0 0.5rem; }
+  .scorecard-header, .scorecard-body { padding-left: 0.75rem; padding-right: 0.75rem; }
+  table { font-size: 0.78rem; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Malayan Interstate Cricket Scorecards</h1>
+  <p>1889–1957 &middot; from the Association of Cricket Statisticians archive</p>
+</header>
+
+<div class="controls">
+  <input type="search" id="search" placeholder="Search players, teams, venues…">
+  <select id="team-filter">
+    <option value="">All teams</option>
+  </select>
+  <select id="venue-filter">
+    <option value="">All venues</option>
+  </select>
+  <span class="count" id="count"></span>
+</div>
+
+<div id="player-panel-container"></div>
+<main id="results"></main>
+
+<script>
+let scorecards = [];
+let playerIndex = {};
+let selectedPlayer = null;
+
+async function init() {
+  const resp = await fetch('scorecards.json');
+  scorecards = await resp.json();
+  buildPlayerIndex();
+  buildFilters();
+  render();
+
+  document.getElementById('search').addEventListener('input', render);
+  document.getElementById('team-filter').addEventListener('change', render);
+  document.getElementById('venue-filter').addEventListener('change', render);
+}
+
+function buildPlayerIndex() {
+  playerIndex = {};
+  for (const sc of scorecards) {
+    const m = sc.match || {};
+    const matchLabel = `${m.team1 || '?'} v ${m.team2 || '?'}`;
+    const matchDate = m.date || '';
+    const sourceUrl = sc.source_url || '';
+
+    for (const inn of sc.innings || []) {
+      const team = inn.team || '';
+      const innNum = inn.innings_number || 1;
+      const opponent = normalizeTeam(team) === normalizeTeam(m.team1 || '')
+        ? (m.team2 || '?') : (m.team1 || '?');
+
+      for (const b of inn.batting || []) {
+        const key = b.name;
+        if (!playerIndex[key]) playerIndex[key] = { batting: [], bowling: [] };
+        playerIndex[key].batting.push({
+          match: matchLabel, date: matchDate, team, opponent,
+          innings: innNum, dismissal: b.dismissal, runs: b.runs,
+          captain: b.captain, wicketkeeper: b.wicketkeeper,
+          sourceUrl
+        });
+      }
+
+      for (const bw of inn.bowling || []) {
+        const key = bw.name;
+        if (!playerIndex[key]) playerIndex[key] = { batting: [], bowling: [] };
+        playerIndex[key].bowling.push({
+          match: matchLabel, date: matchDate, team, opponent,
+          innings: innNum, overs: bw.overs, maidens: bw.maidens,
+          runs: bw.runs, wickets: bw.wickets,
+          noballs: bw.noballs, wides: bw.wides,
+          sourceUrl
+        });
+      }
+    }
+  }
+}
+
+function findMatchingPlayers(query) {
+  if (!query || query.length < 2) return [];
+  const q = query.toLowerCase();
+  const matches = [];
+  for (const name of Object.keys(playerIndex)) {
+    if (name.toLowerCase().includes(q)) {
+      matches.push(name);
+    }
+  }
+  matches.sort((a, b) => {
+    const aStarts = a.toLowerCase().startsWith(q) ? 0 : 1;
+    const bStarts = b.toLowerCase().startsWith(q) ? 0 : 1;
+    if (aStarts !== bStarts) return aStarts - bStarts;
+    return a.localeCompare(b);
+  });
+  return matches;
+}
+
+function showPlayer(name) {
+  selectedPlayer = name;
+  renderPlayerPanel();
+}
+
+function closePlayerPanel() {
+  selectedPlayer = null;
+  document.getElementById('player-panel-container').innerHTML = '';
+}
+
+function renderPlayerPanel() {
+  const container = document.getElementById('player-panel-container');
+  if (!selectedPlayer || !playerIndex[selectedPlayer]) {
+    container.innerHTML = '';
+    return;
+  }
+
+  const p = playerIndex[selectedPlayer];
+  let html = `<div class="player-panel">
+    <div class="player-panel-header">
+      <h2>${esc(selectedPlayer)}</h2>
+      <button class="close-btn" onclick="closePlayerPanel()" title="Close">&times;</button>
+    </div>
+    <div class="player-panel-body">`;
+
+  if (p.batting.length) {
+    const totalRuns = p.batting.reduce((s, b) => s + (b.runs || 0), 0);
+    const innCount = p.batting.length;
+    const notOuts = p.batting.filter(b => b.dismissal && b.dismissal.toLowerCase() === 'not out').length;
+    const hs = Math.max(...p.batting.map(b => b.runs || 0));
+    html += `<h3>Batting Innings</h3>`;
+    html += `<div class="summary-line">${innCount} inn, ${totalRuns} runs, HS ${hs}, ${notOuts} not out</div>`;
+    html += `<table><thead><tr>
+      <th>Match</th><th>Date</th><th>For</th><th>Vs</th><th>Inn</th><th>Dismissal</th><th class="runs">Runs</th>
+    </tr></thead><tbody>`;
+    for (const b of p.batting) {
+      const ord = ordinal(b.innings);
+      html += `<tr>
+        <td>${b.sourceUrl ? `<a href="${esc(b.sourceUrl)}" target="_blank" rel="noopener">${esc(b.match)}</a>` : esc(b.match)}</td>
+        <td>${esc(b.date)}</td>
+        <td>${esc(b.team)}</td>
+        <td>${esc(b.opponent)}</td>
+        <td>${ord}</td>
+        <td>${esc(b.dismissal || '')}</td>
+        <td class="runs">${b.runs ?? ''}</td>
+      </tr>`;
+    }
+    html += '</tbody></table>';
+  }
+
+  if (p.bowling.length) {
+    const totalWickets = p.bowling.reduce((s, b) => s + (b.wickets || 0), 0);
+    const totalRuns = p.bowling.reduce((s, b) => s + (b.runs || 0), 0);
+    const spellCount = p.bowling.length;
+    const best = p.bowling.reduce((best, b) => {
+      if (!best) return b;
+      if ((b.wickets || 0) > (best.wickets || 0)) return b;
+      if ((b.wickets || 0) === (best.wickets || 0) && (b.runs || 0) < (best.runs || 0)) return b;
+      return best;
+    }, null);
+    const bestStr = best ? `${best.wickets}/${best.runs}` : '';
+    html += `<h3>Bowling Innings</h3>`;
+    html += `<div class="summary-line">${spellCount} inn, ${totalWickets} wkts, ${totalRuns} runs conc.${bestStr ? `, best ${bestStr}` : ''}</div>`;
+    html += `<table><thead><tr>
+      <th>Match</th><th>Date</th><th>For</th><th>Vs</th><th>Inn</th>
+      <th class="num">O</th><th class="num">M</th><th class="num">R</th><th class="num">W</th>
+    </tr></thead><tbody>`;
+    for (const b of p.bowling) {
+      const ord = ordinal(b.innings);
+      html += `<tr>
+        <td>${b.sourceUrl ? `<a href="${esc(b.sourceUrl)}" target="_blank" rel="noopener">${esc(b.match)}</a>` : esc(b.match)}</td>
+        <td>${esc(b.date)}</td>
+        <td>${esc(b.team)}</td>
+        <td>${esc(b.opponent)}</td>
+        <td>${ord}</td>
+        <td class="num">${b.overs ?? ''}</td>
+        <td class="num">${b.maidens ?? ''}</td>
+        <td class="num">${b.runs ?? ''}</td>
+        <td class="num">${b.wickets ?? ''}</td>
+      </tr>`;
+    }
+    html += '</tbody></table>';
+  }
+
+  html += '</div></div>';
+  container.innerHTML = html;
+  container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function normalizeTeam(t) {
+  return t.trim().toUpperCase().replace(/&AMP;/g, '&');
+}
+
+function buildFilters() {
+  const teams = new Set();
+  const venues = new Set();
+  for (const sc of scorecards) {
+    const m = sc.match || {};
+    if (m.team1) teams.add(normalizeTeam(m.team1));
+    if (m.team2) teams.add(normalizeTeam(m.team2));
+    if (m.venue) venues.add(m.venue);
+  }
+
+  const teamSel = document.getElementById('team-filter');
+  for (const t of [...teams].sort()) {
+    teamSel.innerHTML += `<option value="${esc(t)}">${esc(t)}</option>`;
+  }
+
+  const venueSel = document.getElementById('venue-filter');
+  for (const v of [...venues].sort()) {
+    venueSel.innerHTML += `<option value="${esc(v)}">${esc(v)}</option>`;
+  }
+}
+
+function scorecardText(sc) {
+  const parts = [];
+  const m = sc.match || {};
+  parts.push(m.team1, m.team2, m.venue, m.date, m.result);
+  for (const inn of sc.innings || []) {
+    for (const b of inn.batting || []) {
+      parts.push(b.name, b.dismissal);
+    }
+    for (const bw of inn.bowling || []) {
+      parts.push(bw.name);
+    }
+  }
+  if (sc.umpires) parts.push(...sc.umpires);
+  if (sc.notes) parts.push(...sc.notes);
+  return parts.filter(Boolean).join(' ').toLowerCase();
+}
+
+function matchesFilters(sc) {
+  const teamFilter = document.getElementById('team-filter').value;
+  const venueFilter = document.getElementById('venue-filter').value;
+  const query = document.getElementById('search').value.trim().toLowerCase();
+
+  const m = sc.match || {};
+
+  if (teamFilter) {
+    const t1 = normalizeTeam(m.team1 || '');
+    const t2 = normalizeTeam(m.team2 || '');
+    if (t1 !== teamFilter && t2 !== teamFilter) return false;
+  }
+
+  if (venueFilter && m.venue !== venueFilter) return false;
+
+  if (query) {
+    const text = scorecardText(sc);
+    const terms = query.split(/\s+/);
+    if (!terms.every(t => text.includes(t))) return false;
+  }
+
+  return true;
+}
+
+function render() {
+  const container = document.getElementById('results');
+  const query = document.getElementById('search').value.trim().toLowerCase();
+  const filtered = scorecards.filter(matchesFilters);
+
+  document.getElementById('count').textContent =
+    `${filtered.length} of ${scorecards.length} scorecard${scorecards.length !== 1 ? 's' : ''}`;
+
+  let html = '';
+
+  const matchedPlayers = findMatchingPlayers(query);
+  if (matchedPlayers.length > 0 && !selectedPlayer) {
+    html += `<div class="player-panel"><div class="player-panel-header"><h2>Players matching "${esc(query)}"</h2></div>`;
+    html += `<div class="player-suggestions">`;
+    for (const name of matchedPlayers.slice(0, 20)) {
+      const p = playerIndex[name];
+      const batCount = p.batting.length;
+      const bowlCount = p.bowling.length;
+      const desc = [batCount ? `${batCount} bat` : '', bowlCount ? `${bowlCount} bowl` : ''].filter(Boolean).join(', ');
+      html += `<button onclick="showPlayer('${esc(name.replace(/'/g, "\\'"))}')">${esc(name)} <small>(${desc})</small></button>`;
+    }
+    html += '</div></div>';
+  }
+
+  if (filtered.length === 0 && matchedPlayers.length === 0) {
+    html += '<div class="no-results">No scorecards match your filters.</div>';
+  } else {
+    html += filtered.map(renderScorecard).join('');
+  }
+
+  container.innerHTML = html;
+
+  container.querySelectorAll('.scorecard-header').forEach(h => {
+    h.addEventListener('click', () => {
+      h.closest('.scorecard').classList.toggle('open');
+    });
+  });
+}
+
+function renderScorecard(sc) {
+  const m = sc.match || {};
+  const query = document.getElementById('search').value.trim().toLowerCase();
+
+  let html = `<div class="scorecard">
+    <div class="scorecard-header">
+      <span class="toggle">&#9662; details</span>
+      <div class="match-teams">${hl(esc(m.team1 || '?'), query)} v ${hl(esc(m.team2 || '?'), query)}</div>
+      <div class="match-meta">${hl(esc(m.venue || ''), query)} &middot; ${hl(esc(m.date || ''), query)}</div>
+      <div class="match-result">${hl(esc(m.result || ''), query)}</div>
+    </div>
+    <div class="scorecard-body">`;
+
+  for (const inn of sc.innings || []) {
+    html += renderInnings(inn, query);
+  }
+
+  if (sc.umpires && sc.umpires.length) {
+    html += `<div class="match-footer"><div><strong>Umpires:</strong> ${sc.umpires.map(u => hl(esc(u), query)).join(', ')}</div></div>`;
+  }
+
+  const footerParts = [];
+  if (sc.toss) footerParts.push(`<div><strong>Toss:</strong> ${esc(sc.toss)}</div>`);
+  if (sc.balls_per_over) footerParts.push(`<div><strong>Balls per over:</strong> ${sc.balls_per_over}</div>`);
+  if (sc.close_of_play) footerParts.push(`<div><strong>Close of play:</strong> ${esc(sc.close_of_play)}</div>`);
+  if (footerParts.length) {
+    html += `<div class="match-footer">${footerParts.join('')}</div>`;
+  }
+
+  if (sc.notes && sc.notes.length) {
+    html += `<div class="match-notes">${sc.notes.map(n => `<p>${hl(esc(n), query)}</p>`).join('')}</div>`;
+  }
+
+  if (sc.source_url) {
+    html += `<div class="source-link"><a href="${esc(sc.source_url)}" target="_blank" rel="noopener">View original &rarr;</a></div>`;
+  }
+
+  html += '</div></div>';
+  return html;
+}
+
+function renderInnings(inn, query) {
+  const innOrd = ordinal(inn.innings_number);
+  let html = `<div class="innings">
+    <div class="innings-title">${hl(esc(inn.team || ''), query)} — ${innOrd} Innings</div>
+    <table><thead><tr><th>Batsman</th><th>Dismissal</th><th class="runs">Runs</th></tr></thead><tbody>`;
+
+  for (const b of inn.batting || []) {
+    const flags = (b.captain ? '*' : '') + (b.wicketkeeper ? '†' : '');
+    html += `<tr>
+      <td><a href="#" class="player-link" onclick="event.preventDefault(); showPlayer('${esc(b.name.replace(/'/g, "\\'"))}')">${hl(esc(b.name), query)}</a>${flags ? `<sup>${flags}</sup>` : ''}</td>
+      <td>${hl(esc(b.dismissal || ''), query)}</td>
+      <td class="runs">${b.runs ?? ''}</td>
+    </tr>`;
+  }
+
+  const extras = inn.extras || {};
+  html += `<tr class="extras"><td colspan="2">Extras${extras.detail ? ` (${esc(extras.detail)})` : ''}</td><td class="runs">${extras.total ?? ''}</td></tr>`;
+
+  const total = inn.total || {};
+  const wicketsText = total.wickets != null ? ` (${total.wickets} wkts${total.declared ? ', dec' : ''})` : total.declared ? ' (dec)' : '';
+  html += `<tr class="total"><td colspan="2">Total${wicketsText}</td><td class="runs">${total.runs ?? ''}</td></tr>`;
+
+  html += '</tbody></table>';
+
+  if (inn.fow && inn.fow.length) {
+    html += `<div class="fow"><strong>Fall of wickets:</strong> ${inn.fow.map((r, i) => `<span>${i + 1}</span>-${r}`).join(', ')}</div>`;
+  }
+
+  if (inn.bowling && inn.bowling.length) {
+    html += `<div class="bowling-section"><table><thead><tr>
+      <th>Bowler</th><th class="num">O</th><th class="num">M</th><th class="num">R</th><th class="num">W</th>
+    </tr></thead><tbody>`;
+    for (const bw of inn.bowling || []) {
+      html += `<tr>
+        <td><a href="#" class="player-link" onclick="event.preventDefault(); showPlayer('${esc(bw.name.replace(/'/g, "\\'"))}')">${hl(esc(bw.name), query)}</a></td>
+        <td class="num">${bw.overs ?? ''}</td>
+        <td class="num">${bw.maidens ?? ''}</td>
+        <td class="num">${bw.runs ?? ''}</td>
+        <td class="num">${bw.wickets ?? ''}</td>
+      </tr>`;
+    }
+    html += '</tbody></table></div>';
+  }
+
+  html += '</div>';
+  return html;
+}
+
+function ordinal(n) {
+  if (n === 1) return '1st';
+  if (n === 2) return '2nd';
+  if (n === 3) return '3rd';
+  return `${n}th`;
+}
+
+function esc(s) {
+  const el = document.createElement('span');
+  el.textContent = s;
+  return el.innerHTML;
+}
+
+function hl(escaped, query) {
+  if (!query) return escaped;
+  const terms = query.split(/\s+/).filter(Boolean);
+  let result = escaped;
+  for (const term of terms) {
+    const re = new RegExp(`(${term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+    result = result.replace(re, '<mark class="highlight">$1</mark>');
+  }
+  return result;
+}
+
+init();
+</script>
+</body>
+</html>

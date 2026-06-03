@@ -154,7 +154,7 @@ RAW SCORECARD TEXT:
 
 
 def fetch_page_text(client: httpx.Client, page: int) -> str | None:
-    url = f"{BASE_URL}/{page}/index.html"
+    url = f"{BASE_URL}/index.html" if page == 1 else f"{BASE_URL}/{page}/index.html"
     try:
         resp = client.get(url, follow_redirects=True)
         resp.raise_for_status()
@@ -226,8 +226,7 @@ def main():
     parser.add_argument(
         "--pages",
         default=None,
-        help="Comma-separated page numbers or ranges, e.g. '2,3,5-10'. "
-             "Page 1 is a redirect; scorecards start at page 2.",
+        help="Comma-separated page numbers or ranges, e.g. '1,3,5-10'.",
     )
     parser.add_argument(
         "--delay",
@@ -270,7 +269,7 @@ def main():
         page_nums = sorted(parse_page_range(args.pages))
     else:
         max_page = detect_max_page(client)
-        page_nums = list(range(2, max_page + 1))
+        page_nums = list(range(1, max_page + 1))
         print(f"Detected {max_page} pages")
 
     print(f"Model : {args.model}")
