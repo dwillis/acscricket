@@ -187,21 +187,43 @@ td a:hover {
   text-decoration: underline;
 }
 
+.intro {
+  max-width: 640px;
+  margin: 0 auto 1.5rem;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--text);
+}
+
+.intro p {
+  margin-bottom: 0.75rem;
+}
+
+.intro a {
+  color: var(--accent);
+}
+
+.intro .db-stats {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 1rem;
+  text-align: center;
+}
+
 .empty-state {
   text-align: center;
-  padding: 4rem 1rem 2rem;
+  padding: 2rem 1rem 1.5rem;
   color: var(--text-muted);
 }
 
 .empty-state .prompt {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-style: italic;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .empty-state .all-players {
-  font-size: 0.85rem;
-  margin-bottom: 1rem;
+  display: none;
 }
 
 .highlight {
@@ -497,9 +519,16 @@ function render() {
   const matched = findMatchingPlayers(query);
 
   if (!query) {
-    let html = `<div class="empty-state">
-      <div class="prompt">Search for a player, or browse by team.</div>
-      <div class="all-players">${allPlayerNames.length} players across ${allTeamNames.length} teams</div>
+    let html = `<div class="intro">
+      <p>This database contains batting and bowling records from interstate cricket
+      in British Malaya, covering matches played between 1889 and 1957. The data
+      has been extracted from scorecards published by the
+      <a href="https://acscricket.com/" target="_blank" rel="noopener">Association
+      of Cricket Statisticians and Historians</a>. The
+      <a href="https://archive.acscricket.com/research/rm/malayan_interstate_cricket_1899-1957/rm_malayan_interstate_cricket_scorecards/index.html" target="_blank" rel="noopener">original
+      scorecards</a> are available in their online archive.</p>
+      <p>Search for a player by name, or browse by team below.</p>
+      <div class="db-stats">${allPlayerNames.length} players &middot; ${scorecards.length} matches &middot; ${allTeamNames.length} teams</div>
     </div>`;
     html += '<div class="team-list">';
     for (const team of allTeamNames) {
