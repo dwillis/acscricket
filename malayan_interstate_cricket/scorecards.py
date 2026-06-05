@@ -242,7 +242,7 @@ def validate_bowling_wickets(scorecard: dict) -> dict:
     for innings in scorecard.get("innings", []):
         tally: dict[str, int] = {}
         for bat in innings.get("batting", []):
-            bowler = _bowler_from_dismissal(bat.get("dismissal", ""))
+            bowler = _bowler_from_dismissal(bat.get("dismissal") or "")
             if bowler:
                 key = _normalize_name(bowler)
                 tally[key] = tally.get(key, 0) + 1
@@ -302,6 +302,11 @@ def main():
         default=RATE_LIMIT_DELAY,
         help=f"Delay between LLM calls in seconds (default: {RATE_LIMIT_DELAY})",
     )
+    parser.add_argument(
+        "-f", "--force",
+        action="store_true",
+        help="Re-parse pages even if they already exist in the output file.",
+    )
     args = parser.parse_args()
 
     output_path = Path(args.output)
@@ -348,7 +353,7 @@ def main():
     total_errors = 0
 
     for page_num in page_nums:
-        if page_num in existing:
+        if page_num in existing and not args.force:
             print(f"  Skipping page {page_num} (already processed)")
             continue
 
