@@ -203,6 +203,21 @@ td a:hover {
   color: var(--accent);
 }
 
+.intro .try-searching {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+}
+
+.intro .try-searching a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.intro .try-searching a:hover {
+  text-decoration: underline;
+}
+
 .intro .db-stats {
   font-size: 0.85rem;
   color: var(--text-muted);
@@ -528,6 +543,8 @@ function render() {
       <a href="https://archive.acscricket.com/research/rm/malayan_interstate_cricket_1899-1957/rm_malayan_interstate_cricket_scorecards/index.html" target="_blank" rel="noopener">original
       scorecards</a> are available in their online archive.</p>
       <p>Search for a player by name, or browse by team below.</p>
+      <div class="try-searching">Try: ${['NSC Grenier', 'SCG Fox', 'MC Kailasapathy', 'Lall Singh', 'Chua Eng Cheng', 'RM McKenzie'].map(
+        n => `<a href="#" data-player="${esc(n)}">${esc(n)}</a>`).join(', ')}</div>
       <div class="db-stats">${allPlayerNames.length} players &middot; ${scorecards.length} matches &middot; ${allTeamNames.length} teams</div>
     </div>`;
     html += '<div class="team-list">';
@@ -539,6 +556,9 @@ function render() {
     container.innerHTML = html;
     container.querySelectorAll('.team-btn').forEach(btn => {
       btn.addEventListener('click', () => selectTeam(btn.dataset.team));
+    });
+    container.querySelectorAll('.try-searching a').forEach(a => {
+      a.addEventListener('click', e => { e.preventDefault(); selectPlayer(a.dataset.player); });
     });
     return;
   }
