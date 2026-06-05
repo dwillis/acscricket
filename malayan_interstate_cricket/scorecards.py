@@ -262,6 +262,135 @@ def validate_bowling_wickets(scorecard: dict) -> dict:
     return scorecard
 
 
+def _fix_name_markers(name: str) -> tuple[str, bool, bool]:
+    """Strip */+ captain/keeper markers, return (clean_name, is_captain, is_keeper)."""
+    captain = False
+    keeper = False
+    n = name
+    while n and n[0] in "*+":
+        if n[0] == "*":
+            captain = True
+        else:
+            keeper = True
+        n = n[1:]
+    return n.strip(), captain, keeper
+
+
+def _fix_initials(name: str) -> str:
+    """Normalize initial spacing: 'M T Retnam' -> 'MT Retnam', 'AWWanless' -> 'AW Wanless'."""
+    # Spaced initials: "M T Retnam" -> "MT Retnam"
+    name = re.sub(r"^([A-Z])\s([A-Z])\s", r"\1\2 ", name)
+    # Stuck initials: uppercase-only prefix run into a capitalized surname
+    # e.g. "AWWanless" -> "AW Wanless", "SGAMaartensz" -> "SGA Maartensz"
+    if " " not in name:
+        m = re.match(r"^([A-Z]+)([A-Z][a-z].*)$", name)
+        if m:
+            name = f"{m.group(1)} {m.group(2)}"
+    return name
+
+
+def normalize_player_names(scorecard: dict) -> dict:
+    """Normalize player names within a single scorecard.
+
+    1. Strip */+ markers from names, set captain/keeper flags instead.
+    2. Fix initial spacing issues.
+    3. Resolve surname-only bowler names using match context.
+    """
+    # --- Pass 1 & 2: Clean all names (markers + initials) ---
+    for innings in scorecard.get("innings", []):
+        for bat in innings.get("batting", []):
+            if not bat.get("name"):
+                continue
+            clean, is_capt, is_wk = _fix_name_markers(bat["name"])
+            clean = _fix_initials(clean)
+            bat["name"] = clean
+            if is_capt:
+                bat["captain"] = True
+            if is_wk:
+                bat["wicketkeeper"] = True
+
+        for bowl in innings.get("bowling", []):
+            if not bowl.get("name"):
+                continue
+            clean, _, _ = _fix_name_markers(bowl["name"])
+            clean = _fix_initials(clean)
+            bowl["name"] = clean
+
+    # Also clean names inside dismissal strings (fielder/bowler references
+    # don't need fixing — they're already surname-only in the text)
+
+    # --- Pass 3: Resolve surname-only bowler names ---
+    # Build a set of full names from batting across ALL innings in this match
+    full_names: dict[str, list[str]] = {}  # surname -> [full names]
+    for innings in scorecard.get("innings", []):
+        for bat in innings.get("batting", []):
+            name = bat.get("name", "")
+            if " " in name:
+                surname = name.rsplit(" ", 1)[1]
+                key = surname.lower()
+                if key not in full_names:
+                    full_names[key] = []
+                if name not in full_names[key]:
+                    full_names[key].append(name)
+
+    # For each surname-only bowler, try to resolve
+    for innings in scorecard.get("innings", []):
+        # Build per-innings batting roster for disambiguation
+        innings_batters = set()
+        for bat in innings.get("batting", []):
+            innings_batters.add(bat.get("name", ""))
+
+        # Also check the opposing innings (bowlers bowl at the OTHER team)
+        # The batting team for this bowling section is the team that batted
+        # in this innings — the bowlers are from the other team.
+        # So we need batters from the SAME innings (to find who the bowler
+        # was bowling at) and bowler's teammates from OTHER innings.
+        other_batters = set()
+        bowling_team = None
+        for other_inn in scorecard.get("innings", []):
+            if other_inn is not innings:
+                for bat in other_inn.get("batting", []):
+                    other_batters.add(bat.get("name", ""))
+
+        for bowl in innings.get("bowling", []):
+            name = bowl.get("name", "")
+            if " " in name:
+                continue  # Already a full name
+            key = name.lower()
+            candidates = full_names.get(key, [])
+            if len(candidates) == 1:
+                bowl["name"] = candidates[0]
+            elif len(candidates) > 1:
+                # Disambiguate: the bowler is NOT batting in this innings
+                # (they're on the fielding team), so prefer candidates
+                # who appear in OTHER innings' batting
+                non_batting = [c for c in candidates if c not in innings_batters]
+                if len(non_batting) == 1:
+                    bowl["name"] = non_batting[0]
+                else:
+                    # Try: who appears in other innings as a batter?
+                    in_other = [c for c in candidates if c in other_batters]
+                    if len(in_other) == 1:
+                        bowl["name"] = in_other[0]
+                    # else: leave as surname — can't disambiguate
+
+    return scorecard
+
+
+def normalize_match(scorecard: dict) -> dict:
+    """Fix common schema variants in the match object."""
+    match = scorecard.get("match", {})
+
+    # Handle "teams" field instead of team1/team2
+    if "teams" in match and "team1" not in match:
+        teams_str = match.pop("teams")
+        parts = re.split(r"\s+v(?:s\.?)?\s+", teams_str, maxsplit=1)
+        match["team1"] = parts[0].strip() if len(parts) > 0 else "?"
+        match["team2"] = parts[1].strip() if len(parts) > 1 else "?"
+
+    return scorecard
+
+
 def parse_scorecard(model, text: str) -> dict:
     prompt = USER_PROMPT_TEMPLATE.format(text=text)
     response = model.prompt(prompt, system=SYSTEM_PROMPT)
@@ -270,6 +399,8 @@ def parse_scorecard(model, text: str) -> dict:
     raw = re.sub(r"^```(?:json)?\s*", "", raw)
     raw = re.sub(r"\s*```$", "", raw)
     scorecard = json.loads(raw)
+    scorecard = normalize_match(scorecard)
+    scorecard = normalize_player_names(scorecard)
     return validate_bowling_wickets(scorecard)
 
 
@@ -307,16 +438,14 @@ def main():
         action="store_true",
         help="Re-parse pages even if they already exist in the output file.",
     )
+    parser.add_argument(
+        "--normalize-only",
+        action="store_true",
+        help="Re-run name normalization on existing data without re-parsing.",
+    )
     args = parser.parse_args()
 
     output_path = Path(args.output)
-
-    all_models = {m.model_id: m for m in llm.get_models()}
-    if args.model not in all_models:
-        raise SystemExit(
-            f"Unknown model: {args.model!r}. Run 'llm models' to see available models."
-        )
-    model = all_models[args.model]
 
     existing: dict[int, dict] = {}
     if output_path.exists():
@@ -330,6 +459,27 @@ def main():
                 existing = {int(k): v for k, v in data.items()}
         except Exception:
             pass
+
+    if args.normalize_only:
+        if not existing:
+            raise SystemExit(f"No data to normalize in {output_path}")
+        print(f"Normalizing {len(existing)} scorecards…")
+        for page_num, sc in existing.items():
+            sc = normalize_match(sc)
+            sc = normalize_player_names(sc)
+            sc = validate_bowling_wickets(sc)
+            existing[page_num] = sc
+        _save(output_path, existing)
+        print("Done.")
+        return
+
+    all_models = {m.model_id: m for m in llm.get_models()}
+    if args.model not in all_models:
+        raise SystemExit(
+            f"Unknown model: {args.model!r}. Run 'llm models' to see available models."
+        )
+    model = all_models[args.model]
+
     if existing:
         print(f"Resuming: {len(existing)} page(s) already in {output_path}")
 
