@@ -34,7 +34,7 @@ BASE_URL = (
     "rm_malayan_interstate_cricket_scorecards"
 )
 
-DEFAULT_MODEL_ID = "gpt-4o-mini"
+DEFAULT_MODEL_ID = "qwen3.5:397b-cloud"
 RATE_LIMIT_DELAY = 1.0
 RETRY_ATTEMPTS = 1
 RETRY_BACKOFF = 5.0
@@ -473,12 +473,12 @@ def main():
         print("Done.")
         return
 
-    all_models = {m.model_id: m for m in llm.get_models()}
-    if args.model not in all_models:
+    try:
+        model = llm.get_model(args.model)
+    except llm.UnknownModelError:
         raise SystemExit(
             f"Unknown model: {args.model!r}. Run 'llm models' to see available models."
         )
-    model = all_models[args.model]
 
     if existing:
         print(f"Resuming: {len(existing)} page(s) already in {output_path}")
