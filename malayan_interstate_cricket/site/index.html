@@ -1,73 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-100">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Malayan Interstate Cricket Players 1889–1957</title>
+<link rel="stylesheet" href="https://archive.acscricket.com/includes/tnav/bs/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://archive.acscricket.com/includes/tnav/styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="icon" type="image/png" sizes="32x32" href="https://archive.acscricket.com/includes/favicon.png">
+<script src="https://archive.acscricket.com/includes/tnav/bs/js/bootstrap.bundle.min.js"></script>
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-:root {
-  --bg: #faf9f6;
-  --card-bg: #fff;
-  --border: #d4c9b8;
-  --text: #2c2416;
-  --text-muted: #6b5d4d;
-  --accent: #8b4513;
-  --accent-light: #f5ebe0;
-  --highlight: #fff3cd;
-}
-
-body {
-  font-family: 'Georgia', 'Times New Roman', serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.5;
-}
-
-header {
-  background: var(--accent);
-  color: #faf9f6;
-  padding: 1.5rem 2rem;
-}
-
-header h1 {
-  font-size: 1.5rem;
-  font-weight: normal;
-  letter-spacing: 0.02em;
-}
-
-header p {
-  font-size: 0.85rem;
-  opacity: 0.8;
-  margin-top: 0.25rem;
+.page-title {
+  text-align: center;
+  margin: 1rem 0;
 }
 
 .search-bar {
-  padding: 1rem 2rem;
-  background: var(--card-bg);
-  border-bottom: 1px solid var(--border);
+  padding: 1rem 0;
 }
 
 .search-bar input {
   width: 100%;
   max-width: 500px;
-  padding: 0.6rem 0.85rem;
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  font-family: inherit;
-  font-size: 0.95rem;
+  padding: 0.375rem 0.75rem;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  font-size: 1rem;
 }
 
 .search-bar input:focus {
   outline: none;
-  border-color: var(--accent);
-}
-
-main {
-  max-width: 960px;
-  margin: 1.5rem auto;
-  padding: 0 1rem;
+  border-color: #86b7fe;
+  box-shadow: 0 0 0 0.25rem rgba(52, 107, 60, 0.25);
 }
 
 .player-list {
@@ -78,56 +44,51 @@ main {
 }
 
 .player-list button {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 4px;
+  background: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 0.25rem;
   padding: 0.4rem 0.85rem;
-  font-family: inherit;
   font-size: 0.85rem;
-  color: var(--text);
+  color: #212529;
   cursor: pointer;
   transition: background 0.15s, color 0.15s;
 }
 
-.player-list button:hover {
-  background: var(--accent);
-  color: #faf9f6;
-  border-color: var(--accent);
-}
-
+.player-list button:hover,
 .player-list button.active {
-  background: var(--accent);
-  color: #faf9f6;
-  border-color: var(--accent);
+  background: #346b3c;
+  color: #fff;
+  border-color: #346b3c;
 }
 
 .player-list button small {
-  color: var(--text-muted);
+  color: #6c757d;
   font-size: 0.78rem;
 }
 
 .player-list button:hover small,
 .player-list button.active small {
-  color: rgba(250, 249, 246, 0.7);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .player-card {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 6px;
+  background: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 0.25rem;
   margin-bottom: 1.5rem;
   overflow: hidden;
 }
 
 .player-card-header {
-  background: var(--accent);
-  color: #faf9f6;
+  background: #346b3c;
+  color: #fff;
   padding: 0.75rem 1.25rem;
 }
 
 .player-card-header h2 {
   font-size: 1.15rem;
-  font-weight: normal;
+  font-weight: 500;
+  margin: 0;
 }
 
 .player-card-body {
@@ -138,7 +99,7 @@ main {
   font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 0.03em;
-  color: var(--text-muted);
+  color: #6c757d;
   margin-bottom: 0.5rem;
   margin-top: 1.25rem;
 }
@@ -147,52 +108,23 @@ main {
 
 .summary-line {
   font-size: 0.85rem;
-  color: var(--text-muted);
+  color: #6c757d;
   margin-bottom: 0.75rem;
   font-style: italic;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.85rem;
-  border: 1px solid var(--border);
-  margin-bottom: 0.5rem;
-}
-
-th, td {
-  padding: 0.35rem 0.5rem;
-  text-align: left;
-  border-bottom: 1px solid #ece6d8;
-}
-
-th {
-  background: #f8f5ee;
-  font-weight: 600;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  color: var(--text-muted);
 }
 
 td.runs, th.runs { text-align: right; width: 50px; }
 td.num, th.num { text-align: right; }
 
 td a {
-  color: var(--accent);
-  text-decoration: none;
-}
-
-td a:hover {
-  text-decoration: underline;
+  color: #346b3c;
 }
 
 .intro {
   max-width: 640px;
   margin: 0 auto 1.5rem;
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   line-height: 1.65;
-  color: var(--text);
 }
 
 .intro p {
@@ -200,27 +132,22 @@ td a:hover {
 }
 
 .intro a {
-  color: var(--accent);
+  color: #346b3c;
 }
 
 .intro .try-searching {
   font-size: 0.85rem;
-  color: var(--text-muted);
+  color: #6c757d;
   margin-top: 0.5rem;
 }
 
 .intro .try-searching a {
-  color: var(--accent);
-  text-decoration: none;
-}
-
-.intro .try-searching a:hover {
-  text-decoration: underline;
+  color: #346b3c;
 }
 
 .intro .db-stats {
   font-size: 0.85rem;
-  color: var(--text-muted);
+  color: #6c757d;
   margin-top: 1rem;
   text-align: center;
 }
@@ -228,7 +155,7 @@ td a:hover {
 .empty-state {
   text-align: center;
   padding: 2rem 1rem 1.5rem;
-  color: var(--text-muted);
+  color: #6c757d;
 }
 
 .empty-state .prompt {
@@ -242,7 +169,7 @@ td a:hover {
 }
 
 .highlight {
-  background: var(--highlight);
+  background: #fff3cd;
 }
 
 .stat-grid {
@@ -253,8 +180,8 @@ td a:hover {
 }
 
 .stat-box {
-  background: var(--accent-light);
-  border-radius: 4px;
+  background: #e8f0e9;
+  border-radius: 0.25rem;
   padding: 0.6rem 0.75rem;
   text-align: center;
 }
@@ -262,14 +189,14 @@ td a:hover {
 .stat-box .stat-value {
   font-size: 1.3rem;
   font-weight: bold;
-  color: var(--accent);
+  color: #346b3c;
 }
 
 .stat-box .stat-label {
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.03em;
-  color: var(--text-muted);
+  color: #6c757d;
 }
 
 .team-list {
@@ -280,14 +207,13 @@ td a:hover {
 }
 
 .team-btn {
-  background: var(--card-bg);
-  border: 2px solid var(--border);
-  border-radius: 6px;
+  background: #fff;
+  border: 2px solid #eaeaea;
+  border-radius: 0.25rem;
   padding: 1rem 1.5rem;
-  font-family: inherit;
   font-size: 1rem;
   font-weight: bold;
-  color: var(--accent);
+  color: #346b3c;
   cursor: pointer;
   transition: background 0.15s, border-color 0.15s;
   min-width: 180px;
@@ -298,18 +224,18 @@ td a:hover {
   display: block;
   font-weight: normal;
   font-size: 0.8rem;
-  color: var(--text-muted);
+  color: #6c757d;
   margin-top: 0.2rem;
 }
 
 .team-btn:hover {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #faf9f6;
+  background: #346b3c;
+  border-color: #346b3c;
+  color: #fff;
 }
 
 .team-btn:hover small {
-  color: rgba(250, 249, 246, 0.7);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .team-header {
@@ -318,12 +244,12 @@ td a:hover {
 
 .team-header h2 {
   font-size: 1.25rem;
-  color: var(--accent);
+  color: #346b3c;
 }
 
 .team-header .team-count {
   font-size: 0.85rem;
-  color: var(--text-muted);
+  color: #6c757d;
 }
 
 .back-link {
@@ -333,9 +259,8 @@ td a:hover {
 .back-link button {
   background: none;
   border: none;
-  font-family: inherit;
   font-size: 0.9rem;
-  color: var(--accent);
+  color: #346b3c;
   cursor: pointer;
   padding: 0;
 }
@@ -353,48 +278,118 @@ td a:hover {
 }
 
 .filter-row select {
-  padding: 0.35rem 0.6rem;
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  font-family: inherit;
+  padding: 0.375rem 0.75rem;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
   font-size: 0.82rem;
-  background: var(--card-bg);
-  color: var(--text);
+  background: #fff;
+  color: #212529;
 }
 
 .filter-row label {
   font-size: 0.82rem;
-  color: var(--text-muted);
+  color: #6c757d;
 }
 
 .filtered-note {
   font-size: 0.8rem;
-  color: var(--text-muted);
+  color: #6c757d;
   font-style: italic;
   margin-bottom: 0.5rem;
 }
-
-@media (max-width: 600px) {
-  header { padding: 1rem; }
-  .search-bar { padding: 0.75rem 1rem; }
-  main { padding: 0 0.5rem; }
-  table { font-size: 0.78rem; }
-  .stat-grid { grid-template-columns: repeat(2, 1fr); }
-}
 </style>
 </head>
-<body>
+<body class="d-flex flex-column h-100">
 
-<header>
-  <h1>Malayan Interstate Cricket Players</h1>
-  <p>1889–1957 &middot; batting and bowling records from the ACS archive</p>
-</header>
-
-<div class="search-bar">
-  <input type="search" id="search" placeholder="Search for a player…" autofocus>
+<div class="pb-3 mb-4 border-bottom my-jumbotron">
+  <p class="lead">Association of Cricket Statisticians and Historians</p>
 </div>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top green-background mynav">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="https://acscricket.com"><img src="https://archive.acscricket.com/includes/tnav/ACS_Logo.jpg" alt="ACS" width="30"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="https://acscricket.com">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">About and Joining</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="https://acscricket.com/?page_id=267">About the ACS</a></li>
+            <li><a class="dropdown-item" href="https://acscricket.com/?page_id=294">Join</a></li>
+            <li><a class="dropdown-item" href="https://acscricket.com/?page_id=2302">News</a></li>
+            <li><a class="dropdown-item" href="https://acscricket.com/?page_id=4280">Recent Website Updates</a></li>
+            <li><a class="dropdown-item" href="https://acscricket.com/?page_id=55">ACS Publications</a></li>
+            <li><a class="dropdown-item" href="https://archive.acscricket.com/online_library/index.html">Online Library</a></li>
+            <li><a class="dropdown-item" href="https://acscricket.com/?page_id=1006">Improving the Record</a></li>
+            <li><a class="dropdown-item" href="https://acscricket.com/?page_id=165">ACS Awards</a></li>
+            <li><a class="dropdown-item" href="https://acscricket.com/?page_id=144">Members' Area</a></li>
+            <li><a class="dropdown-item" href="https://acscricket.com/?page_id=30">Links</a></li>
+            <li><a class="dropdown-item" href="https://acscricket.com/?page_id=966">Advertising</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Records and Statistics</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="https://acscricket.com/?page_id=5580">Online Records Site</a></li>
+            <li><a class="dropdown-item" href="https://archive.acscricket.com/records_and_stats/womens_records.html">Women's Records</a></li>
+            <li><a class="dropdown-item" href="https://archive.acscricket.com/records_and_stats/all_cricket_records.html">Records in All Cricket</a></li>
+            <li><a class="dropdown-item" href="https://archive.acscricket.com/records_and_stats/progressive_records.html">Progressive Records</a></li>
+            <li><a class="dropdown-item" href="https://archive.acscricket.com/records_and_stats/team_v_team_records.html">Team v Team Records</a></li>
+            <li><a class="dropdown-item" href="https://archive.acscricket.com/records_and_stats/major_domestic_competitions_records.html">Major Domestic Competitions</a></li>
+            <li><a class="dropdown-item" href="https://archive.acscricket.com/records_and_stats/other_records.html">Other Records and Statistics</a></li>
+            <li><a class="dropdown-item" href="https://acscricket.com/?page_id=2025">Ask the ACS</a></li>
+            <li><a class="dropdown-item" href="https://acscricket.com/?page_id=3897">FAQ</a></li>
+            <li><a class="dropdown-item" href="https://acscricket.com/?page_id=1006">Improving the Record</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">History and Biography</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="https://archive.acscricket.com/biographical.html">Biographical</a></li>
+            <li><a class="dropdown-item" href="https://archive.acscricket.com/county.html">County Cricket</a></li>
+            <li><a class="dropdown-item" href="https://archive.acscricket.com/womens_cricket.html">Women's Cricket</a></li>
+            <li><a class="dropdown-item" href="https://archive.acscricket.com/league_club_other.html">League, Club, and Other</a></li>
+            <li><a class="dropdown-item" href="https://archive.acscricket.com/online_library/index.html">Online Library</a></li>
+            <li><a class="dropdown-item" href="https://archive.acscricket.com/laws_and_regulations.html">Laws and Regulations</a></li>
+            <li><a class="dropdown-item" href="https://archive.acscricket.com/early_cricket.html">Early Cricket</a></li>
+            <li><a class="dropdown-item" href="https://archive.acscricket.com/resource_sources.html">Resource Sources</a></li>
+            <li><a class="dropdown-item" href="https://acscricket.com/?page_id=3897">FAQ</a></li>
+            <li><a class="dropdown-item" href="https://archive.acscricket.com/miscellaneous.html">Miscellaneous</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="https://shop.acscricket.com/">Shop</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Search</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="https://archive.acscricket.com/search_acs_pages.html">ACS Web Pages</a></li>
+            <li><a class="dropdown-item" href="https://acscricket.com/?page_id=11299">Search User Guide</a></li>
+            <li><a class="dropdown-item" href="https://dbsearch.acscricket.com/index.html">Interactive Database</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="https://acscricket.com/?page_id=37">Contact Us</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-<main id="results"></main>
+<main class="flex-shrink-0">
+  <div class="container my-container">
+    <div class="search-bar">
+      <input type="search" id="search" placeholder="Search for a player…" autofocus>
+    </div>
+    <div id="results"></div>
+  </div>
+</main>
 
 <script>
 let scorecards = [];
@@ -534,10 +529,11 @@ function render() {
   const matched = findMatchingPlayers(query);
 
   if (!query) {
-    let html = `<div class="intro">
-      <p>This database contains batting and bowling records from interstate cricket
-      in British Malaya, covering matches played between 1889 and 1957. The data
-      has been extracted from scorecards published by the
+    let html = `<h2 class="page-title">Malayan Interstate Cricket Players</h2>
+    <div class="intro">
+      <p>This database contains batting and bowling records from Malayan interstate cricket,
+      covering matches played between 1889 and 1957. The data
+      has been extracted from scorecards researched by Roy Morgan and published by the
       <a href="https://acscricket.com/" target="_blank" rel="noopener">Association
       of Cricket Statisticians and Historians</a>. The
       <a href="https://archive.acscricket.com/research/rm/malayan_interstate_cricket_1899-1957/rm_malayan_interstate_cricket_scorecards/index.html" target="_blank" rel="noopener">original
@@ -809,5 +805,23 @@ function hl(escaped, query) {
 
 init();
 </script>
+
+<footer class="footer mt-auto py-3 green-background">
+  <div class="container">
+    <span class="text-light">Copyright &copy; 2010-2026 Association of Cricket Statisticians and Historians</span>
+    <span class="social-navigation">
+      <div class="menu-social-media-links-container">
+        <ul>
+          <li><a href="https://twitter.com/ACScricket" target="_blank"><span class="screen-reader-text">Twitter</span><span class="fab fa-twitter"></span></a></li>
+          <li><a href="https://www.facebook.com/Association-of-Cricket-Statisticians-Historians-101127452440852" target="_blank"><span class="fab fa-facebook"></span><span class="screen-reader-text">Facebook</span></a></li>
+          <li><a href="https://www.instagram.com/acscricket/" target="_blank"><span class="fab fa-instagram"></span><span class="screen-reader-text">Instagram</span></a></li>
+          <li><a href="https://www.mstdn.social/@acscricket/" target="_blank"><span class="fab fa-mastodon"></span><span class="screen-reader-text">Mastodon</span></a></li>
+          <li><a href="https://www.youtube.com/@acscricket/" target="_blank"><span class="fab fa-youtube"></span><span class="screen-reader-text">YouTube</span></a></li>
+        </ul>
+      </div>
+    </span>
+  </div>
+</footer>
+
 </body>
 </html>
