@@ -28,13 +28,15 @@ import httpx
 import llm
 from bs4 import BeautifulSoup
 
+from names import dismissal_tally, lookup_tally
+
 BASE_URL = (
     "https://archive.acscricket.com/research/rm/"
     "malayan_interstate_cricket_1899-1957/"
     "rm_malayan_interstate_cricket_scorecards"
 )
 
-DEFAULT_MODEL_ID = "qwen3.5:397b-cloud"
+DEFAULT_MODEL_ID = "claude-sonnet-4.6"
 RATE_LIMIT_DELAY = 1.0
 RETRY_ATTEMPTS = 1
 RETRY_BACKOFF = 5.0
@@ -180,10 +182,21 @@ RAW SCORECARD TEXT:
 {text}"""
 
 
+PAGE_CACHE_DIR = Path(__file__).parent / "pages"
+
+
+def page_url(page: int) -> str:
+    return f"{BASE_URL}/index.html" if page == 1 else f"{BASE_URL}/{page}/index.html"
+
+
 def fetch_page_text(client: httpx.Client, page: int) -> str | None:
-    url = f"{BASE_URL}/index.html" if page == 1 else f"{BASE_URL}/{page}/index.html"
+    cache_file = PAGE_CACHE_DIR / f"{page}.txt"
+    if cache_file.exists():
+        text = cache_file.read_text(encoding="utf-8")
+        return text if text else None
+
     try:
-        resp = client.get(url, follow_redirects=True)
+        resp = client.get(page_url(page), follow_redirects=True)
         resp.raise_for_status()
     except httpx.HTTPError as e:
         print(f"  HTTP error for page {page}: {e}")
@@ -196,6 +209,9 @@ def fetch_page_text(client: httpx.Client, page: int) -> str | None:
 
     text = container.get_text(separator=" ", strip=True)
     text = html.unescape(text)
+    if text:
+        PAGE_CACHE_DIR.mkdir(parents=True, exist_ok=True)
+        cache_file.write_text(text, encoding="utf-8")
     return text if text else None
 
 
@@ -222,42 +238,41 @@ def detect_max_page(client: httpx.Client) -> int:
     return MAX_PAGE
 
 
-def _bowler_from_dismissal(dismissal: str) -> str | None:
-    """Extract the bowler's name from a batting dismissal string."""
-    d = dismissal.strip()
-    if not d or d.lower() in ("not out", "retired"):
-        return None
-    if "run out" in d.lower():
-        return None
-    m = re.search(r"\bb\s+(.+)$", d, re.IGNORECASE)
-    return m.group(1).strip() if m else None
-
-
-def _normalize_name(name: str) -> str:
-    return re.sub(r"\s+", " ", name.strip()).lower()
-
-
 def validate_bowling_wickets(scorecard: dict) -> dict:
-    """Patch bowling wickets to match dismissal counts from batting data."""
-    for innings in scorecard.get("innings", []):
-        tally: dict[str, int] = {}
-        for bat in innings.get("batting", []):
-            bowler = _bowler_from_dismissal(bat.get("dismissal") or "")
-            if bowler:
-                key = _normalize_name(bowler)
-                tally[key] = tally.get(key, 0) + 1
+    """Patch bowling wickets to match dismissal counts from batting data.
 
-        for bowl in innings.get("bowling", []):
+    Only patches when the dismissal evidence is unambiguous. A bowler with
+    no tally entry gets 0 only when every dismissal in the innings is known;
+    otherwise the parsed value is left alone (validation will flag any
+    disagreement). The model's original value is preserved as
+    `wickets_reported` when overwritten.
+    """
+    for innings in scorecard.get("innings") or []:
+        batting = innings.get("batting") or []
+        tally = dismissal_tally(batting)
+        dismissals_complete = bool(batting) and all(
+            (b.get("dismissal") or "").strip().lower() not in ("", "[unknown]", "unknown")
+            for b in batting
+        )
+
+        for bowl in innings.get("bowling") or []:
             if not bowl.get("name"):
                 continue
-            key = _normalize_name(bowl["name"])
-            matched = tally.get(key)
+            matched = lookup_tally(tally, bowl["name"])
             if matched is None:
-                for tally_key, count in tally.items():
-                    if tally_key.endswith(key) or key.endswith(tally_key):
-                        matched = count
-                        break
-            bowl["wickets"] = matched if matched is not None else 0
+                # Absent or ambiguous-surname tally entry: only treat as 0
+                # when we saw every dismissal and the surname isn't ambiguous
+                key_surname = bowl["name"].rsplit(" ", 1)[-1].lower()
+                ambiguous = sum(
+                    1 for k in tally if k.rsplit(" ", 1)[-1] == key_surname
+                ) > 1
+                if ambiguous or not dismissals_complete:
+                    continue
+                matched = 0
+            if bowl.get("wickets") != matched:
+                if bowl.get("wickets") is not None:
+                    bowl["wickets_reported"] = bowl["wickets"]
+                bowl["wickets"] = matched
 
     return scorecard
 
@@ -297,8 +312,8 @@ def normalize_player_names(scorecard: dict) -> dict:
     3. Resolve surname-only bowler names using match context.
     """
     # --- Pass 1 & 2: Clean all names (markers + initials) ---
-    for innings in scorecard.get("innings", []):
-        for bat in innings.get("batting", []):
+    for innings in scorecard.get("innings") or []:
+        for bat in innings.get("batting") or []:
             if not bat.get("name"):
                 continue
             clean, is_capt, is_wk = _fix_name_markers(bat["name"])
@@ -309,7 +324,7 @@ def normalize_player_names(scorecard: dict) -> dict:
             if is_wk:
                 bat["wicketkeeper"] = True
 
-        for bowl in innings.get("bowling", []):
+        for bowl in innings.get("bowling") or []:
             if not bowl.get("name"):
                 continue
             clean, _, _ = _fix_name_markers(bowl["name"])
@@ -322,8 +337,8 @@ def normalize_player_names(scorecard: dict) -> dict:
     # --- Pass 3: Resolve surname-only bowler names ---
     # Build a set of full names from batting across ALL innings in this match
     full_names: dict[str, list[str]] = {}  # surname -> [full names]
-    for innings in scorecard.get("innings", []):
-        for bat in innings.get("batting", []):
+    for innings in scorecard.get("innings") or []:
+        for bat in innings.get("batting") or []:
             name = bat.get("name", "")
             if " " in name:
                 surname = name.rsplit(" ", 1)[1]
@@ -334,10 +349,10 @@ def normalize_player_names(scorecard: dict) -> dict:
                     full_names[key].append(name)
 
     # For each surname-only bowler, try to resolve
-    for innings in scorecard.get("innings", []):
+    for innings in scorecard.get("innings") or []:
         # Build per-innings batting roster for disambiguation
         innings_batters = set()
-        for bat in innings.get("batting", []):
+        for bat in innings.get("batting") or []:
             innings_batters.add(bat.get("name", ""))
 
         # Also check the opposing innings (bowlers bowl at the OTHER team)
@@ -347,12 +362,12 @@ def normalize_player_names(scorecard: dict) -> dict:
         # was bowling at) and bowler's teammates from OTHER innings.
         other_batters = set()
         bowling_team = None
-        for other_inn in scorecard.get("innings", []):
+        for other_inn in scorecard.get("innings") or []:
             if other_inn is not innings:
-                for bat in other_inn.get("batting", []):
+                for bat in other_inn.get("batting") or []:
                     other_batters.add(bat.get("name", ""))
 
-        for bowl in innings.get("bowling", []):
+        for bowl in innings.get("bowling") or []:
             name = bowl.get("name", "")
             if " " in name:
                 continue  # Already a full name
@@ -391,17 +406,226 @@ def normalize_match(scorecard: dict) -> dict:
     return scorecard
 
 
+def _extract_json(raw: str) -> str:
+    """Pull the JSON object out of a model response that may include prose
+    before/after it or wrap it in a markdown fence."""
+    raw = raw.strip()
+    # Prefer a fenced ```json block anywhere in the response
+    m = re.search(r"```(?:json)?\s*(\{.*?\})\s*```", raw, re.DOTALL)
+    if m:
+        return m.group(1)
+    # Otherwise take everything from the first { to the last }
+    start = raw.find("{")
+    end = raw.rfind("}")
+    if start != -1 and end > start:
+        return raw[start : end + 1]
+    return raw
+
+
 def parse_scorecard(model, text: str) -> dict:
     prompt = USER_PROMPT_TEMPLATE.format(text=text)
-    response = model.prompt(prompt, system=SYSTEM_PROMPT)
-    raw = response.text()
-    raw = raw.strip()
-    raw = re.sub(r"^```(?:json)?\s*", "", raw)
-    raw = re.sub(r"\s*```$", "", raw)
-    scorecard = json.loads(raw)
+    response = model.prompt(prompt, system=SYSTEM_PROMPT, thinking=False)
+    scorecard = json.loads(_extract_json(response.text()))
     scorecard = normalize_match(scorecard)
     scorecard = normalize_player_names(scorecard)
     return validate_bowling_wickets(scorecard)
+
+
+def _anthropic_model_id(model_arg: str) -> str:
+    """Convert an llm model alias/ID to a raw Anthropic API model ID.
+
+    e.g. 'claude-sonnet-4.6'  -> 'claude-sonnet-4-6'
+         'anthropic/claude-3-5-haiku-latest' -> 'claude-3-5-haiku-latest'
+    """
+    mid = model_arg
+    if mid.startswith("anthropic/"):
+        mid = mid[len("anthropic/"):]
+    # llm uses dots in version aliases (4.6); Anthropic API uses hyphens (4-6)
+    mid = re.sub(r"(\d+)\.(\d+)", r"\1-\2", mid)
+    return mid
+
+
+def _process_batch_text(raw_text: str) -> dict:
+    """Parse a batch result text string into a normalised scorecard dict."""
+    scorecard = json.loads(_extract_json(raw_text))
+    scorecard = normalize_match(scorecard)
+    scorecard = normalize_player_names(scorecard)
+    return validate_bowling_wickets(scorecard)
+
+
+def _batch_collect_results(
+    client,
+    batch_id: str,
+    existing: dict[int, dict],
+    output_path: Path,
+) -> tuple[int, int]:
+    """Stream batch results and merge into *existing*. Returns (parsed, errors)."""
+    total_parsed = 0
+    failed_pages: list[int] = []
+    failures_dir = output_path.parent / "failures"
+
+    def _dump_failure(page_num: int, raw_text: str):
+        failures_dir.mkdir(parents=True, exist_ok=True)
+        (failures_dir / f"page-{page_num}.txt").write_text(raw_text, encoding="utf-8")
+
+    for result in client.messages.batches.results(batch_id):
+        page_num = int(result.custom_id.split("-", 1)[1])
+        if result.result.type == "succeeded":
+            message = result.result.message
+            raw_text = message.content[0].text if message.content else ""
+            if message.stop_reason == "max_tokens":
+                failed_pages.append(page_num)
+                _dump_failure(page_num, raw_text)
+                print(
+                    f"  page {page_num}: TRUNCATED at max_tokens "
+                    f"({message.usage.output_tokens} output tokens) — raw saved"
+                )
+                continue
+            try:
+                scorecard = _process_batch_text(raw_text)
+                scorecard["page"] = page_num
+                scorecard["source_url"] = page_url(page_num)
+                existing[page_num] = scorecard
+                total_parsed += 1
+                match = scorecard.get("match", {})
+                print(
+                    f"  page {page_num}: "
+                    f"{match.get('team1', '?')} v {match.get('team2', '?')} "
+                    f"({match.get('date', '?')})"
+                )
+            except Exception as e:
+                failed_pages.append(page_num)
+                _dump_failure(page_num, raw_text)
+                print(f"  page {page_num}: parse error: {e} — raw saved")
+        else:
+            failed_pages.append(page_num)
+            print(f"  page {page_num}: {result.result.type}")
+    _save(output_path, existing)
+
+    if failed_pages:
+        pages_arg = ",".join(str(p) for p in sorted(failed_pages))
+        print(f"\n{len(failed_pages)} page(s) failed; raw responses in {failures_dir}/")
+        print(f"Retry with: --batch --pages {pages_arg}")
+    return total_parsed, len(failed_pages)
+
+
+def _poll_batch(client, batch_id: str, poll_interval: int) -> None:
+    """Block until the batch reaches 'ended' status, printing progress."""
+    while True:
+        batch = client.messages.batches.retrieve(batch_id)
+        counts = batch.request_counts
+        print(
+            f"  {batch.processing_status}: "
+            f"processing={counts.processing} "
+            f"succeeded={counts.succeeded} "
+            f"errored={counts.errored}"
+        )
+        if batch.processing_status == "ended":
+            break
+        time.sleep(poll_interval)
+
+
+def run_batch(
+    model_arg: str,
+    page_nums: list[int],
+    existing: dict[int, dict],
+    output_path: Path,
+    http_client: httpx.Client,
+    force: bool = False,
+    poll_interval: int = 60,
+) -> None:
+    """Fetch pages, submit as an Anthropic Message Batch, poll, and collect."""
+    try:
+        import anthropic as _anthropic
+        from anthropic.types.message_create_params import MessageCreateParamsNonStreaming
+        from anthropic.types.messages.batch_create_params import Request as BatchRequest
+    except ImportError:
+        raise SystemExit(
+            "anthropic package not found. "
+            "Install it with: pip install anthropic"
+        )
+
+    api_key = llm.get_key("", "anthropic", "ANTHROPIC_API_KEY")
+    client = _anthropic.Anthropic(api_key=api_key)
+    api_model_id = _anthropic_model_id(model_arg)
+
+    pages_to_fetch = [
+        p for p in page_nums if force or p not in existing
+    ]
+    print(f"Fetching text for {len(pages_to_fetch)} page(s)…")
+    requests: list = []
+    for page_num in pages_to_fetch:
+        text = fetch_page_text(http_client, page_num)
+        if not text:
+            print(f"  page {page_num}: no text content — skipping")
+            continue
+        # Split the prompt so the ~2.5k-token instruction prefix is shared
+        # and cacheable across all requests; only the scorecard text varies.
+        instructions = USER_PROMPT_TEMPLATE.split("{text}")[0]
+        requests.append(
+            BatchRequest(
+                custom_id=f"page-{page_num}",
+                params=MessageCreateParamsNonStreaming(
+                    model=api_model_id,
+                    max_tokens=32000,
+                    system=SYSTEM_PROMPT,
+                    messages=[{
+                        "role": "user",
+                        "content": [
+                            {
+                                "type": "text",
+                                "text": instructions,
+                                "cache_control": {"type": "ephemeral"},
+                            },
+                            {"type": "text", "text": text},
+                        ],
+                    }],
+                ),
+            )
+        )
+
+    if not requests:
+        print("Nothing to submit.")
+        return
+
+    print(f"Submitting batch of {len(requests)} request(s) (model: {api_model_id})…")
+    batch = client.messages.batches.create(requests=requests)
+    print(f"Batch ID : {batch.id}")
+    print(f"(Resume with --batch-id {batch.id} if interrupted)")
+
+    _poll_batch(client, batch.id, poll_interval)
+
+    total_parsed, total_errors = _batch_collect_results(
+        client, batch.id, existing, output_path
+    )
+    print(f"\nDone. {total_parsed} scorecards parsed, {total_errors} errors.")
+    print(f"Total scorecards in {output_path}: {len(existing)}")
+
+
+def resume_batch(
+    batch_id: str,
+    existing: dict[int, dict],
+    output_path: Path,
+    poll_interval: int = 60,
+) -> None:
+    """Poll and collect results for an already-submitted batch."""
+    try:
+        import anthropic as _anthropic
+    except ImportError:
+        raise SystemExit(
+            "anthropic package not found. "
+            "Install it with: pip install anthropic"
+        )
+
+    client = _anthropic.Anthropic(api_key=llm.get_key("", "anthropic", "ANTHROPIC_API_KEY"))
+    print(f"Polling batch {batch_id}…")
+    _poll_batch(client, batch_id, poll_interval)
+
+    total_parsed, total_errors = _batch_collect_results(
+        client, batch_id, existing, output_path
+    )
+    print(f"\nDone. {total_parsed} scorecards parsed, {total_errors} errors.")
+    print(f"Total scorecards in {output_path}: {len(existing)}")
 
 
 def parse_page_range(spec: str) -> set[int]:
@@ -443,6 +667,29 @@ def main():
         action="store_true",
         help="Re-run name normalization on existing data without re-parsing.",
     )
+    parser.add_argument(
+        "--fetch-only",
+        action="store_true",
+        help="Fetch and cache page texts without parsing. Useful for populating the cache.",
+    )
+    parser.add_argument(
+        "--batch",
+        action="store_true",
+        help="Submit all pages as an Anthropic Message Batch (50%% cost, async).",
+    )
+    parser.add_argument(
+        "--batch-id",
+        metavar="BATCH_ID",
+        default=None,
+        help="Poll and collect results for an already-submitted batch ID.",
+    )
+    parser.add_argument(
+        "--poll-interval",
+        type=int,
+        default=60,
+        metavar="SECONDS",
+        help="Seconds between batch status polls (default: 60).",
+    )
     args = parser.parse_args()
 
     output_path = Path(args.output)
@@ -473,6 +720,41 @@ def main():
         print("Done.")
         return
 
+    if args.fetch_only:
+        http_client = httpx.Client(
+            timeout=30,
+            headers={"User-Agent": "ACSCricket-Scorecard-Parser/1.0"},
+        )
+        if args.pages:
+            page_nums = sorted(parse_page_range(args.pages))
+        else:
+            max_page = detect_max_page(http_client)
+            page_nums = list(range(1, max_page + 1))
+        cached = 0
+        fetched = 0
+        for page_num in page_nums:
+            cache_file = PAGE_CACHE_DIR / f"{page_num}.txt"
+            if cache_file.exists():
+                cached += 1
+                continue
+            text = fetch_page_text(http_client, page_num)
+            if text:
+                fetched += 1
+                print(f"  Fetched page {page_num}")
+            else:
+                print(f"  No content for page {page_num}")
+            time.sleep(0.5)
+        http_client.close()
+        print(f"Done. {fetched} fetched, {cached} already cached.")
+        return
+
+    # --batch-id: resume an existing batch — no model or page fetching needed
+    if args.batch_id:
+        if existing:
+            print(f"Resuming: {len(existing)} page(s) already in {output_path}")
+        resume_batch(args.batch_id, existing, output_path, args.poll_interval)
+        return
+
     try:
         model = llm.get_model(args.model)
     except llm.UnknownModelError:
@@ -483,7 +765,7 @@ def main():
     if existing:
         print(f"Resuming: {len(existing)} page(s) already in {output_path}")
 
-    client = httpx.Client(
+    http_client = httpx.Client(
         timeout=30,
         headers={"User-Agent": "ACSCricket-Scorecard-Parser/1.0"},
     )
@@ -491,9 +773,24 @@ def main():
     if args.pages:
         page_nums = sorted(parse_page_range(args.pages))
     else:
-        max_page = detect_max_page(client)
+        max_page = detect_max_page(http_client)
         page_nums = list(range(1, max_page + 1))
         print(f"Detected {max_page} pages")
+
+    # --batch: submit all pages as an Anthropic Message Batch
+    if args.batch:
+        print(f"Output: {output_path}")
+        run_batch(
+            args.model,
+            page_nums,
+            existing,
+            output_path,
+            http_client,
+            force=args.force,
+            poll_interval=args.poll_interval,
+        )
+        http_client.close()
+        return
 
     print(f"Model : {args.model}")
     print(f"Output: {output_path}")
@@ -508,7 +805,7 @@ def main():
             continue
 
         print(f"  Fetching page {page_num} …", end=" ", flush=True)
-        text = fetch_page_text(client, page_num)
+        text = fetch_page_text(http_client, page_num)
         if not text:
             print("no text content")
             continue
@@ -533,7 +830,7 @@ def main():
 
         if scorecard:
             scorecard["page"] = page_num
-            scorecard["source_url"] = f"{BASE_URL}/{page_num}/index.html"
+            scorecard["source_url"] = page_url(page_num)
             existing[page_num] = scorecard
             total_parsed += 1
             match = scorecard.get("match", {})
@@ -551,7 +848,7 @@ def main():
         time.sleep(args.delay)
 
     _save(output_path, existing)
-    client.close()
+    http_client.close()
 
     print(f"\nDone. {total_parsed} scorecards parsed, {total_errors} errors.")
     print(f"Total scorecards in {output_path}: {len(existing)}")
