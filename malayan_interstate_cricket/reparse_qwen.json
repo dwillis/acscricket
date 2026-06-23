@@ -1,0 +1,2574 @@
+[
+  {
+    "match": {
+      "team1": "SELANGOR",
+      "team2": "PENANG",
+      "venue": "Penang Cricket Club, The Esplanade, George Town",
+      "date": "May 16 and 18, 1891",
+      "result": "Penang won by 7 wickets"
+    },
+    "innings": [
+      {
+        "team": "SELANGOR",
+        "innings_number": 1,
+        "batting": [
+          {
+            "name": "EW Neubronner",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "run out (Hawkins>Ryan)",
+            "runs": 19
+          },
+          {
+            "name": "RCG Glassford",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Wilkinson",
+            "runs": 2
+          },
+          {
+            "name": "P Weinman",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Scott",
+            "runs": 52
+          },
+          {
+            "name": "FA Thomasz",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Jumeaux",
+            "runs": 1
+          },
+          {
+            "name": "AH Bagnall",
+            "captain": false,
+            "wicketkeeper": true,
+            "dismissal": "b Hawkins",
+            "runs": 15
+          },
+          {
+            "name": "HC Holmes",
+            "captain": true,
+            "wicketkeeper": false,
+            "dismissal": "b Wilkinson",
+            "runs": 10
+          },
+          {
+            "name": "HC Paxon",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "run out",
+            "runs": 2
+          },
+          {
+            "name": "EA Christoffelsz",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Watson",
+            "runs": 3
+          },
+          {
+            "name": "DJ Highet",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Watson",
+            "runs": 4
+          },
+          {
+            "name": "L Dougal",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Watson",
+            "runs": 0
+          },
+          {
+            "name": "JOC Glassford",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "not out",
+            "runs": 0
+          }
+        ],
+        "extras": {
+          "total": 10,
+          "detail": null
+        },
+        "total": {
+          "runs": 118,
+          "wickets": 10,
+          "declared": false
+        },
+        "fow": [
+          4,
+          44,
+          62,
+          81,
+          100,
+          103,
+          107,
+          116,
+          117
+        ],
+        "bowling": [
+          {
+            "name": "N Wilkinson",
+            "overs": "8",
+            "maidens": 1,
+            "runs": 25,
+            "wickets": 2,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "RT Peake",
+            "overs": "5",
+            "maidens": 2,
+            "runs": 18,
+            "wickets": 0,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "ALL Jumeaux",
+            "overs": "5",
+            "maidens": 1,
+            "runs": 22,
+            "wickets": 1,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "FH Hawkins",
+            "overs": "10",
+            "maidens": 1,
+            "runs": 26,
+            "wickets": 1,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "RG Watson",
+            "overs": "4.1",
+            "maidens": 0,
+            "runs": 17,
+            "wickets": 3,
+            "noballs": null,
+            "wides": null
+          }
+        ]
+      },
+      {
+        "team": "PENANG",
+        "innings_number": 1,
+        "batting": [
+          {
+            "name": "RG Watson",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c Dougal b Christoffelsz",
+            "runs": 0
+          },
+          {
+            "name": "F Baynes",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Dougal",
+            "runs": 9
+          },
+          {
+            "name": "AJ McClosky",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Dougal",
+            "runs": 2
+          },
+          {
+            "name": "FH Hawkins",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Christoffelsz",
+            "runs": 6
+          },
+          {
+            "name": "ALM Scott",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Dougal",
+            "runs": 65
+          },
+          {
+            "name": "AG Wright",
+            "captain": true,
+            "wicketkeeper": false,
+            "dismissal": "st Bagnall b Thomasz",
+            "runs": 17
+          },
+          {
+            "name": "ALL Jumeaux",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c Neubronner b Thomasz",
+            "runs": 0
+          },
+          {
+            "name": "RT Peake",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Christoffelsz",
+            "runs": 6
+          },
+          {
+            "name": "R Ryan",
+            "captain": false,
+            "wicketkeeper": true,
+            "dismissal": "c Neubronner b Dougal",
+            "runs": 1
+          },
+          {
+            "name": "P Gallway",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Christoffelsz",
+            "runs": 18
+          },
+          {
+            "name": "N Wilkinson",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "not out",
+            "runs": 24
+          }
+        ],
+        "extras": {
+          "total": 24,
+          "detail": null
+        },
+        "total": {
+          "runs": 172,
+          "wickets": 10,
+          "declared": false
+        },
+        "fow": [
+          4,
+          10,
+          13,
+          36,
+          92,
+          92,
+          120,
+          121,
+          129
+        ],
+        "bowling": [
+          {
+            "name": "EA Christoffelsz",
+            "overs": "17",
+            "maidens": 4,
+            "runs": 63,
+            "wickets": 4,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "L Dougal",
+            "overs": "12",
+            "maidens": 3,
+            "runs": 45,
+            "wickets": 4,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "JOC Glassford",
+            "overs": "2",
+            "maidens": 0,
+            "runs": 11,
+            "wickets": 0,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "EW Neubronner",
+            "overs": "3",
+            "maidens": 0,
+            "runs": 19,
+            "wickets": 0,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "Thomas",
+            "overs": "4",
+            "maidens": 1,
+            "runs": 10,
+            "wickets": 0,
+            "noballs": null,
+            "wides": null
+          }
+        ]
+      },
+      {
+        "team": "SELANGOR",
+        "innings_number": 2,
+        "batting": [
+          {
+            "name": "EW Neubronner",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Watson",
+            "runs": 21
+          },
+          {
+            "name": "RCG Glassford",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Peake",
+            "runs": 22
+          },
+          {
+            "name": "P Weinman",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c Jumeaux b Wilkinson",
+            "runs": 4
+          },
+          {
+            "name": "FA Thomasz",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Watson",
+            "runs": 0
+          },
+          {
+            "name": "AH Bagnall",
+            "captain": false,
+            "wicketkeeper": true,
+            "dismissal": "lbw b Wilkinson",
+            "runs": 0
+          },
+          {
+            "name": "HC Holmes",
+            "captain": true,
+            "wicketkeeper": false,
+            "dismissal": "b Peake",
+            "runs": 9
+          },
+          {
+            "name": "HC Paxon",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "not out",
+            "runs": 1
+          },
+          {
+            "name": "EA Christoffelsz",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Watson",
+            "runs": 20
+          },
+          {
+            "name": "DJ Highet",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c Scott b Wilkinson",
+            "runs": 1
+          },
+          {
+            "name": "L Dougal",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Peake",
+            "runs": 1
+          },
+          {
+            "name": "JOC Glassford",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Wilkinson",
+            "runs": 0
+          }
+        ],
+        "extras": {
+          "total": 5,
+          "detail": null
+        },
+        "total": {
+          "runs": 84,
+          "wickets": 10,
+          "declared": false
+        },
+        "fow": [
+          49,
+          50,
+          57,
+          58,
+          79,
+          80
+        ],
+        "bowling": [
+          {
+            "name": "N Wilkinson",
+            "overs": "18.3",
+            "maidens": 9,
+            "runs": 25,
+            "wickets": 4,
+            "noballs": 1,
+            "wides": 4
+          },
+          {
+            "name": "RT Peake",
+            "overs": "4",
+            "maidens": 1,
+            "runs": 3,
+            "wickets": 3,
+            "noballs": 2,
+            "wides": null
+          },
+          {
+            "name": "ALL Jumeaux",
+            "overs": "3",
+            "maidens": null,
+            "runs": null,
+            "wickets": 0,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "FH Hawkins",
+            "overs": "3",
+            "maidens": 0,
+            "runs": 8,
+            "wickets": 0,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "RG Watson",
+            "overs": "12",
+            "maidens": 1,
+            "runs": 43,
+            "wickets": 3,
+            "noballs": null,
+            "wides": null
+          }
+        ]
+      },
+      {
+        "team": "PENANG",
+        "innings_number": 2,
+        "batting": [
+          {
+            "name": "RG Watson",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Dougal",
+            "runs": 0
+          },
+          {
+            "name": "AJ McClosky",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Christoffelsz",
+            "runs": 11
+          },
+          {
+            "name": "FH Hawkins",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "not out",
+            "runs": 5
+          },
+          {
+            "name": "ALL Jumeaux",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "lbw b Christoffelsz",
+            "runs": 3
+          },
+          {
+            "name": "ALM Scott",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "not out",
+            "runs": 8
+          }
+        ],
+        "extras": {
+          "total": 4,
+          "detail": null
+        },
+        "total": {
+          "runs": 31,
+          "wickets": 3,
+          "declared": false
+        },
+        "fow": [
+          4,
+          10,
+          13
+        ],
+        "bowling": [
+          {
+            "name": "EA Christoffelsz",
+            "overs": "7",
+            "maidens": 3,
+            "runs": 14,
+            "wickets": 2,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "L Dougal",
+            "overs": "6.2",
+            "maidens": 1,
+            "runs": 13,
+            "wickets": 1,
+            "noballs": null,
+            "wides": null
+          }
+        ]
+      }
+    ],
+    "umpires": null,
+    "toss": null,
+    "close_of_play": "1st day - Selangor (2) 22-0 (CG Glassford 9*, Neubronner 15*)",
+    "balls_per_over": 5,
+    "notes": [
+      "Match started late on 1st day because of business commitments of some of Penang's players",
+      "RCG Glassford failed to appear at the start of the 2nd day; Christoffelsz took his place and Glassford resumed on 58-5"
+    ],
+    "page": 3,
+    "source_url": "https://archive.acscricket.com/research/rm/malayan_interstate_cricket_1899-1957/rm_malayan_interstate_cricket_scorecards/3/index.html"
+  },
+  {
+    "match": {
+      "team1": "Penang",
+      "team2": "Singapore",
+      "venue": "Penang Cricket Club, The Esplanade, George Town",
+      "date": "December 24 and 26, 1892",
+      "result": "Penang won by an innings and 23 runs"
+    },
+    "innings": [
+      {
+        "team": "Singapore",
+        "innings_number": 1,
+        "batting": [
+          {
+            "name": "FM Elliot",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Carter",
+            "runs": 8
+          },
+          {
+            "name": "J Cook",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c Shropshire b Anthony",
+            "runs": 22
+          },
+          {
+            "name": "HL Talbot",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Garrard",
+            "runs": 18
+          },
+          {
+            "name": "AS Vanrenen",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c Carter b Garrard",
+            "runs": 6
+          },
+          {
+            "name": "AB Hinde",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Garrard",
+            "runs": 6
+          },
+          {
+            "name": "CB Logan",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c Carter b Peake",
+            "runs": 1
+          },
+          {
+            "name": "JM Dow",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c Wright b Peake",
+            "runs": 4
+          },
+          {
+            "name": "AJ Ross",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Garrard",
+            "runs": 0
+          },
+          {
+            "name": "AJ Sisson",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Garrard",
+            "runs": 3
+          },
+          {
+            "name": "W Fox",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Peake",
+            "runs": 0
+          },
+          {
+            "name": "JWB MacLaren",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "not out",
+            "runs": 1
+          }
+        ],
+        "extras": {
+          "total": 8,
+          "detail": null
+        },
+        "total": {
+          "runs": 77,
+          "wickets": 10,
+          "declared": false
+        },
+        "fow": [
+          15,
+          51,
+          51,
+          51,
+          66,
+          67,
+          67,
+          70,
+          70
+        ],
+        "bowling": [
+          {
+            "name": "AG Wright",
+            "overs": null,
+            "maidens": null,
+            "runs": null,
+            "wickets": 0,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "AJ McClosky",
+            "overs": null,
+            "maidens": null,
+            "runs": null,
+            "wickets": 0,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "AS Anthony",
+            "overs": "13",
+            "maidens": 3,
+            "runs": 24,
+            "wickets": 1,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "RT Peake",
+            "overs": "4",
+            "maidens": 2,
+            "runs": 4,
+            "wickets": 3,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "FH Hawkins",
+            "overs": null,
+            "maidens": null,
+            "runs": null,
+            "wickets": 0,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "JMP Smith",
+            "overs": null,
+            "maidens": null,
+            "runs": null,
+            "wickets": 0,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "JF Lamb",
+            "overs": null,
+            "maidens": null,
+            "runs": null,
+            "wickets": 0,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "WL Carter",
+            "overs": "6",
+            "maidens": 0,
+            "runs": 29,
+            "wickets": 1,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "SE Gwyer",
+            "overs": null,
+            "maidens": null,
+            "runs": null,
+            "wickets": 0,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "CG Garrard",
+            "overs": "12",
+            "maidens": 7,
+            "runs": 12,
+            "wickets": 5,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "E Shropshire",
+            "overs": null,
+            "maidens": null,
+            "runs": null,
+            "wickets": 0,
+            "noballs": null,
+            "wides": null
+          }
+        ]
+      },
+      {
+        "team": "Penang",
+        "innings_number": 1,
+        "batting": [
+          {
+            "name": "AG Wright",
+            "captain": true,
+            "wicketkeeper": false,
+            "dismissal": "c Talbot b Hinde",
+            "runs": 3
+          },
+          {
+            "name": "AJ McClosky",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Hinde",
+            "runs": 28
+          },
+          {
+            "name": "AS Anthony",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Talbot",
+            "runs": 66
+          },
+          {
+            "name": "RT Peake",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c Sisson b Ross",
+            "runs": 17
+          },
+          {
+            "name": "FH Hawkins",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Hinde",
+            "runs": 15
+          },
+          {
+            "name": "JMP Smith",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Ross",
+            "runs": 7
+          },
+          {
+            "name": "JF Lamb",
+            "captain": false,
+            "wicketkeeper": true,
+            "dismissal": "c Talbot b Dow",
+            "runs": 24
+          },
+          {
+            "name": "WL Carter",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c Hinde b Cook",
+            "runs": 18
+          },
+          {
+            "name": "SE Gwyer",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Cook",
+            "runs": 2
+          },
+          {
+            "name": "CG Garrard",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Hinde",
+            "runs": 10
+          },
+          {
+            "name": "E Shropshire",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "not out",
+            "runs": 7
+          }
+        ],
+        "extras": {
+          "total": 16,
+          "detail": null
+        },
+        "total": {
+          "runs": 213,
+          "wickets": 10,
+          "declared": false
+        },
+        "fow": [
+          11,
+          93,
+          120,
+          133,
+          144,
+          144,
+          173,
+          195
+        ],
+        "bowling": [
+          {
+            "name": "FM Elliot",
+            "overs": null,
+            "maidens": null,
+            "runs": null,
+            "wickets": 0,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "J Cook",
+            "overs": "13",
+            "maidens": 3,
+            "runs": 42,
+            "wickets": 2,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "HL Talbot",
+            "overs": "3",
+            "maidens": 0,
+            "runs": 26,
+            "wickets": 1,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "AS Vanrenen",
+            "overs": null,
+            "maidens": null,
+            "runs": null,
+            "wickets": 0,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "AB Hinde",
+            "overs": "27.4",
+            "maidens": 5,
+            "runs": 81,
+            "wickets": 4,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "CB Logan",
+            "overs": null,
+            "maidens": null,
+            "runs": null,
+            "wickets": 0,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "JM Dow",
+            "overs": "5",
+            "maidens": 1,
+            "runs": 13,
+            "wickets": 1,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "AJ Ross",
+            "overs": "24",
+            "maidens": 14,
+            "runs": 35,
+            "wickets": 2,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "AJ Sisson",
+            "overs": null,
+            "maidens": null,
+            "runs": null,
+            "wickets": 0,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "W Fox",
+            "overs": null,
+            "maidens": null,
+            "runs": null,
+            "wickets": 0,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "JWB MacLaren",
+            "overs": null,
+            "maidens": null,
+            "runs": null,
+            "wickets": 0,
+            "noballs": null,
+            "wides": null
+          }
+        ]
+      },
+      {
+        "team": "Singapore",
+        "innings_number": 2,
+        "batting": [
+          {
+            "name": "FM Elliot",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Garrard",
+            "runs": 0
+          },
+          {
+            "name": "J Cook",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Garrard",
+            "runs": 0
+          },
+          {
+            "name": "HL Talbot",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Garrard",
+            "runs": 41
+          },
+          {
+            "name": "AS Vanrenen",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c Peake b Hawkins",
+            "runs": 12
+          },
+          {
+            "name": "AB Hinde",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c McClosky b Garrard",
+            "runs": 1
+          },
+          {
+            "name": "CB Logan",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "run out",
+            "runs": 28
+          },
+          {
+            "name": "JM Dow",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Garrard",
+            "runs": 0
+          },
+          {
+            "name": "AJ Ross",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Hawkins",
+            "runs": 19
+          },
+          {
+            "name": "AJ Sisson",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Garrard",
+            "runs": 3
+          },
+          {
+            "name": "W Fox",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "not out",
+            "runs": 0
+          },
+          {
+            "name": "JWB MacLaren",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Carter",
+            "runs": 5
+          }
+        ],
+        "extras": {
+          "total": 4,
+          "detail": null
+        },
+        "total": {
+          "runs": 113,
+          "wickets": 10,
+          "declared": false
+        },
+        "fow": [
+          4,
+          11,
+          11,
+          20,
+          55,
+          61,
+          76
+        ],
+        "bowling": [
+          {
+            "name": "AG Wright",
+            "overs": null,
+            "maidens": null,
+            "runs": null,
+            "wickets": 0,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "AJ McClosky",
+            "overs": null,
+            "maidens": null,
+            "runs": null,
+            "wickets": 0,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "AS Anthony",
+            "overs": "12",
+            "maidens": 2,
+            "runs": 38,
+            "wickets": 0,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "RT Peake",
+            "overs": null,
+            "maidens": null,
+            "runs": null,
+            "wickets": 0,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "FH Hawkins",
+            "overs": null,
+            "maidens": null,
+            "runs": null,
+            "wickets": 2,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "JMP Smith",
+            "overs": null,
+            "maidens": null,
+            "runs": null,
+            "wickets": 0,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "JF Lamb",
+            "overs": null,
+            "maidens": null,
+            "runs": null,
+            "wickets": 0,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "WL Carter",
+            "overs": "9",
+            "maidens": 1,
+            "runs": 19,
+            "wickets": 1,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "SE Gwyer",
+            "overs": null,
+            "maidens": null,
+            "runs": null,
+            "wickets": 0,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "CG Garrard",
+            "overs": "17",
+            "maidens": 4,
+            "runs": 51,
+            "wickets": 6,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "E Shropshire",
+            "overs": null,
+            "maidens": null,
+            "runs": null,
+            "wickets": 0,
+            "noballs": null,
+            "wides": null
+          }
+        ]
+      }
+    ],
+    "umpires": [
+      null
+    ],
+    "toss": null,
+    "close_of_play": "1st day - Singapore (2) 31-4 (Logan, HL Talbot - scores not known)",
+    "balls_per_over": 5,
+    "notes": null,
+    "page": 10,
+    "source_url": "https://archive.acscricket.com/research/rm/malayan_interstate_cricket_1899-1957/rm_malayan_interstate_cricket_scorecards/10/index.html"
+  },
+  {
+    "match": {
+      "team1": "PERAK",
+      "team2": "SINGAPORE",
+      "venue": "The Esplanade, Taiping",
+      "date": "December 21 and 22, 1894",
+      "result": "Perak won by an innings and 45 runs"
+    },
+    "innings": [
+      {
+        "team": "SINGAPORE",
+        "innings_number": 1,
+        "batting": [
+          {
+            "name": "AJ McClosky",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Talbot",
+            "runs": 9
+          },
+          {
+            "name": "CCL Barlow",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "st Voules b McKenzie",
+            "runs": 2
+          },
+          {
+            "name": "JJ Howley",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c Weld b McKenzie",
+            "runs": 15
+          },
+          {
+            "name": "HH Harrington",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c Hughes b Fox",
+            "runs": 46
+          },
+          {
+            "name": "HB Wilson",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c Ingall b Talbot",
+            "runs": 2
+          },
+          {
+            "name": "FG Guggisberg",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c Weld b Hughes",
+            "runs": 7
+          },
+          {
+            "name": "GF Davies",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c Ingall b Fox",
+            "runs": 5
+          },
+          {
+            "name": "FW Stringer",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c Ingall b Fox",
+            "runs": 7
+          },
+          {
+            "name": "FH Grant",
+            "captain": true,
+            "wicketkeeper": false,
+            "dismissal": "lbw b McKenzie",
+            "runs": 0
+          },
+          {
+            "name": "WS Nealon",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c Talbot b McKenzie",
+            "runs": 12
+          },
+          {
+            "name": "E Maxwell",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Fox",
+            "runs": 2
+          },
+          {
+            "name": "FT Koelle",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "not out",
+            "runs": 0
+          }
+        ],
+        "extras": {
+          "total": 10,
+          "detail": null
+        },
+        "total": {
+          "runs": 117,
+          "wickets": 11,
+          "declared": false
+        },
+        "fow": [
+          15,
+          51,
+          51,
+          93,
+          93,
+          101,
+          105,
+          105,
+          105,
+          112,
+          117
+        ],
+        "bowling": [
+          {
+            "name": "RM McKenzie",
+            "overs": "28",
+            "maidens": 11,
+            "runs": 35,
+            "wickets": 4,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "SCG Fox",
+            "overs": "25.4",
+            "maidens": 9,
+            "runs": 51,
+            "wickets": 4,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "FW Talbot",
+            "overs": "9",
+            "maidens": 4,
+            "runs": 13,
+            "wickets": 2,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "J Hughes",
+            "overs": "7",
+            "maidens": 0,
+            "runs": 8,
+            "wickets": 1,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "RSF Walker",
+            "overs": "9",
+            "maidens": 0,
+            "runs": 32,
+            "wickets": 0,
+            "noballs": null,
+            "wides": null
+          }
+        ]
+      },
+      {
+        "team": "PERAK",
+        "innings_number": 1,
+        "batting": [
+          {
+            "name": "FA Swettenham",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c Guggisberg b Koelle",
+            "runs": 5
+          },
+          {
+            "name": "O Marks",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Barlow",
+            "runs": 16
+          },
+          {
+            "name": "SCG Fox",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c Wilson b Guggisberg",
+            "runs": 27
+          },
+          {
+            "name": "AL Ingall",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c Wilson b Guggisberg",
+            "runs": 3
+          },
+          {
+            "name": "RM McKenzie",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c Harrington b Guggisberg",
+            "runs": 51
+          },
+          {
+            "name": "FW Talbot",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c Howley b Guggisberg",
+            "runs": 10
+          },
+          {
+            "name": "RSF Walker",
+            "captain": true,
+            "wicketkeeper": false,
+            "dismissal": "c Harrington b Maxwell",
+            "runs": 8
+          },
+          {
+            "name": "J Hughes",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c Harrington b Maxwell",
+            "runs": 56
+          },
+          {
+            "name": "AB Stephens",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c Guggisberg b Nealon",
+            "runs": 14
+          },
+          {
+            "name": "FJ Weld",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c Maxwell b Guggisberg",
+            "runs": 30
+          },
+          {
+            "name": "AB Voules",
+            "captain": false,
+            "wicketkeeper": true,
+            "dismissal": "not out",
+            "runs": 25
+          },
+          {
+            "name": "ALM Scott",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c Nealon b Barlow",
+            "runs": 20
+          }
+        ],
+        "extras": {
+          "total": 17,
+          "detail": null
+        },
+        "total": {
+          "runs": 282,
+          "wickets": 11,
+          "declared": false
+        },
+        "fow": [
+          11,
+          29,
+          33,
+          48,
+          64,
+          77,
+          89,
+          91,
+          155,
+          182,
+          202
+        ],
+        "bowling": [
+          {
+            "name": "FG Guggisberg",
+            "overs": "32",
+            "maidens": 3,
+            "runs": 130,
+            "wickets": 5,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "FT Koelle",
+            "overs": "6",
+            "maidens": 0,
+            "runs": 20,
+            "wickets": 1,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "CCL Barlow",
+            "overs": "16.2",
+            "maidens": 4,
+            "runs": 63,
+            "wickets": 2,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "E Maxwell",
+            "overs": "5",
+            "maidens": 0,
+            "runs": 15,
+            "wickets": 2,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "WS Nealon",
+            "overs": "9",
+            "maidens": 1,
+            "runs": 37,
+            "wickets": 1,
+            "noballs": null,
+            "wides": null
+          }
+        ]
+      },
+      {
+        "team": "SINGAPORE",
+        "innings_number": 2,
+        "batting": [
+          {
+            "name": "AJ McClosky",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Walker",
+            "runs": 31
+          },
+          {
+            "name": "CCL Barlow",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c Scott b McKenzie",
+            "runs": 5
+          },
+          {
+            "name": "JJ Howley",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c Voules b Talbot",
+            "runs": 27
+          },
+          {
+            "name": "HH Harrington",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c Marks b Walker",
+            "runs": 16
+          },
+          {
+            "name": "HB Wilson",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b McKenzie",
+            "runs": 19
+          },
+          {
+            "name": "FG Guggisberg",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "lbw b Walker",
+            "runs": 0
+          },
+          {
+            "name": "GF Davies",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "lbw b Talbot",
+            "runs": 1
+          },
+          {
+            "name": "FW Stringer",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Talbot",
+            "runs": 0
+          },
+          {
+            "name": "FH Grant",
+            "captain": true,
+            "wicketkeeper": false,
+            "dismissal": "c Marks b McKenzie",
+            "runs": 3
+          },
+          {
+            "name": "WS Nealon",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b McKenzie",
+            "runs": 12
+          },
+          {
+            "name": "E Maxwell",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "not out",
+            "runs": 0
+          },
+          {
+            "name": "FT Koelle",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c Scott b McKenzie",
+            "runs": 0
+          }
+        ],
+        "extras": {
+          "total": 6,
+          "detail": null
+        },
+        "total": {
+          "runs": 120,
+          "wickets": 11,
+          "declared": false
+        },
+        "fow": [
+          4,
+          11,
+          29,
+          33,
+          55,
+          88,
+          88,
+          88,
+          101,
+          101,
+          120
+        ],
+        "bowling": [
+          {
+            "name": "RM McKenzie",
+            "overs": "11.1",
+            "maidens": 3,
+            "runs": 34,
+            "wickets": 5,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "SCG Fox",
+            "overs": "11",
+            "maidens": 5,
+            "runs": 18,
+            "wickets": 0,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "FW Talbot",
+            "overs": "12",
+            "maidens": 4,
+            "runs": 24,
+            "wickets": 3,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "J Hughes",
+            "overs": "3",
+            "maidens": 0,
+            "runs": 6,
+            "wickets": 0,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "RSF Walker",
+            "overs": "5",
+            "maidens": 0,
+            "runs": 55,
+            "wickets": 3,
+            "noballs": null,
+            "wides": null
+          }
+        ]
+      }
+    ],
+    "umpires": [
+      "[unknown]"
+    ],
+    "toss": "[unknown]",
+    "close_of_play": "1st day - Perak (1) 130-6 (McKenzie, Hughes, scores unknown)",
+    "balls_per_over": 5,
+    "notes": [
+      "Singapore's team comprised 11 players from Singapore Cricket Club and HB Wilson from Singapore Recreation Club",
+      "Match started late on the first day",
+      "The SS Mena bringing the players from Singapore ran aground on mud at Kuala Sepetang"
+    ],
+    "page": 17,
+    "source_url": "https://archive.acscricket.com/research/rm/malayan_interstate_cricket_1899-1957/rm_malayan_interstate_cricket_scorecards/17/index.html"
+  },
+  {
+    "match": {
+      "team1": "Singapore",
+      "team2": "Selangor",
+      "venue": "Singapore Cricket Club Padang, Singapore",
+      "date": "January 28 and 29, 1895",
+      "result": "Match drawn"
+    },
+    "innings": [
+      {
+        "team": "Selangor",
+        "innings_number": 1,
+        "batting": [
+          {
+            "name": "RCG Glassford",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c Howley b Guggisberg",
+            "runs": 38
+          },
+          {
+            "name": "W Dunman",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c Davies b Koelle",
+            "runs": 40
+          },
+          {
+            "name": "EW Neubronner",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c Hinde b Mactaggart",
+            "runs": 5
+          },
+          {
+            "name": "HF Bellamy",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c Guggisberg b Mactaggart",
+            "runs": 3
+          },
+          {
+            "name": "FG Scott",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c Mactaggart b Koelle",
+            "runs": 34
+          },
+          {
+            "name": "BJ Pereira",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c Koelle b Mactaggart",
+            "runs": 1
+          },
+          {
+            "name": "FA Thomasz",
+            "captain": false,
+            "wicketkeeper": true,
+            "dismissal": "b Koelle",
+            "runs": 43
+          },
+          {
+            "name": "HC Paxon",
+            "captain": true,
+            "wicketkeeper": false,
+            "dismissal": "c Hinde b Koelle",
+            "runs": 26
+          },
+          {
+            "name": "W Mitchell",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Koelle",
+            "runs": 0
+          },
+          {
+            "name": "GD Tisbury",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c Koelle b Hinde",
+            "runs": 0
+          },
+          {
+            "name": "JOG Glassford",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "not out",
+            "runs": 0
+          }
+        ],
+        "extras": {
+          "total": 11,
+          "detail": "b 9, lb 2"
+        },
+        "total": {
+          "runs": 201,
+          "wickets": 4,
+          "declared": false
+        },
+        "fow": [
+          15,
+          51,
+          91,
+          95
+        ],
+        "bowling": [
+          {
+            "name": "FT Koelle",
+            "overs": "14.2",
+            "maidens": 5,
+            "runs": 13,
+            "wickets": 5,
+            "noballs": 1,
+            "wides": null
+          },
+          {
+            "name": "JG Mactaggart",
+            "overs": "21",
+            "maidens": 3,
+            "runs": 56,
+            "wickets": 3,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "AB Hinde",
+            "overs": "28",
+            "maidens": 4,
+            "runs": 78,
+            "wickets": 1,
+            "noballs": 1,
+            "wides": null
+          },
+          {
+            "name": "FG Guggisberg",
+            "overs": "16",
+            "maidens": 4,
+            "runs": 40,
+            "wickets": 1,
+            "noballs": 2,
+            "wides": null
+          },
+          {
+            "name": "HH Harrington",
+            "overs": "3",
+            "maidens": 1,
+            "runs": 3,
+            "wickets": 0,
+            "noballs": null,
+            "wides": null
+          }
+        ]
+      },
+      {
+        "team": "Singapore",
+        "innings_number": 1,
+        "batting": [
+          {
+            "name": "AJ McClosky",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b JOG Glassford",
+            "runs": 7
+          },
+          {
+            "name": "JJ Howley",
+            "captain": false,
+            "wicketkeeper": true,
+            "dismissal": "c Pereira b JOG Glassford",
+            "runs": 4
+          },
+          {
+            "name": "J Cook",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Neubronner",
+            "runs": 27
+          },
+          {
+            "name": "FG Guggisberg",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b JOG Glassford",
+            "runs": 2
+          },
+          {
+            "name": "HH Harrington",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c Thomasz b JOG Glassford",
+            "runs": 2
+          },
+          {
+            "name": "JJH Orman",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "lbw b Neubronner",
+            "runs": 0
+          },
+          {
+            "name": "GF Davies",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Neubronner",
+            "runs": 4
+          },
+          {
+            "name": "FH Grant",
+            "captain": true,
+            "wicketkeeper": false,
+            "dismissal": "c Scott b Neubronner",
+            "runs": 12
+          },
+          {
+            "name": "AB Hinde",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "not out",
+            "runs": 33
+          },
+          {
+            "name": "JG Mactaggart",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c Neubronner b Bellamy",
+            "runs": 6
+          },
+          {
+            "name": "FT Koelle",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "ht wkt b Bellamy",
+            "runs": 2
+          }
+        ],
+        "extras": {
+          "total": 11,
+          "detail": "b 1, lb 3"
+        },
+        "total": {
+          "runs": 103,
+          "wickets": null,
+          "declared": false
+        },
+        "fow": [
+          7,
+          11,
+          38,
+          40,
+          42,
+          42,
+          46,
+          58,
+          78
+        ],
+        "bowling": [
+          {
+            "name": "JOG Glassford",
+            "overs": "18",
+            "maidens": 5,
+            "runs": 38,
+            "wickets": 4,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "EW Neubronner",
+            "overs": "24",
+            "maidens": 11,
+            "runs": 30,
+            "wickets": 4,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "W Dunman",
+            "overs": "6",
+            "maidens": 1,
+            "runs": 19,
+            "wickets": 0,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "BJ Pereira",
+            "overs": "3",
+            "maidens": 0,
+            "runs": 8,
+            "wickets": 0,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "HF Bellamy",
+            "overs": "2",
+            "maidens": 0,
+            "runs": 4,
+            "wickets": 2,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "HC Paxon",
+            "overs": "2",
+            "maidens": 0,
+            "runs": 8,
+            "wickets": 0,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "FG Scott",
+            "overs": "3",
+            "maidens": 0,
+            "runs": 11,
+            "wickets": 0,
+            "noballs": null,
+            "wides": null
+          }
+        ]
+      },
+      {
+        "team": "Selangor",
+        "innings_number": 2,
+        "batting": [
+          {
+            "name": "RCG Glassford",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "not out",
+            "runs": 10
+          },
+          {
+            "name": "W Dunman",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "run out",
+            "runs": 14
+          },
+          {
+            "name": "EW Neubronner",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "not out",
+            "runs": 1
+          },
+          {
+            "name": "FG Scott",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c Davies b Guggisberg",
+            "runs": 5
+          },
+          {
+            "name": "BJ Pereira",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Guggisberg",
+            "runs": 19
+          },
+          {
+            "name": "FA Thomasz",
+            "captain": false,
+            "wicketkeeper": true,
+            "dismissal": "c Orman b Hinde",
+            "runs": 5
+          }
+        ],
+        "extras": {
+          "total": 2,
+          "detail": null
+        },
+        "total": {
+          "runs": 56,
+          "wickets": 4,
+          "declared": false
+        },
+        "fow": [
+          6,
+          38,
+          45,
+          45
+        ],
+        "bowling": [
+          {
+            "name": "FG Guggisberg",
+            "overs": null,
+            "maidens": null,
+            "runs": null,
+            "wickets": 2,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "AB Hinde",
+            "overs": null,
+            "maidens": null,
+            "runs": null,
+            "wickets": 1,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "FT Koelle",
+            "overs": null,
+            "maidens": null,
+            "runs": null,
+            "wickets": 0,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "JG Mactaggart",
+            "overs": null,
+            "maidens": null,
+            "runs": null,
+            "wickets": 0,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "HH Harrington",
+            "overs": null,
+            "maidens": null,
+            "runs": null,
+            "wickets": 0,
+            "noballs": null,
+            "wides": null
+          }
+        ]
+      },
+      {
+        "team": "Singapore",
+        "innings_number": 2,
+        "batting": [
+          {
+            "name": "AJ McClosky",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Pereira",
+            "runs": 15
+          },
+          {
+            "name": "JJ Howley",
+            "captain": false,
+            "wicketkeeper": true,
+            "dismissal": "c Thomasz b Pereira",
+            "runs": 12
+          },
+          {
+            "name": "J Cook",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b JOG Glassford",
+            "runs": 17
+          },
+          {
+            "name": "FG Guggisberg",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Pereira",
+            "runs": 2
+          },
+          {
+            "name": "HH Harrington",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Neubronner",
+            "runs": 31
+          },
+          {
+            "name": "JJH Orman",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c Paxon b Pereira",
+            "runs": 74
+          },
+          {
+            "name": "GF Davies",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c Thomasz b Neubronner",
+            "runs": 0
+          },
+          {
+            "name": "FH Grant",
+            "captain": true,
+            "wicketkeeper": false,
+            "dismissal": "c Scott b Bellamy",
+            "runs": 10
+          },
+          {
+            "name": "AB Hinde",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Pereira",
+            "runs": 4
+          },
+          {
+            "name": "JG Mactaggart",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c Neubronner b Pereira",
+            "runs": 3
+          },
+          {
+            "name": "FT Koelle",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "not out",
+            "runs": 6
+          }
+        ],
+        "extras": {
+          "total": 4,
+          "detail": "b 1, lb 3"
+        },
+        "total": {
+          "runs": 185,
+          "wickets": null,
+          "declared": false
+        },
+        "fow": [
+          5,
+          11,
+          24,
+          30,
+          32,
+          33,
+          41,
+          61,
+          64
+        ],
+        "bowling": [
+          {
+            "name": "JOG Glassford",
+            "overs": "8.2",
+            "maidens": 4,
+            "runs": 19,
+            "wickets": 1,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "EW Neubronner",
+            "overs": "19",
+            "maidens": 6,
+            "runs": 49,
+            "wickets": 2,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "W Dunman",
+            "overs": "3",
+            "maidens": 0,
+            "runs": 7,
+            "wickets": 0,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "BJ Pereira",
+            "overs": "26",
+            "maidens": 7,
+            "runs": 54,
+            "wickets": 6,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "HF Bellamy",
+            "overs": "11",
+            "maidens": 3,
+            "runs": 26,
+            "wickets": 1,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "HC Paxon",
+            "overs": null,
+            "maidens": null,
+            "runs": null,
+            "wickets": 0,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "FG Scott",
+            "overs": null,
+            "maidens": null,
+            "runs": null,
+            "wickets": 0,
+            "noballs": null,
+            "wides": null
+          }
+        ]
+      }
+    ],
+    "umpires": [
+      "H Vane (Selangor)",
+      "[unknown]"
+    ],
+    "toss": "Selangor",
+    "close_of_play": "1st day - Singapore (2) 11-1 (Grant 5*, McClosky 0*)",
+    "balls_per_over": null,
+    "notes": [
+      "Bowling analysis in Selangor's second innings is not known"
+    ],
+    "page": 19,
+    "source_url": "https://archive.acscricket.com/research/rm/malayan_interstate_cricket_1899-1957/rm_malayan_interstate_cricket_scorecards/19/index.html"
+  },
+  {
+    "match": {
+      "team1": "PERAK",
+      "team2": "SELANGOR",
+      "venue": "The Esplanade, Taiping",
+      "date": "June 7 and 9, 1897",
+      "result": "Match drawn"
+    },
+    "innings": [
+      {
+        "team": "PERAK",
+        "innings_number": 1,
+        "batting": [
+          {
+            "name": "AB Voules",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Stainer",
+            "runs": 36
+          },
+          {
+            "name": "SCG Fox",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c RCG Glassford b Neubronner",
+            "runs": 20
+          },
+          {
+            "name": "RM McKenzie",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b JOG Glassford",
+            "runs": 12
+          },
+          {
+            "name": "O Marks",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c Paxon b Stainer",
+            "runs": 15
+          },
+          {
+            "name": "GFC Curtis",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Stainer",
+            "runs": 1
+          },
+          {
+            "name": "AL Ingall",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c Stonor b Whitley",
+            "runs": 4
+          },
+          {
+            "name": "J Hughes",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c AB Hubback b Stainer",
+            "runs": 4
+          },
+          {
+            "name": "RG Watson",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "retired out",
+            "runs": 69
+          },
+          {
+            "name": "SHR Lucy",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Whitley",
+            "runs": 13
+          },
+          {
+            "name": "PW Gleeson",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Stainer",
+            "runs": 42
+          },
+          {
+            "name": "W Sayers",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "not out",
+            "runs": 19
+          }
+        ],
+        "extras": {
+          "total": 13,
+          "detail": "b 7, lb 4, w 2"
+        },
+        "total": {
+          "runs": 248,
+          "wickets": 10,
+          "declared": false
+        },
+        "fow": null,
+        "bowling": [
+          {
+            "name": "MH Whitley",
+            "overs": "34",
+            "maidens": 10,
+            "runs": 65,
+            "wickets": 2,
+            "noballs": 1,
+            "wides": 1
+          },
+          {
+            "name": "RF Stainer",
+            "overs": "29",
+            "maidens": 11,
+            "runs": 65,
+            "wickets": 5,
+            "noballs": 2,
+            "wides": null
+          },
+          {
+            "name": "EW Neubronner",
+            "overs": "17",
+            "maidens": 4,
+            "runs": 39,
+            "wickets": 1,
+            "noballs": 3,
+            "wides": null
+          },
+          {
+            "name": "JOG Glassford",
+            "overs": "14",
+            "maidens": 6,
+            "runs": 35,
+            "wickets": 1,
+            "noballs": 4,
+            "wides": null
+          },
+          {
+            "name": "AB Hubback",
+            "overs": "6",
+            "maidens": 3,
+            "runs": 15,
+            "wickets": 0,
+            "noballs": 1,
+            "wides": 5
+          },
+          {
+            "name": "TR Hubback",
+            "overs": "6",
+            "maidens": 0,
+            "runs": 16,
+            "wickets": 0,
+            "noballs": null,
+            "wides": null
+          }
+        ]
+      },
+      {
+        "team": "SELANGOR",
+        "innings_number": 1,
+        "batting": [
+          {
+            "name": "RCG Glassford",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "not out",
+            "runs": 1
+          },
+          {
+            "name": "MH Whitley",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "not out",
+            "runs": 5
+          },
+          {
+            "name": "AH Bagnall",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": null,
+            "runs": null
+          },
+          {
+            "name": "EW Neubronner",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": null,
+            "runs": null
+          },
+          {
+            "name": "HL Talbot",
+            "captain": false,
+            "wicketkeeper": true,
+            "dismissal": null,
+            "runs": null
+          },
+          {
+            "name": "TR Hubback",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": null,
+            "runs": null
+          },
+          {
+            "name": "AB Hubback",
+            "captain": true,
+            "wicketkeeper": false,
+            "dismissal": null,
+            "runs": null
+          },
+          {
+            "name": "JOG Glassford",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": null,
+            "runs": null
+          },
+          {
+            "name": "HC Paxon",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": null,
+            "runs": null
+          },
+          {
+            "name": "OFG Stonor",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": null,
+            "runs": null
+          },
+          {
+            "name": "RF Stainer",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": null,
+            "runs": null
+          }
+        ],
+        "extras": {
+          "total": 0,
+          "detail": null
+        },
+        "total": {
+          "runs": 6,
+          "wickets": 0,
+          "declared": false
+        },
+        "fow": null,
+        "bowling": [
+          {
+            "name": "RM McKenzie",
+            "overs": "3",
+            "maidens": 1,
+            "runs": 4,
+            "wickets": 0,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "SCG Fox",
+            "overs": "2",
+            "maidens": 1,
+            "runs": 2,
+            "wickets": 0,
+            "noballs": null,
+            "wides": null
+          }
+        ]
+      }
+    ],
+    "umpires": [
+      "[unknown]"
+    ],
+    "toss": "Perak",
+    "close_of_play": "1st day - Perak (1) 156-7 (Watson 42*, Lucy 11*)",
+    "balls_per_over": 5,
+    "notes": [
+      "There was no play after lunch on either day because of rain.",
+      "In Perak's innings Watson retired to ensure that the innings would finish before lunch on the second day"
+    ],
+    "page": 28,
+    "source_url": "https://archive.acscricket.com/research/rm/malayan_interstate_cricket_1899-1957/rm_malayan_interstate_cricket_scorecards/28/index.html"
+  }
+]

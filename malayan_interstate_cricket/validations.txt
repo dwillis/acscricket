@@ -1,0 +1,1125 @@
+
+Page 1: PERAK v SELANGOR (November 8 and 9, 1889)
+  [batting_total] SELANGOR inn 1: batting (59) + extras (3) = 62, but total is 63 (-1)
+
+Page 3: Penang v Selangor (May 16 and 18, 1891)
+  [dismissal_wickets] Selangor inn 1: bowling figures total 7w but 8 bowler-credited dismissals
+  [dismissal_wickets] Penang inn 1: bowling figures total 8w but 10 bowler-credited dismissals
+  [fow_count] Selangor inn 2: 7 FOW entries but wickets=all out (10)
+
+Page 4: SELANGOR v MELAKA & SUNGAI UJONG (August 8 and 10, 1891)
+  [fow_count] SELANGOR inn 1: 8 FOW entries but wickets=10
+  [fow_count] MELAKA & SUNGAI UJONG inn 1: 6 FOW entries but wickets=9
+  [fow_count] MELAKA & SUNGAI UJONG inn 2: 8 FOW entries but wickets=9
+
+Page 6: Singapore v Penang (December 24 and 26, 1891)
+  [batting_total] Singapore inn 2: batting (118) + extras (15) = 133, but total is 136 (-3)
+
+Page 7: Selangor v Singapore (December 28 and 29, 1891)
+  [fow_final_value] Selangor inn 1: last FOW is 110 but all-out total is 122
+
+Page 8: PERAK v PENANG (April 16 and 18, 1892)
+  [fow_ascending] PERAK inn 1: FOW not ascending: [15, 51, 93, 11, 42, 70, 81, 75, 88, 95]
+  [fow_ascending] PENANG inn 1: FOW not ascending: [2, 11, 4, 51, 13, 72, 38, 35, 42, 45]
+  [fow_ascending] PERAK inn 2: FOW not ascending: [11, 4, 33, 20, 33, 33, 33, 33, 35, 33]
+  [fow_ascending] PENANG inn 2: FOW not ascending: [0, 2, 17, 29, 75, 45, 88, 54, 57, 56]
+
+Page 10: Penang v Singapore (December 24 and 26, 1892)
+  [fow_final_value] Penang inn 1: last FOW is 77 but all-out total is 213
+  [batting_total] Singapore inn 2: batting (104) + extras (4) = 108, but total is 113 (-5)
+  [fow_count] Singapore inn 2: 7 FOW entries but wickets=all out (10)
+
+Page 12: SELANGOR v PENANG (May 22 and 23, 1893)
+  [batting_total] SELANGOR inn 1: batting (257) + extras (27) = 284, but total is 264 (+20)
+
+Page 13: PERAK v SELANGOR (June 19 and 20, 1893)
+  [fow_count] PERAK inn 1: 2 FOW entries but wickets=3
+  [fow_count] SELANGOR inn 1: 2 FOW entries but wickets=4
+  [fow_count] SELANGOR inn 2: 2 FOW entries but wickets=all out (10)
+  [fow_final_value] SELANGOR inn 2: last FOW is 11 but all-out total is 80
+
+Page 14: Singapore v Penang (December 26 and 27, 1893)
+  [fow_count] Singapore inn 2: 9 FOW entries but wickets=10
+  [fow_count] Penang inn 2: 7 FOW entries but wickets=8
+
+Page 15: SELANGOR v SINGAPORE (February 5 and 6, 1894)
+  [fow_count] SELANGOR inn 1: 6 FOW entries but wickets=all out (10)
+  [fow_count] SINGAPORE inn 1: 5 FOW entries but wickets=10
+  [fow_count] SINGAPORE inn 2: 9 FOW entries but wickets=10
+
+Page 16: PERAK v PENANG (March 24 and 26, 1894)
+  [batting_total] PENANG inn 1: batting (64) + extras (6) = 70, but total is 76 (-6)
+
+Page 17: PERAK v SINGAPORE (December 21 and 22, 1894)
+  [batsmen_count] SINGAPORE inn 1: 12 batsmen (expected <= 11)
+  [fow_ascending] SINGAPORE inn 1: FOW not ascending: [15, 51, 48, 64, 77, 89, 91, 105, 117, 117]
+  [batsmen_count] PERAK inn 1: 12 batsmen (expected <= 11)
+  [fow_ascending] PERAK inn 1: FOW not ascending: [11, 93, 48, 33, 55, 77, 88, 101, 155, 182]
+  [batsmen_count] SINGAPORE inn 2: 12 batsmen (expected <= 11)
+
+Page 18: Singapore v Penang (December 24 and 26, 1894)
+  [fow_count] Singapore inn 1: 2 FOW entries but wickets=10
+  [fow_count] Penang inn 1: 2 FOW entries but wickets=10
+  [fow_count] Penang inn 2: 2 FOW entries but wickets=8
+
+Page 20: PENANG v PERAK (April 13 and 15, 1895)
+  [fow_count] PENANG inn 2: 4 FOW entries but wickets=10
+
+Page 21: SELANGOR v PERAK (June 3 and 4, 1895)
+  [batting_total] PERAK inn 2: batting (118) + extras (2) = 120, but total is 112 (+8)
+
+Page 23: Selangor v Singapore (February 14 and 15, 1896)
+  [fow_count] Singapore inn 1: 5 FOW entries but wickets=10
+  [fow_count] Selangor inn 1: 5 FOW entries but wickets=10
+  [fow_count] Singapore inn 2: 5 FOW entries but wickets=10
+  [fow_count] Selangor inn 2: 5 FOW entries but wickets=10
+
+Page 24: PERAK v SELANGOR (May 25 and 26, 1896)
+  [fow_count] PERAK inn 1: 11 FOW entries but wickets=10
+  [fow_ascending] SELANGOR inn 1: FOW not ascending: [11, 93, 116, 52, 36, 39]
+  [batting_total] SELANGOR inn 2: batting (156) + extras (14) = 170, but total is 169 (+1)
+  [fow_ascending] SELANGOR inn 2: FOW not ascending: [4, 11, 36, 98, 62]
+  [fow_count] SELANGOR inn 2: 5 FOW entries but wickets=9
+
+Page 26: Selangor v Singapore (February 1, 2 and 3, 1897)
+  [fow_count] Selangor inn 1: 5 FOW entries but wickets=10
+  [fow_count] Singapore inn 1: 7 FOW entries but wickets=10
+  [fow_count] Selangor inn 2: 8 FOW entries but wickets=10
+  [fow_count] Singapore inn 2: 8 FOW entries but wickets=10
+
+Page 30: Selangor v Singapore (January 24, 25 and 26, 1898)
+  [fow_ascending] Singapore inn 1: FOW not ascending: [24, 23, 49, 51, 61, 85, 90, 105, 109, None]
+  [fow_count] Singapore inn 1: 9 FOW entries but wickets=10
+  [fow_ascending] Selangor inn 1: FOW not ascending: [7, 22, 20, 24, 54, 78, 93, 93, 112, None]
+  [fow_count] Selangor inn 1: 9 FOW entries but wickets=10
+  [fow_ascending] Singapore inn 2: FOW not ascending: [10, 22, 24, 8, 29, 39, 44, 50, 51, None]
+  [fow_count] Singapore inn 2: 9 FOW entries but wickets=10
+  [fow_ascending] Selangor inn 2: FOW not ascending: [46, 20, 20, 8, 6, 7, None, None, None, None]
+
+Page 31: PERAK v PENANG (April 8 and 9, 1898)
+  [batting_total] PERAK inn 1: batting (88) + extras (0) = 88, but total is 189 (-101)
+  [batting_total] PENANG inn 1: batting (41) + extras (0) = 41, but total is 95 (-54)
+  [batting_total] PENANG inn 2: batting (0) + extras (0) = 0, but total is 85 (-85)
+
+Page 32: SELANGOR v PERAK (May 30, 31 and June 1, 1898)
+  [dismissal_wickets] PERAK inn 1: AB Hubback: bowling says 0w but dismissals say 1w
+  [dismissal_wickets] PERAK inn 1: HL Talbot: bowling says 0w but dismissals say 1w
+
+Page 33: PENANG v SINGAPORE (December 23 and 24, 1898)
+  [fow_ascending] PENANG inn 1: FOW not ascending: [15, 20, 5, 19]
+  [fow_count] PENANG inn 1: 4 FOW entries but wickets=10
+  [fow_ascending] SINGAPORE inn 1: FOW not ascending: [0, 59, 60, 50]
+  [fow_count] SINGAPORE inn 1: 4 FOW entries but wickets=2
+  [fow_count] PENANG inn 2: 4 FOW entries but wickets=10
+  [batting_total] SINGAPORE inn 2: batting (54) + extras (0) = 54, but total is 63 (-9)
+  [fow_ascending] SINGAPORE inn 2: FOW not ascending: [20, 50, 37, 63]
+  [fow_count] SINGAPORE inn 2: 4 FOW entries but wickets=2
+
+Page 34: Singapore v Perak (December 26, 27 and 28, 1898)
+  [fow_count] Singapore inn 1: 9 FOW entries but wickets=10
+  [fow_count] Perak inn 1: 9 FOW entries but wickets=10
+  [batting_total] Singapore inn 2: batting (130) + extras (13) = 143, but total is 134 (+9)
+  [fow_count] Singapore inn 2: 9 FOW entries but wickets=10
+  [fow_count] Perak inn 2: 9 FOW entries but wickets=10
+
+Page 35: Singapore v Selangor (February 10, 11 and 13, 1899)
+  [fow_count] Singapore inn 1: 9 FOW entries but wickets=10
+  [fow_count] Selangor inn 1: 7 FOW entries but wickets=10
+  [fow_count] Singapore inn 2: 9 FOW entries but wickets=10
+  [fow_ascending] Selangor inn 2: FOW not ascending: [56, 35, 38, 45, 46, 50, 69, 70]
+  [fow_count] Selangor inn 2: 8 FOW entries but wickets=10
+
+Page 38: Singapore v Perak (December 26, 27 and 28, 1899)
+  [fow_ascending] Perak inn 1: FOW not ascending: [11, 93, 16, 26, 44, 64, 71, 74, 82]
+  [fow_count] Perak inn 1: 9 FOW entries but wickets=10
+  [batting_total] Singapore inn 2: batting (140) + extras (9) = 149, but total is 153 (-4)
+  [fow_count] Singapore inn 2: 2 FOW entries but wickets=10
+
+Page 41: PERAK v PENANG (April 14 and 16, 1900)
+  [batting_total] PENANG inn 1: batting (80) + extras (0) = 80, but total is 82 (-2)
+
+Page 44: PERAK v SINGAPORE (December 21, 22 and 24, 1900)
+  [fow_ascending] SINGAPORE inn 2: FOW not ascending: [11, 93, 11, 11, 11, 11, 11, 11, 11, 75]
+  [batting_total] PERAK inn 2: batting (104) + extras (11) = 115, but total is 108 (+7)
+
+Page 45: PENANG v SINGAPORE (December 26 and 27, 1900)
+  [dismissal_wickets] SINGAPORE inn 1: bowling figures total 9w but 10 bowler-credited dismissals
+
+Page 46: SELANGOR v SINGAPORE (February 18 and 19, 1901)
+  [fow_final_value] SELANGOR inn 1: last FOW is 137 but all-out total is 129
+  [fow_final_value] SELANGOR inn 2: last FOW is 108 but all-out total is 120
+  [fow_final_value] SINGAPORE inn 2: last FOW is 94 but all-out total is 114
+
+Page 49: Singapore v Perak (December 23, 24 and 25, 1901)
+  [fow_count] Perak inn 1: 9 FOW entries but wickets=10
+  [fow_count] Singapore inn 1: 6 FOW entries but wickets=7
+  [fow_ascending] Perak inn 2: FOW not ascending: [40, 6, 18, 20, 27, 31, 32, 33, 35]
+  [fow_count] Perak inn 2: 9 FOW entries but wickets=10
+
+Page 54: PENANG v SINGAPORE (December 25 and 26, 1902)
+  [fow_count] PENANG inn 1: 7 FOW entries but wickets=10
+
+Page 57: Singapore v Selangor (April 10, 11 and 12, 1903)
+  [fow_count] Singapore inn 1: 11 FOW entries but wickets=10
+  [fow_count] Selangor inn 1: 11 FOW entries but wickets=10
+  [fow_count] Singapore inn 2: 11 FOW entries but wickets=10
+  [fow_count] Selangor inn 2: 11 FOW entries but wickets=10
+
+Page 58: SELANGOR v PERAK (May 30 and June 1, 1903)
+  [batting_total] SELANGOR inn 2: batting (139) + extras (18) = 157, but total is 160 (-3)
+
+Page 61: Selangor v Singapore (December 24, 25 and 26, 1903)
+  [fow_count] Singapore inn 1: 9 FOW entries but wickets=all out (10)
+  [batting_total] Selangor inn 1: batting (114) + extras (4) = 118, but total is 115 (+3)
+  [fow_count] Selangor inn 1: 8 FOW entries but wickets=all out (10)
+
+Page 63: Singapore v Perak (April 1 and 2, 1904)
+  [fow_count] Singapore inn 1: 9 FOW entries but wickets=10
+  [batting_total] Perak inn 1: batting (53) + extras (4) = 57, but total is 59 (-2)
+
+Page 64: Singapore v Penang (April 4 and 5, 1904)
+  [batting_total] Penang inn 2: batting (49) + extras (20) = 69, but total is 70 (-1)
+
+Page 65: PERAK v SELANGOR (June 3 and 4, 1904)
+  [batting_total] PERAK inn 1: batting (195) + extras (0) = 195, but total is 220 (-25)
+  [batting_total] SELANGOR inn 1: batting (111) + extras (0) = 111, but total is 128 (-17)
+
+Page 67: PENANG v SINGAPORE (December 26 and 27, 1904)
+  [fow_count] SINGAPORE inn 1: 2 FOW entries but wickets=10
+  [batting_total] PENANG inn 1: batting (97) + extras (9) = 106, but total is 109 (-3)
+  [fow_count] PENANG inn 1: 2 FOW entries but wickets=10
+  [fow_count] SINGAPORE inn 2: 2 FOW entries but wickets=10
+  [batting_total] PENANG inn 2: batting (45) + extras (12) = 57, but total is 54 (+3)
+
+Page 69: PERAK v PENANG (April 21 and 22, 1905)
+  [fow_count] PERAK inn 1: 8 FOW entries but wickets=10
+  [fow_count] PENANG inn 1: 9 FOW entries but wickets=10
+
+Page 70: Singapore v Selangor (April 22 and 24, 1905)
+  [fow_count] Singapore inn 1: 9 FOW entries but wickets=all out (10)
+  [fow_final_value] Singapore inn 1: last FOW is 147 but all-out total is 154
+  [fow_ascending] Selangor inn 2: FOW not ascending: [11, 4, 48, 69, 73, 78, 114, 131, 159, 160]
+
+Page 76: MELAKA v NEGERI SEMBILAN (November 9 and 10, 1906)
+  [fow_ascending] MELAKA inn 1: FOW not ascending: [15, 51, 7, 8, 9]
+  [fow_count] MELAKA inn 1: 5 FOW entries but wickets=10
+  [fow_count] NEGERI SEMBILAN inn 1: 2 FOW entries but wickets=10
+  [batting_total] MELAKA inn 2: batting (58) + extras (12) = 70, but total is 60 (+10)
+  [fow_count] MELAKA inn 2: 2 FOW entries but wickets=10
+
+Page 77: PERAK v PENANG (December 25, 26 and 27, 1906)
+  [dismissal_wickets] PENANG inn 2: bowling figures total 8w but 9 bowler-credited dismissals
+
+Page 78: SELANGOR v PERAK (May 17 and 18, 1907)
+  [dismissal_wickets] SELANGOR inn 2: bowling figures total 0w but 8 bowler-credited dismissals
+  [dismissal_wickets] PERAK inn 2: bowling figures total 0w but 10 bowler-credited dismissals
+
+Page 79: PERAK v PENANG (December 25 and 26, 1907)
+  [fow_count] PENANG inn 1: 2 FOW entries but wickets=10
+  [fow_count] PENANG inn 2: 2 FOW entries but wickets=9
+  [dismissal_wickets] PERAK inn 1: bowling figures total 8w but 9 bowler-credited dismissals
+  [fow_count] PERAK inn 1: 2 FOW entries but wickets=10
+
+Page 80: Negeri Sembilan v Melaka (February 10 and 11, 1908)
+  [batting_total] Melaka inn 1: batting (52) + extras (5) = 57, but total is 52 (+5)
+  [batting_total] Negeri Sembilan inn 2: batting (106) + extras (45) = 151, but total is 104 (+47)
+
+Page 81: Singapore v Selangor (April 18 and 20, 1908)
+  [fow_count] Singapore inn 1: 8 FOW entries but wickets=10
+  [fow_count] Selangor inn 1: 6 FOW entries but wickets=10
+  [fow_count] Selangor inn 2: 9 FOW entries but wickets=10
+
+Page 82: PERAK v PENANG (April 18 and 20, 1908)
+  [fow_count] PERAK inn 1: 9 FOW entries but wickets=10
+  [fow_count] PENANG inn 1: 9 FOW entries but wickets=10
+  [fow_ascending] PERAK inn 2: FOW not ascending: [19, 12, 43, 49, 50, 64, 156, 182, 184]
+  [fow_count] PERAK inn 2: 9 FOW entries but wickets=10
+  [fow_count] PENANG inn 2: 9 FOW entries but wickets=10
+
+Page 85: PENANG v PERAK (April 10 and 11, 1909)
+  [fow_count] PENANG inn 1: 9 FOW entries but wickets=10
+  [fow_count] PENANG inn 2: 9 FOW entries but wickets=10
+
+Page 87: SELANGOR v NEGERI SEMBILAN (May 24, 1909)
+  [dismissal_wickets] NEGERI SEMBILAN inn 2: bowling figures total 8w but 10 bowler-credited dismissals
+
+Page 88: SELANGOR v PERAK (May 31 and June 1, 1909)
+  [batting_total] PERAK inn 2: batting (121) + extras (0) = 121, but total is 111 (+10)
+
+Page 89: PERAK v PENANG (December 25 and 27, 1909)
+  [batting_total] PENANG inn 2: batting (215) + extras (13) = 228, but total is 215 (+13)
+
+Page 93: PERAK v NEGERI SEMBILAN (June 18 and 19, 1910)
+  [fow_count] PERAK inn 1: 5 FOW entries but wickets=6
+  [batting_total] NEGERI SEMBILAN inn 1: batting (119) + extras (6) = 125, but total is 120 (+5)
+  [fow_count] NEGERI SEMBILAN inn 2: 1 FOW entries but wickets=all out (10)
+  [fow_final_value] NEGERI SEMBILAN inn 2: last FOW is 10 but all-out total is 28
+
+Page 94: NEGERI SEMBILAN v SELANGOR (September 30 and October 1, 1910)
+  [batting_total] NEGERI SEMBILAN inn 1: batting (0) + extras (0) = 0, but total is 120 (-120)
+  [batting_total] NEGERI SEMBILAN inn 2: batting (0) + extras (0) = 0, but total is 109 (-109)
+
+Page 95: PERAK v PENANG (December 26 and 27, 1910)
+  [dismissal_wickets] PERAK inn 1: bowling figures total 0w but 9 bowler-credited dismissals
+  [dismissal_wickets] PERAK inn 2: bowling figures total 0w but 3 bowler-credited dismissals
+
+Page 96: Selangor v Negeri Sembilan (January 14 and 15, 1911)
+  [batting_total] Selangor inn 1: batting (0) + extras (6) = 6, but total is 66 (-60)
+  [batting_total] Selangor inn 2: batting (0) + extras (94) = 94, but total is 105 (-11)
+
+Page 97: Singapore v Selangor (April 15 and 17, 1911)
+  [fow_count] Singapore inn 1: 9 FOW entries but wickets=10
+  [fow_ascending] Selangor inn 1: FOW not ascending: [11, 93, 63, 73, 114, 132, 142, 142, 142]
+  [fow_count] Selangor inn 1: 9 FOW entries but wickets=10
+  [fow_ascending] Selangor inn 2: FOW not ascending: [4, 11, 2, 37, 79, 98, 125, 132, 133]
+
+Page 98: PENANG v PERAK (April 15 and 17, 1911)
+  [fow_ascending] PERAK inn 2: FOW not ascending: [31, 39, 40, 51, 73, 59, 75, 79, 84, 98]
+
+Page 100: SINGAPORE v MELAKA (June 3 and 5, 1911)
+  [fow_count] MELAKA inn 1: 7 FOW entries but wickets=10
+  [fow_count] MELAKA inn 2: 3 FOW entries but wickets=10
+
+Page 102: NEGERI SEMBILAN v SELANGOR (September 24 and 25, 1911)
+  [batting_total] NEGERI SEMBILAN inn 1: batting (209) + extras (0) = 209, but total is 0 (+209)
+
+Page 103: PENANG v PERAK (December 25 and 26, 1911)
+  [fow_count] PERAK inn 1: 8 FOW entries but wickets=all out (10)
+  [fow_final_value] PENANG inn 2: last FOW is 97 but all-out total is 111
+  [fow_count] PERAK inn 2: 9 FOW entries but wickets=all out (10)
+
+Page 104: SINGAPORE v NEGERI SEMBILAN (February 17 and 19, 1912)
+  [fow_count] NEGERI SEMBILAN inn 1: 8 FOW entries but wickets=all out (10)
+  [fow_final_value] NEGERI SEMBILAN inn 1: last FOW is 119 but all-out total is 128
+  [fow_count] NEGERI SEMBILAN inn 2: 5 FOW entries but wickets=all out (10)
+  [fow_final_value] NEGERI SEMBILAN inn 2: last FOW is 42 but all-out total is 54
+
+Page 106: Selangor v Negeri Sembilan (June 1 and 3, 1912)
+  [batting_total] Selangor inn 1: batting (331) + extras (0) = 331, but total is 241 (+90)
+
+Page 107: SELANGOR v SINGAPORE (August 3 and 5, 1912)
+  [batting_total] SELANGOR inn 2: batting (0) + extras (0) = 0, but total is 104 (-104)
+
+Page 110: Selangor v Perak (May 10 and 12, 1913)
+  [fow_count] Selangor inn 1: 9 FOW entries but wickets=10
+
+Page 111: SELANGOR v NEGERI SEMBILAN (June 2 and 3, 1913)
+  [fow_count] NEGERI SEMBILAN inn 1: 2 FOW entries but wickets=all out (10)
+  [fow_count] NEGERI SEMBILAN inn 2: 5 FOW entries but wickets=8
+  [batting_total] SELANGOR inn 2: batting (11) + extras (0) = 11, but total is 17 (-6)
+  [fow_count] SELANGOR inn 2: 1 FOW entries but wickets=2
+
+Page 112: SINGAPORE v SELANGOR (August 2 and 4, 1913)
+  [fow_count] SELANGOR inn 1: 8 FOW entries but wickets=10
+  [batting_total] SELANGOR inn 2: batting (43) + extras (1) = 44, but total is 37 (+7)
+
+Page 113: PERAK v NEGERI SEMBILAN (August 2 and 4, 1913)
+  [fow_count] PERAK inn 1: 2 FOW entries but wickets=10
+  [batting_total] NEGERI SEMBILAN inn 2: batting (90) + extras (10) = 100, but total is 110 (-10)
+
+Page 118: MELAKA v SINGAPORE (June 20, 1914)
+  [dismissal_wickets] MELAKA inn 1: bowling figures total 9w but 10 bowler-credited dismissals
+
+Page 120: NEGERI SEMBILAN v PERAK (August 1 and 3, 1914)
+  [fow_count] NEGERI SEMBILAN inn 1: 2 FOW entries but wickets=7
+  [fow_count] PERAK inn 1: 2 FOW entries but wickets=10
+  [batting_total] NEGERI SEMBILAN inn 2: batting (176) + extras (7) = 183, but total is 184 (-1)
+  [fow_count] NEGERI SEMBILAN inn 2: 2 FOW entries but wickets=all out (10)
+  [fow_final_value] NEGERI SEMBILAN inn 2: last FOW is 11 but all-out total is 184
+  [fow_count] PERAK inn 2: 1 FOW entries but wickets=10
+
+Page 122: PENANG v PERAK (June 9 and 11, 1916)
+  [fow_count] PERAK inn 1: 9 FOW entries but wickets=10
+  [fow_count] PENANG inn 2: 9 FOW entries but wickets=10
+
+Page 123: PERAK v PENANG (August 5 and 7, 1916)
+  [fow_count] PERAK inn 1: 9 FOW entries but wickets=10
+  [fow_ascending] PENANG inn 1: FOW not ascending: [41, 33, 52, 52, 70, 73, 82, 100, 102]
+  [fow_count] PENANG inn 1: 9 FOW entries but wickets=10
+  [fow_count] PERAK inn 2: 9 FOW entries but wickets=10
+  [fow_count] PENANG inn 2: 8 FOW entries but wickets=10
+
+Page 125: SELANGOR v SINGAPORE (May 26 and 28, 1917)
+  [fow_count] SELANGOR inn 1: 7 FOW entries but wickets=10
+
+Page 126: MELAKA v SINGAPORE (June 3, 1918)
+  [fow_ascending] SINGAPORE inn 1: FOW not ascending: [2, 8, 22, 18, 56, 73, 73, 79, 85]
+  [fow_count] SINGAPORE inn 1: 9 FOW entries but wickets=10
+
+Page 127: PERAK v SELANGOR (June 3 and 4, 1918)
+  [fow_count] PERAK inn 1: 2 FOW entries but wickets=10
+  [batting_total] SELANGOR inn 1: batting (96) + extras (11) = 107, but total is 106 (+1)
+  [fow_ascending] SELANGOR inn 1: FOW not ascending: [15, 11]
+  [fow_count] SELANGOR inn 1: 2 FOW entries but wickets=6
+  [fow_count] SELANGOR inn 2: 1 FOW entries but wickets=10
+
+Page 130: Selangor v Singapore (August 2 and 3, 1919)
+  [fow_ascending] Singapore inn 1: FOW not ascending: [11, 93, 93, 11, 18, 23, 23, 23, 23, 103]
+
+Page 131: SELANGOR v NEGERI SEMBILAN (February 20 and 21, 1920)
+  [batting_total] SELANGOR inn 1: batting (0) + extras (0) = 0, but total is 240 (-240)
+  [batting_total] NEGERI SEMBILAN inn 1: batting (0) + extras (0) = 0, but total is 87 (-87)
+  [batting_total] NEGERI SEMBILAN inn 2: batting (0) + extras (0) = 0, but total is 110 (-110)
+
+Page 132: PENANG v PERAK (February 20 and 21, 1920)
+  [fow_ascending] PERAK inn 1: FOW not ascending: [11, 93, 11, 29, 41, 52]
+  [fow_count] PERAK inn 1: 6 FOW entries but wickets=5
+
+Page 133: Selangor v Perak (May 22 and 24, 1920)
+  [batting_total] Selangor inn 1: batting (119) + extras (15) = 134, but total is 135 (-1)
+  [dismissal_wickets] Perak inn 1: REH Oliver: bowling says 0w but dismissals say 1w
+
+Page 134: SINGAPORE v SELANGOR (July 31 and August 1, 1920)
+  [fow_ascending] SINGAPORE inn 1: FOW not ascending: [15, 51, 40, 48, 93, 97, 128, 142, 145]
+  [fow_ascending] SELANGOR inn 1: FOW not ascending: [11, 93, 51, 42, 97, 111, 166, 203, 224, 250]
+  [dismissal_wickets] SINGAPORE inn 2: bowling figures total 7w but 8 bowler-credited dismissals
+
+Page 135: PERAK v PENANG (July 31 and August 2, 1920)
+  [batting_total] PERAK inn 1: batting (58) + extras (8) = 66, but total is 65 (+1)
+  [batting_total] PENANG inn 2: batting (83) + extras (8) = 91, but total is 92 (-1)
+
+Page 136: PERAK v PENANG (February 8 and 9, 1921)
+  [dismissal_wickets] PERAK inn 2: bowling figures total 8w but 9 bowler-credited dismissals
+
+Page 138: PERAK v PENANG (July 31 and August 1, 1921)
+  [batting_total] PERAK inn 1: batting (120) + extras (17) = 137, but total is 135 (+2)
+  [dismissal_wickets] PERAK inn 2: bowling figures total 8w but 9 bowler-credited dismissals
+
+Page 140: PERAK v PENANG (January 28 and 30, 1922)
+  [fow_ascending] PERAK inn 1: FOW not ascending: [15, 51, 35, 37, 41, 54, 65, 65, 65, 70]
+  [fow_ascending] PENANG inn 1: FOW not ascending: [11, 93, 66, 69, 179, 236, 239, 241, 242, None]
+  [fow_count] PENANG inn 1: 9 FOW entries but wickets=10
+  [fow_count] PERAK inn 2: 7 FOW entries but wickets=10
+
+Page 141: PERAK v PENANG (April 15 and 17, 1922)
+  [batting_total] PENANG inn 2: batting (26) + extras (0) = 26, but total is 36 (-10)
+
+Page 144: PENANG v KEDAH (June 3, 1922)
+  [fow_count] PENANG inn 1: 9 FOW entries but wickets=10
+  [fow_count] KEDAH inn 1: 8 FOW entries but wickets=10
+
+Page 145: SELANGOR v PERAK (June 3 and 5, 1922)
+  [dismissal_wickets] SELANGOR inn 2: bowling figures total 9w but 10 bowler-credited dismissals
+
+Page 146: PENANG v PERAK (March 31 and April 2, 1923)
+  [fow_ascending] PENANG inn 1: FOW not ascending: [11, 93, 83, 88, 141]
+  [fow_count] PENANG inn 1: 5 FOW entries but wickets=10
+  [fow_count] PERAK inn 1: 3 FOW entries but wickets=10
+  [fow_count] PENANG inn 2: 4 FOW entries but wickets=10
+
+Page 147: Selangor v Singapore (March 31 and April 2, 1923)
+  [fow_final_value] Singapore inn 2: last FOW is 212 but all-out total is 157
+  [fow_final_value] Selangor inn 1: last FOW is 187 but all-out total is 208
+  [batting_total] Selangor inn 2: batting (231) + extras (9) = 240, but total is 162 (+78)
+
+Page 149: PENANG v PERAK (June 2 and 4, 1923)
+  [fow_count] PENANG inn 1: 8 FOW entries but wickets=9
+  [fow_ascending] PERAK inn 1: FOW not ascending: [11, 49, 62, 93, 59, 64, 68, 71]
+  [fow_count] PERAK inn 1: 8 FOW entries but wickets=all out (10)
+  [fow_final_value] PERAK inn 1: last FOW is 71 but all-out total is 78
+  [fow_ascending] PENANG inn 2: FOW not ascending: [4, 29, 5, 11, 118, 119, 120, 127]
+  [fow_count] PENANG inn 2: 8 FOW entries but wickets=9
+  [fow_ascending] PERAK inn 2: FOW not ascending: [53, 57, 34, 69, 59, 64, 70, 70]
+  [fow_count] PERAK inn 2: 8 FOW entries but wickets=all out (10)
+
+Page 150: NEGERI SEMBILAN v SELANGOR (June 2 and 4, 1923)
+  [batting_total] NEGERI SEMBILAN inn 1: batting (112) + extras (7) = 119, but total is 112 (+7)
+
+Page 153: Selangor v Perak (May 6 and 7, 1924)
+  [batting_total] Selangor inn 2: batting (100) + extras (4) = 104, but total is 94 (+10)
+
+Page 154: PENANG v KEDAH (May 12, 1924)
+  [fow_count] PENANG inn 1: 3 FOW entries but wickets=10
+  [batting_total] KEDAH inn 1: batting (131) + extras (1) = 132, but total is 133 (-1)
+  [fow_ascending] KEDAH inn 1: FOW not ascending: [11, 4, 11]
+  [fow_count] KEDAH inn 1: 3 FOW entries but wickets=10
+
+Page 158: MELAKA v NEGERI SEMBILAN (August 10, 1924)
+  [batting_total] NEGERI SEMBILAN inn 1: batting (63) + extras (0) = 63, but total is 60 (+3)
+  [batting_total] MELAKA inn 1: batting (0) + extras (0) = 0, but total is 184 (-184)
+
+Page 162: Penang v Perak (April 11 and 13, 1925)
+  [fow_count] Penang inn 1: 9 FOW entries but wickets=5
+  [fow_count] Perak inn 2: 11 FOW entries but wickets=all out (10)
+
+Page 165: PERAK v SELANGOR (May 8 and 9, 1925)
+  [fow_count] SELANGOR inn 2: 9 FOW entries but wickets=10
+
+Page 167: SINGAPORE v NEGERI SEMBILAN (May 30, June 1 and 2, 1925)
+  [fow_count] SINGAPORE inn 1: 9 FOW entries but wickets=10
+  [fow_count] NEGERI SEMBILAN inn 1: 9 FOW entries but wickets=10
+
+Page 168: SELANGOR v PENANG (May 30 and June 1, 1925)
+  [fow_count] SELANGOR inn 1: 9 FOW entries but wickets=10
+  [fow_count] PENANG inn 1: 9 FOW entries but wickets=10
+  [fow_count] SELANGOR inn 2: 4 FOW entries but wickets=10
+
+Page 174: SINGAPORE v NEGERI SEMBILAN (May 22 and 24, 1926)
+  [fow_count] SINGAPORE inn 1: 10 FOW entries but wickets=9
+  [fow_count] NEGERI SEMBILAN inn 1: 10 FOW entries but wickets=9
+
+Page 175: PERAK v KEDAH (May 22 and 24, 1926)
+  [batting_total] KEDAH inn 1: batting (0) + extras (0) = 0, but total is 112 (-112)
+  [batting_total] PERAK inn 1: batting (140) + extras (0) = 140, but total is 221 (-81)
+
+Page 176: SELANGOR v PENANG (May 22 and 24, 1926)
+  [batting_total] SELANGOR inn 2: batting (167) + extras (8) = 175, but total is 153 (+22)
+
+Page 178: PENANG v KEDAH (February 3 and 4, 1927)
+  [dismissal_wickets] KEDAH inn 2: bowling figures total 9w but 10 bowler-credited dismissals
+
+Page 181: PERAK v PENANG (April 15 and 16, 1927)
+  [fow_count] PERAK inn 1: 3 FOW entries but wickets=10
+  [fow_ascending] PENANG inn 1: FOW not ascending: [11, 4]
+  [fow_count] PENANG inn 1: 2 FOW entries but wickets=10
+  [fow_ascending] PERAK inn 2: FOW not ascending: [51, 93, 11]
+  [fow_count] PERAK inn 2: 3 FOW entries but wickets=10
+
+Page 182: PERAK v PENANG (April 7, 8 and 9, 1928)
+  [fow_count] PENANG inn 1: 1 FOW entries but wickets=10
+  [fow_count] PERAK inn 1: 1 FOW entries but wickets=6
+
+Page 185: SINGAPORE v NEGERI SEMBILAN (May 26, 27 and 28, 1928)
+  [batting_total] NEGERI SEMBILAN inn 2: batting (99) + extras (12) = 111, but total is 113 (-2)
+
+Page 186: PENANG v SELANGOR (May 26, 27 and 28, 1928)
+  [fow_count] SELANGOR inn 1: 5 FOW entries but wickets=9
+  [fow_ascending] PENANG inn 2: FOW not ascending: [7, 4, 12, 15, 18, 34, 35, 35, 71]
+  [fow_count] SELANGOR inn 2: 9 FOW entries but wickets=10
+
+Page 187: KEDAH v PENANG (June 2 and 4, 1928)
+  [fow_count] KEDAH inn 1: 7 FOW entries but wickets=all out (10)
+  [fow_count] PENANG inn 1: 8 FOW entries but wickets=9
+  [batting_total] KEDAH inn 2: batting (69) + extras (17) = 86, but total is 77 (+9)
+  [fow_count] KEDAH inn 2: 7 FOW entries but wickets=all out (10)
+  [fow_final_value] KEDAH inn 2: last FOW is 73 but all-out total is 77
+
+Page 189: KEDAH v PERAK (July 7 and 8, 1928)
+  [fow_count] PERAK inn 2: 5 FOW entries but wickets=4
+
+Page 190: Selangor v Negeri Sembilan (March 13 and 14, 1929)
+  [batting_total] Selangor inn 2: batting (23) + extras (0) = 23, but total is 216 (-193)
+
+Page 192: PENANG v PERAK (March 30, 31 and April 1, 1929)
+  [batting_total] PENANG inn 1: batting (121) + extras (16) = 137, but total is 136 (+1)
+  [batting_total] PENANG inn 2: batting (295) + extras (18) = 313, but total is 293 (+20)
+  [fow_ascending] PENANG inn 2: FOW not ascending: [4, 47, 93, 11, 66, 90, 90, 97, 118, 293]
+  [batting_total] PERAK inn 2: batting (108) + extras (9) = 117, but total is 111 (+6)
+  [fow_ascending] PERAK inn 2: FOW not ascending: [39, 23, 31, 42, 46, 46, 46, 94, 98, 111]
+
+Page 193: NEGERI SEMBILAN v MELAKA (March 31 and April 1, 1929)
+  [batting_total] NEGERI SEMBILAN inn 2: batting (105) + extras (8) = 113, but total is 111 (+2)
+
+Page 198: Perak v Negeri Sembilan (June 29 and 30, 1929)
+  [batting_total] Negeri Sembilan inn 1: batting (159) + extras (12) = 171, but total is 180 (-9)
+  [batting_total] Perak inn 2: batting (185) + extras (0) = 185, but total is 226 (-41)
+  [batting_total] Negeri Sembilan inn 2: batting (0) + extras (0) = 0, but total is 64 (-64)
+
+Page 201: NEGERI SEMBILAN v SELANGOR (March 22 and 23, 1930)
+  [fow_count] NEGERI SEMBILAN inn 1: 2 FOW entries but wickets=8
+  [fow_count] SELANGOR inn 2: 2 FOW entries but wickets=10
+  [fow_count] SELANGOR inn 4: 2 FOW entries but wickets=4
+
+Page 202: Singapore v Selangor (April 19, 20 and 21, 1930)
+  [fow_count] Singapore inn 1: 8 FOW entries but wickets=10
+  [fow_count] Selangor inn 1: 8 FOW entries but wickets=10
+  [batting_total] Singapore inn 2: batting (234) + extras (7) = 241, but total is 246 (-5)
+  [fow_count] Singapore inn 2: 8 FOW entries but wickets=9
+  [batting_total] Selangor inn 2: batting (189) + extras (16) = 205, but total is 204 (+1)
+  [fow_count] Selangor inn 2: 7 FOW entries but wickets=10
+
+Page 205: SELANGOR v PERAK (May 10 and 11, 1930)
+  [dismissal_wickets] SELANGOR inn 1: bowling figures total 9w but 10 bowler-credited dismissals
+  [fow_count] SELANGOR inn 1: 9 FOW entries but wickets=10
+
+Page 206: Penang v Kedah (May 10 and 11, 1930)
+  [fow_count] Penang inn 1: 9 FOW entries but wickets=all out (10)
+  [batting_total] Kedah inn 2: batting (99) + extras (1) = 100, but total is 110 (-10)
+
+Page 207: NEGERI SEMBILAN v SINGAPORE (June 7, 8 and 9, 1930)
+  [batting_total] NEGERI SEMBILAN inn 1: batting (230) + extras (15) = 245, but total is 249 (-4)
+
+Page 209: Selangor v Singapore (April 20 and 21, 1946)
+  [dismissal_wickets] Singapore inn 2: Gorbex Singh: bowling says 0w but dismissals say 6w
+
+Page 210: NEGERI SEMBILAN v SINGAPORE (April 20 and 21, 1946)
+  [fow_count] NEGERI SEMBILAN inn 1: 3 FOW entries but wickets=10
+  [fow_count] NEGERI SEMBILAN inn 2: 2 FOW entries but wickets=10
+
+Page 211: PENANG v PERAK (April 20, 21 and 22, 1946)
+  [batting_total] PENANG inn 2: batting (102) + extras (2) = 104, but total is 102 (+2)
+
+Page 212: NEGERI SEMBILAN v SINGAPORE (May 18 and 19, 1946)
+  [dismissal_wickets] NEGERI SEMBILAN inn 1: SK Sundram: bowling says 0w but dismissals say 3w
+
+Page 213: PERAK v NEGERI SEMBILAN (June 8 and 9, 1946)
+  [fow_count] NEGERI SEMBILAN inn 1: 8 FOW entries but wickets=6
+  [batting_total] NEGERI SEMBILAN inn 2: batting (47) + extras (4) = 51, but total is 45 (+6)
+  [fow_count] NEGERI SEMBILAN inn 2: 8 FOW entries but wickets=all out (10)
+  [fow_final_value] NEGERI SEMBILAN inn 2: last FOW is 9 but all-out total is 45
+  [fow_count] PERAK inn 1: 10 FOW entries but wickets=4
+  [fow_count] PERAK inn 2: 4 FOW entries but wickets=all out (10)
+
+Page 214: SELANGOR v PERAK (July 27 and 28, 1946)
+  [batting_total] PERAK inn 2: batting (171) + extras (15) = 186, but total is 132 (+54)
+
+Page 215: PERAK v PENANG (April 5, 6 and 7, 1947)
+  [batting_total] PERAK inn 1: batting (107) + extras (3) = 110, but total is 115 (-5)
+  [dismissal_wickets] PERAK inn 1: DHC LaBrooy: bowling says 0w but dismissals say 1w
+
+Page 219: Selangor v Perak (June 14 and 15, 1947)
+  [dismissal_wickets] Perak inn 1: Lall Singh: bowling says 0w but dismissals say 3w
+
+Page 220: Selangor v Negeri Sembilan (July 19 and 20, 1947)
+  [batting_total] Selangor inn 1: batting (214) + extras (4) = 218, but total is 220 (-2)
+  [batting_total] Negeri Sembilan inn 1: batting (165) + extras (13) = 178, but total is 177 (+1)
+
+Page 221: MELAKA v SELANGOR (July 19 and 20, 1947)
+  [dismissal_wickets] SELANGOR inn 1: S Sequerah: bowling says 0w but dismissals say 2w
+
+Page 222: PAHANG v SELANGOR (August 17 and 18, 1947)
+  [dismissal_wickets] PAHANG inn 1: Lall Singh: bowling says 0w but dismissals say 2w
+  [fow_count] PAHANG inn 1: 6 FOW entries but wickets=10
+  [dismissal_wickets] PAHANG inn 2: Gorbex Singh: bowling says 0w but dismissals say 1w
+
+Page 224: PENANG v PERAK (March 27, 28 and 29, 1948)
+  [fow_count] PENANG inn 1: 9 FOW entries but wickets=10
+  [fow_ascending] PENANG inn 2: FOW not ascending: [2, 37, 4, 5, 6, 7]
+  [fow_count] PERAK inn 1: 9 FOW entries but wickets=10
+
+Page 225: Selangor v Pahang (April 24 and 25, 1948)
+  [batting_total] Pahang inn 1: batting (70) + extras (28) = 98, but total is 130 (-32)
+  [batting_total] Selangor inn 1: batting (51) + extras (0) = 51, but total is 158 (-107)
+
+Page 227: SINGAPORE v NEGERI SEMBILAN (May 29 and 30, 1948)
+  [dismissal_wickets] SINGAPORE inn 1: Khoo Beng Eng: bowling says 0w but dismissals say 1w
+
+Page 228: Perak v Selangor (June 19 and 20, 1948)
+  [batting_total] Perak inn 2: batting (184) + extras (15) = 199, but total is 188 (+11)
+
+Page 229: Selangor v Melaka (July 24 and 25, 1948)
+  [batting_total] Selangor inn 1: batting (160) + extras (45) = 205, but total is 211 (-6)
+
+Page 230: Negeri Sembilan v Selangor (July 24 and 25, 1948)
+  [batting_total] Negeri Sembilan inn 1: batting (150) + extras (47) = 197, but total is 186 (+11)
+
+Page 231: Perak v Pahang (July 31 and August 1, 1948)
+  [fow_ascending] Pahang inn 1: FOW not ascending: [4, 9, 4, 7, 5, 11, 0, 17, 0, 0]
+  [batting_total] Perak inn 1: batting (105) + extras (0) = 105, but total is 210 (-105)
+
+Page 233: Perak v Penang (April 17 and 18, 1949)
+  [batting_total] Penang inn 2: batting (123) + extras (4) = 127, but total is 129 (-2)
+
+Page 235: Pahang v Selangor (May 14 and 15, 1949)
+  [batting_total] Pahang inn 1: batting (163) + extras (7) = 170, but total is 98 (+72)
+  [batting_total] Selangor inn 1: batting (160) + extras (0) = 160, but total is 198 (-38)
+  [batting_total] Pahang inn 2: batting (6) + extras (21) = 27, but total is 119 (-92)
+
+Page 236: SELANGOR v NEGERI SEMBILAN (May 21 and 22, 1949)
+  [batting_total] SELANGOR inn 1: batting (126) + extras (168) = 294, but total is 168 (+126)
+
+Page 237: MELAKA v SELANGOR (May 21 and 22, 1949)
+  [batting_total] MELAKA inn 1: batting (21) + extras (79) = 100, but total is 81 (+19)
+  [batting_total] MELAKA inn 2: batting (40) + extras (60) = 100, but total is 59 (+41)
+  [batting_total] SELANGOR inn 1: batting (62) + extras (0) = 62, but total is 0 (+62)
+
+Page 238: PENANG v SELANGOR (June 4 and 5, 1949)
+  [batting_total] PENANG inn 2: batting (152) + extras (10) = 162, but total is 163 (-1)
+  [batting_total] SELANGOR inn 1: batting (115) + extras (10) = 125, but total is 126 (-1)
+  [batting_total] SELANGOR inn 2: batting (44) + extras (1) = 45, but total is 46 (-1)
+  [dismissal_wickets] SELANGOR inn 2: bowling figures total 3w but 4 bowler-credited dismissals
+
+Page 239: PAHANG v PERAK (June 4 and 5, 1949)
+  [batting_total] PAHANG inn 2: batting (144) + extras (10) = 154, but total is 200 (-46)
+
+Page 240: SINGAPORE v NEGERI SEMBILAN (June 25 and 26, 1949)
+  [fow_count] NEGERI SEMBILAN inn 1: 8 FOW entries but wickets=10
+  [fow_count] NEGERI SEMBILAN inn 2: 8 FOW entries but wickets=10
+  [fow_count] SINGAPORE inn 1: 6 FOW entries but wickets=7
+  [fow_count] SINGAPORE inn 2: 2 FOW entries but wickets=7
+
+Page 241: NEGERI SEMBILAN v MELAKA (July 23 and 24, 1949)
+  [batting_total] NEGERI SEMBILAN inn 1: batting (0) + extras (0) = 0, but total is 61 (-61)
+  [batting_total] NEGERI SEMBILAN inn 2: batting (0) + extras (0) = 0, but total is 103 (-103)
+
+Page 243: SINGAPORE v MELAKA (August 27 and 28, 1949)
+  [dismissal_wickets] SINGAPORE inn 1: J Sequerah: bowling says 0w but dismissals say 4w
+
+Page 244: PENANG v PERAK (April 8, 9 and 10, 1950)
+  [fow_ascending] PENANG inn 1: FOW not ascending: [11, 4, 93, 11, 14, 20, 14, 14, None, None]
+  [fow_count] PENANG inn 1: 8 FOW entries but wickets=10
+  [batting_total] PENANG inn 2: batting (78) + extras (2) = 80, but total is 57 (+23)
+  [fow_ascending] PENANG inn 2: FOW not ascending: [7, 8, 9, 14, 20, 14]
+
+Page 246: SELANGOR v PERAK (May 6 and 7, 1950)
+  [fow_count] SELANGOR inn 1: 9 FOW entries but wickets=10
+  [batting_total] PERAK inn 1: batting (39) + extras (0) = 39, but total is 42 (-3)
+  [fow_count] PERAK inn 1: 9 FOW entries but wickets=10
+  [fow_count] SELANGOR inn 2: 9 FOW entries but wickets=10
+  [batting_total] PERAK inn 2: batting (50) + extras (1) = 51, but total is 45 (+6)
+  [fow_count] PERAK inn 2: 9 FOW entries but wickets=10
+
+Page 247: MELAKA v NEGERI SEMBILAN (May 13 and 14, 1950)
+  [fow_count] MELAKA inn 1: 9 FOW entries but wickets=10
+  [fow_count] MELAKA inn 2: 9 FOW entries but wickets=10
+  [dismissal_wickets] NEGERI SEMBILAN inn 1: H Sequerah: bowling says 0w but dismissals say 2w
+  [fow_count] NEGERI SEMBILAN inn 1: 6 FOW entries but wickets=9
+  [dismissal_wickets] NEGERI SEMBILAN inn 2: S Sequerah: bowling says 0w but dismissals say 4w
+  [fow_count] NEGERI SEMBILAN inn 2: 8 FOW entries but wickets=9
+
+Page 248: Selangor v Penang (May 27 and 28, 1950)
+  [batting_total] Penang inn 1: batting (94) + extras (2) = 96, but total is 83 (+13)
+  [batting_total] Penang inn 2: batting (77) + extras (0) = 77, but total is 79 (-2)
+
+Page 249: SELANGOR v MELAKA (June 3 and 4, 1950)
+  [batting_total] SELANGOR inn 1: batting (70) + extras (8) = 78, but total is 79 (-1)
+  [batting_total] SELANGOR inn 2: batting (63) + extras (5) = 68, but total is 100 (-32)
+  [dismissal_wickets] SELANGOR inn 2: J Sequerah: bowling says 0w but dismissals say 1w
+  [dismissal_wickets] SELANGOR inn 2: S Sequerah: bowling says 0w but dismissals say 1w
+
+Page 251: MELAKA v SINGAPORE (June 17 and 18, 1950)
+  [fow_count] MELAKA inn 1: 5 FOW entries but wickets=10
+  [dismissal_wickets] SINGAPORE inn 1: J Sequerah: bowling says 0w but dismissals say 6w
+  [fow_ascending] SINGAPORE inn 1: FOW not ascending: [11, 93, 58, 69, 70, 86]
+  [fow_count] SINGAPORE inn 1: 6 FOW entries but wickets=10
+
+Page 252: Penang v Kedah (June 24 and 25, 1950)
+  [fow_count] Kedah inn 1: 9 FOW entries but wickets=all out (10)
+  [fow_final_value] Kedah inn 1: last FOW is 143 but all-out total is 97
+  [batting_total] Penang inn 1: batting (158) + extras (17) = 175, but total is 176 (-1)
+  [batting_total] Kedah inn 2: batting (0) + extras (0) = 0, but total is 97 (-97)
+  [fow_count] Kedah inn 2: 8 FOW entries but wickets=all out (10)
+  [fow_final_value] Kedah inn 2: last FOW is 93 but all-out total is 97
+  [dismissal_wickets] Penang inn 2: bowling figures total 0w but 1 bowler-credited dismissals
+
+Page 253: NEGERI SEMBILAN v SINGAPORE (July 1 and 2, 1950)
+  [fow_ascending] NEGERI SEMBILAN inn 1: FOW not ascending: [21, 69, 102, 137, 212, 260, 298, 107, 107]
+  [fow_count] NEGERI SEMBILAN inn 1: 9 FOW entries but wickets=10
+  [fow_count] SINGAPORE inn 1: 8 FOW entries but wickets=7
+
+Page 254: NEGERI SEMBILAN v PERAK (July 15 and 16, 1950)
+  [batting_total] PERAK inn 1: batting (140) + extras (10) = 150, but total is 160 (-10)
+  [batting_total] PERAK inn 2: batting (127) + extras (29) = 156, but total is 162 (-6)
+  [batting_total] NEGERI SEMBILAN inn 2: batting (59) + extras (14) = 73, but total is 103 (-30)
+
+Page 255: SINGAPORE v JOHOR (July 16 and 17, 1950)
+  [dismissal_wickets] JOHOR inn 1: bowling figures total 10w but 9 bowler-credited dismissals
+  [dismissal_wickets] JOHOR inn 2: bowling figures total 15w but 10 bowler-credited dismissals
+
+Page 256: PERAK v PENANG (March 23, 24 and 25, 1951)
+  [fow_count] PENANG inn 1: 10 FOW entries but wickets=9
+  [batting_total] PERAK inn 1: batting (44) + extras (5) = 49, but total is 44 (+5)
+  [fow_ascending] PERAK inn 1: FOW not ascending: [43, 43, 48, 53, 53, 58, 58, 58, 60, 44]
+  [batting_total] PENANG inn 2: batting (106) + extras (15) = 121, but total is 117 (+4)
+  [fow_count] PENANG inn 2: 10 FOW entries but wickets=9
+
+Page 257: SELANGOR v PERAK (May 12 and 13, 1951)
+  [fow_count] PERAK inn 1: 9 FOW entries but wickets=10
+
+Page 258: KEDAH v PENANG (June 2 and 3, 1951)
+  [fow_count] KEDAH inn 1: 9 FOW entries but wickets=10
+  [fow_ascending] PENANG inn 1: FOW not ascending: [11, 93, 11, 37, 37, 38, 38, 38, 39]
+  [fow_count] PENANG inn 1: 9 FOW entries but wickets=10
+  [fow_count] KEDAH inn 2: 2 FOW entries but wickets=10
+  [dismissal_wickets] PENANG inn 2: bowling figures total 0w but 1 bowler-credited dismissals
+
+Page 259: Singapore v Melaka (June 16 and 17, 1951)
+  [dismissal_wickets] Singapore inn 1: J Sequerah: bowling says 0w but dismissals say 6w
+  [fow_ascending] Singapore inn 1: FOW not ascending: [15, 51, 97, 97, 182, 130, 182]
+  [fow_ascending] Melaka inn 1: FOW not ascending: [11, 93, 39, 68, 79, 45, 68, 79, 87, 92]
+  [fow_ascending] Melaka inn 2: FOW not ascending: [4, 11, 47, 82, 92, 47, 82, 92, 107, 107]
+
+Page 260: Selangor v Negeri Sembilan (June 16 and 17, 1951)
+  [batting_total] Negeri Sembilan inn 1: batting (100) + extras (9) = 109, but total is 115 (-6)
+
+Page 261: NEGERI SEMBILAN v SINGAPORE (June 30 and July 1, 1951)
+  [dismissal_wickets] NEGERI SEMBILAN inn 1: bowling figures total 8w but 9 bowler-credited dismissals
+  [fow_count] NEGERI SEMBILAN inn 1: 9 FOW entries but wickets=10
+  [fow_count] NEGERI SEMBILAN inn 2: 7 FOW entries but wickets=10
+  [fow_count] SINGAPORE inn 1: 9 FOW entries but wickets=10
+  [fow_count] SINGAPORE inn 2: 6 FOW entries but wickets=10
+
+Page 262: SELANGOR v PENANG (July 7, 8 and 9, 1951)
+  [batting_total] SELANGOR inn 1: batting (71) + extras (7) = 78, but total is 76 (+2)
+  [fow_count] SELANGOR inn 1: 3 FOW entries but wickets=all out (10)
+  [fow_count] PENANG inn 1: 5 FOW entries but wickets=6
+  [dismissal_wickets] SELANGOR inn 2: DHC LaBrooy: bowling says 0w but dismissals say 2w
+  [fow_count] SELANGOR inn 2: 6 FOW entries but wickets=all out (10)
+  [fow_count] PENANG inn 2: 2 FOW entries but wickets=6
+
+Page 263: PERAK v NEGERI SEMBILAN (July 7 and 8, 1951)
+  [fow_count] NEGERI SEMBILAN inn 2: 9 FOW entries but wickets=10
+
+Page 264: JOHOR v SINGAPORE (July 14 and 15, 1951)
+  [batting_total] SINGAPORE inn 1: batting (102) + extras (0) = 102, but total is 73 (+29)
+
+Page 265: MELAKA v NEGERI SEMBILAN (July 28 and 29, 1951)
+  [batting_total] MELAKA inn 1: batting (88) + extras (3) = 91, but total is 118 (-27)
+  [batting_total] MELAKA inn 2: batting (36) + extras (0) = 36, but total is 52 (-16)
+  [dismissal_wickets] MELAKA inn 2: bowling figures total 0w but 8 bowler-credited dismissals
+
+Page 266: MELAKA v JOHOR (August 4 and 5, 1951)
+  [dismissal_wickets] JOHOR inn 1: bowling figures total 8w but 10 bowler-credited dismissals
+  [dismissal_wickets] JOHOR inn 1: J Sequerah: bowling says 0w but dismissals say 3w
+  [dismissal_wickets] JOHOR inn 2: bowling figures total 6w but 7 bowler-credited dismissals
+
+Page 267: PERAK v KEDAH (August 18 and 19, 1951)
+  [fow_ascending] KEDAH inn 1: FOW not ascending: [15, 51, 93, 11, 2, 4, 2, 51, 93, 11]
+
+Page 269: SELANGOR v SINGAPORE (April 12 and 13, 1952)
+  [fow_ascending] SELANGOR inn 1: FOW not ascending: [15, 51, 50, 41, 42, 68, 72, 75, 90]
+  [fow_count] SELANGOR inn 1: 9 FOW entries but wickets=all out (10)
+  [fow_final_value] SELANGOR inn 1: last FOW is 90 but all-out total is 77
+  [fow_ascending] SINGAPORE inn 1: FOW not ascending: [11, 93, 28, 35, 45, 64, 79, 86]
+  [fow_count] SINGAPORE inn 1: 8 FOW entries but wickets=all out (10)
+  [fow_final_value] SINGAPORE inn 1: last FOW is 86 but all-out total is 110
+  [fow_ascending] SELANGOR inn 2: FOW not ascending: [4, 11, 22, 6, 7, 8, 9]
+  [fow_count] SELANGOR inn 2: 7 FOW entries but wickets=all out (10)
+  [fow_final_value] SELANGOR inn 2: last FOW is 9 but all-out total is 86
+  [batting_total] SINGAPORE inn 2: batting (62) + extras (6) = 68, but total is 54 (+14)
+
+Page 270: PENANG v PERAK (April 12 and 13, 1952)
+  [fow_count] PERAK inn 1: 9 FOW entries but wickets=10
+  [fow_count] PENANG inn 1: 9 FOW entries but wickets=10
+  [batting_total] PERAK inn 2: batting (71) + extras (5) = 76, but total is 77 (-1)
+  [fow_count] PERAK inn 2: 9 FOW entries but wickets=10
+
+Page 271: PERAK v SELANGOR (May 3 and 4, 1952)
+  [fow_count] SELANGOR inn 1: 9 FOW entries but wickets=10
+  [fow_count] SELANGOR inn 2: 9 FOW entries but wickets=10
+
+Page 272: KEDAH v PENANG (May 17 and 18, 1952)
+  [fow_count] KEDAH inn 1: 2 FOW entries but wickets=10
+  [fow_count] PENANG inn 1: 2 FOW entries but wickets=10
+  [fow_count] KEDAH inn 2: 2 FOW entries but wickets=10
+
+Page 273: NEGERI SEMBILAN v MELAKA (May 17 and 18, 1952)
+  [batting_total] MELAKA inn 1: batting (158) + extras (3) = 161, but total is 174 (-13)
+
+Page 274: NEGERI SEMBILAN v SELANGOR (June 7 and 8, 1952)
+  [dismissal_wickets] NEGERI SEMBILAN inn 1: Gurucharan Singh: bowling says 0w but dismissals say 1w
+  [dismissal_wickets] NEGERI SEMBILAN inn 2: Gurucharan Singh: bowling says 0w but dismissals say 2w
+
+Page 276: NEGERI SEMBILAN v PERAK (June 22 and 23, 1952)
+  [batting_total] NEGERI SEMBILAN inn 1: batting (91) + extras (25) = 116, but total is 149 (-33)
+  [batting_total] NEGERI SEMBILAN inn 2: batting (126) + extras (11) = 137, but total is 131 (+6)
+
+Page 277: SELANGOR v PENANG (June 22, 23 and 24, 1952)
+  [batting_total] PENANG inn 1: batting (140) + extras (21) = 161, but total is 156 (+5)
+  [batting_total] SELANGOR inn 1: batting (132) + extras (13) = 145, but total is 135 (+10)
+  [batting_total] PENANG inn 2: batting (215) + extras (15) = 230, but total is 236 (-6)
+  [batting_total] SELANGOR inn 2: batting (247) + extras (13) = 260, but total is 259 (+1)
+  [fow_count] SELANGOR inn 2: 9 FOW entries but wickets=8
+
+Page 278: Singapore v Johor (June 28 and 29, 1952)
+  [batting_total] Singapore inn 1: batting (191) + extras (7) = 198, but total is 201 (-3)
+  [fow_count] Singapore inn 1: 3 FOW entries but wickets=10
+  [fow_count] Johor inn 1: 3 FOW entries but wickets=8
+  [fow_count] Johor inn 2: 2 FOW entries but wickets=8
+
+Page 279: MELAKA v SINGAPORE (June 28 and 29, 1952)
+  [fow_count] MELAKA inn 1: 6 FOW entries but wickets=10
+  [batting_total] SINGAPORE inn 1: batting (165) + extras (15) = 180, but total is 184 (-4)
+  [fow_count] SINGAPORE inn 1: 8 FOW entries but wickets=10
+  [fow_count] MELAKA inn 2: 9 FOW entries but wickets=10
+
+Page 280: SELANGOR v MELAKA (July 5 and 6, 1952)
+  [dismissal_wickets] SELANGOR inn 1: S Sequerah: bowling says 0w but dismissals say 2w
+
+Page 281: KEDAH v PERAK (August 30 and 31, 1952)
+  [batting_total] KEDAH inn 1: batting (33) + extras (7) = 40, but total is 39 (+1)
+  [dismissal_wickets] PERAK inn 1: SE Augustin: bowling says 0w but dismissals say 1w
+
+Page 282: SELANGOR v SINGAPORE (April 4, 5 and 6, 1953)
+  [fow_ascending] SINGAPORE inn 1: FOW not ascending: [13, 16, 33, 29, 133, 150, 161, 193, 220, 238]
+  [fow_count] SELANGOR inn 1: 9 FOW entries but wickets=8
+  [fow_ascending] SINGAPORE inn 2: FOW not ascending: [16, 33, 29, 133, 150, 161, 193, 220, 110, 125]
+
+Page 283: Perak v Penang (April 4, 5 and 6, 1953)
+  [batting_total] Penang inn 1: batting (47) + extras (3) = 50, but total is 47 (+3)
+  [fow_count] Penang inn 2: 9 FOW entries but wickets=all out (10)
+
+Page 284: SELANGOR v PERAK (May 2 and 3, 1953)
+  [fow_ascending] PERAK inn 1: FOW not ascending: [15, 11, 4, 51, 93, 11, 6, 7, 8]
+  [dismissal_wickets] SELANGOR inn 1: bowling figures total 8w but 9 bowler-credited dismissals
+
+Page 285: Negeri Sembilan v Pahang (May 23 and 24, 1953)
+  [batting_total] Negeri Sembilan inn 1: batting (204) + extras (0) = 204, but total is 257 (-53)
+  [batting_total] Pahang inn 1: batting (98) + extras (0) = 98, but total is 0 (+98)
+
+Page 286: Negeri Sembilan v Melaka (June 13 and 14, 1953)
+  [batting_total] Negeri Sembilan inn 1: batting (145) + extras (9) = 154, but total is 84 (+70)
+  [batting_total] Melaka inn 1: batting (105) + extras (10) = 115, but total is 68 (+47)
+  [batting_total] Negeri Sembilan inn 2: batting (31) + extras (0) = 31, but total is 109 (-78)
+  [batting_total] Melaka inn 2: batting (7) + extras (0) = 7, but total is 113 (-106)
+
+Page 287: PAHANG v PERAK (June 13 and 14, 1953)
+  [fow_count] PAHANG inn 1: 11 FOW entries but wickets=10
+  [batting_total] PERAK inn 1: batting (176) + extras (1) = 177, but total is 178 (-1)
+
+Page 288: PENANG v SELANGOR (June 13, 14 and 15, 1953)
+  [batting_total] PENANG inn 2: batting (140) + extras (8) = 148, but total is 140 (+8)
+
+Page 289: Selangor v Negeri Sembilan (June 27 and 28, 1953)
+  [batting_total] Selangor inn 2: batting (107) + extras (4) = 111, but total is 51 (+60)
+
+Page 290: SINGAPORE v MELAKA (July 4 and 5, 1953)
+  [fow_count] SINGAPORE inn 1: 6 FOW entries but wickets=10
+  [fow_count] SINGAPORE inn 2: 9 FOW entries but wickets=10
+  [fow_ascending] MELAKA inn 1: FOW not ascending: [11, 93, 11, 77, 132, None, None, None, None, None]
+  [fow_count] MELAKA inn 1: 5 FOW entries but wickets=10
+
+Page 292: PENANG v KEDAH (July 18 and 19, 1953)
+  [dismissal_wickets] PENANG inn 1: HE Augustin: bowling says 0w but dismissals say 7w
+
+Page 294: JOHOR v SINGAPORE (August 15 and 16, 1953)
+  [dismissal_wickets] SINGAPORE inn 2: bowling figures total 5w but 6 bowler-credited dismissals
+
+Page 296: PERAK v PENANG (April 17 and 18, 1954)
+  [batting_total] PENANG inn 1: batting (52) + extras (0) = 52, but total is 84 (-32)
+  [dismissal_wickets] PENANG inn 1: bowling figures total 9w but 10 bowler-credited dismissals
+  [fow_count] PENANG inn 2: 4 FOW entries but wickets=6
+
+Page 297: PERAK v SELANGOR (May 1 and 2, 1954)
+  [fow_count] PERAK inn 1: 9 FOW entries but wickets=10
+  [fow_count] PERAK inn 2: 9 FOW entries but wickets=10
+
+Page 298: Pahang v Negeri Sembilan (May 22 and 23, 1954)
+  [batting_total] Negeri Sembilan inn 1: batting (97) + extras (0) = 97, but total is 92 (+5)
+  [batting_total] Pahang inn 1: batting (53) + extras (0) = 53, but total is 77 (-24)
+  [batting_total] Pahang inn 2: batting (0) + extras (0) = 0, but total is 75 (-75)
+
+Page 300: SELANGOR v PENANG (June 5 and 6, 1954)
+  [dismissal_wickets] SELANGOR inn 1: CEA LaBrooy: bowling says 0w but dismissals say 3w
+  [batting_total] PENANG inn 1: batting (74) + extras (6) = 80, but total is 70 (+10)
+  [dismissal_wickets] PENANG inn 1: Duleep Singh: bowling says 0w but dismissals say 5w
+  [fow_count] PENANG inn 1: 9 FOW entries but wickets=10
+  [batting_total] PENANG inn 2: batting (149) + extras (8) = 157, but total is 199 (-42)
+
+Page 301: NEGERI SEMBILAN v PERAK (June 5 and 6, 1954)
+  [fow_ascending] PERAK inn 1: FOW not ascending: [5, 15, 51, 93, 11]
+  [fow_count] PERAK inn 1: 5 FOW entries but wickets=10
+  [fow_ascending] PERAK inn 2: FOW not ascending: [4, 2, 11]
+  [fow_count] PERAK inn 2: 3 FOW entries but wickets=10
+  [fow_count] NEGERI SEMBILAN inn 1: 5 FOW entries but wickets=10
+
+Page 302: MELAKA v NEGERI SEMBILAN (June 12 and 13, 1954)
+  [batting_total] MELAKA inn 2: batting (65) + extras (0) = 65, but total is 140 (-75)
+  [batting_total] NEGERI SEMBILAN inn 1: batting (41) + extras (48) = 89, but total is 113 (-24)
+
+Page 303: PERAK v PAHANG (June 19 and 20, 1954)
+  [dismissal_wickets] PAHANG inn 1: bowling figures total 8w but 9 bowler-credited dismissals
+  [fow_count] PAHANG inn 1: 8 FOW entries but wickets=10
+  [fow_count] PAHANG inn 2: 6 FOW entries but wickets=10
+
+Page 304: Negeri Sembilan v Selangor (July 3 and 4 1954)
+  [batting_total] Selangor inn 1: batting (179) + extras (6) = 185, but total is 189 (-4)
+
+Page 305: Melaka v Singapore (July 3 and 4, 1954)
+  [fow_count] Melaka inn 2: 8 FOW entries but wickets=7
+
+Page 306: SELANGOR v MELAKA (July 17 and 18, 1954)
+  [fow_count] SELANGOR inn 1: 8 FOW entries but wickets=10
+  [batting_total] MELAKA inn 2: batting (92) + extras (5) = 97, but total is 104 (-7)
+  [dismissal_wickets] MELAKA inn 2: bowling figures total 9w but 10 bowler-credited dismissals
+
+Page 307: PENANG v KEDAH (July 17 and 18, 1954)
+  [dismissal_wickets] PENANG inn 2: JP Augustin: bowling says 0w but dismissals say 1w
+
+Page 308: Singapore v Johor (August 14 and 15, 1954)
+  [batting_total] Singapore inn 1: batting (191) + extras (18) = 209, but total is 208 (+1)
+
+Page 309: PERAK v KEDAH (August 14 and 15, 1954)
+  [dismissal_wickets] PERAK inn 1: JP Augustin: bowling says 0w but dismissals say 8w
+  [fow_count] PERAK inn 1: 11 FOW entries but wickets=10
+
+Page 310: Negeri Sembilan v Johor (April 2 and 3, 1955)
+  [batting_total] Johor inn 1: batting (73) + extras (8) = 81, but total is 133 (-52)
+
+Page 312: PAHANG v PERAK (April 16 and 17, 1955)
+  [batting_total] PAHANG inn 1: batting (98) + extras (0) = 98, but total is 121 (-23)
+  [batting_total] PERAK inn 1: batting (133) + extras (0) = 133, but total is 177 (-44)
+  [batting_total] PAHANG inn 2: batting (0) + extras (0) = 0, but total is 113 (-113)
+  [batting_total] PERAK inn 2: batting (0) + extras (0) = 0, but total is 58 (-58)
+
+Page 313: SELANGOR v PERAK (May 7 and 8, 1955)
+  [dismissal_wickets] PERAK inn 1: Gurucharan Singh: bowling says 0w but dismissals say 1w
+  [fow_count] PERAK inn 1: 8 FOW entries but wickets=10
+  [fow_count] PERAK inn 2: 3 FOW entries but wickets=10
+
+Page 314: Negeri Sembilan v Melaka (May 21 and 22, 1955)
+  [batting_total] Melaka inn 1: batting (312) + extras (0) = 312, but total is 240 (+72)
+  [batting_total] Negeri Sembilan inn 1: batting (224) + extras (0) = 224, but total is 323 (-99)
+
+Page 316: MELAKA v SELANGOR (June 4 and 5, 1955)
+  [batting_total] SELANGOR inn 1: batting (144) + extras (46) = 190, but total is 213 (-23)
+  [batting_total] MELAKA inn 1: batting (124) + extras (88) = 212, but total is 0 (+212)
+
+Page 317: SELANGOR v NEGERI SEMBILAN (June 18 and 19, 1955)
+  [dismissal_wickets] NEGERI SEMBILAN inn 1: Duleep Singh: bowling says 0w but dismissals say 3w
+
+Page 318: SINGAPORE v MELAKA (July 2 and 3, 1955)
+  [fow_count] MELAKA inn 1: 8 FOW entries but wickets=10
+  [fow_count] SINGAPORE inn 1: 9 FOW entries but wickets=10
+  [fow_count] MELAKA inn 2: 8 FOW entries but wickets=10
+
+Page 319: PERAK v NEGERI SEMBILAN (July 9 and 10, 1955)
+  [batting_total] PERAK inn 1: batting (205) + extras (9) = 214, but total is 210 (+4)
+  [dismissal_wickets] PERAK inn 1: bowling figures total 0w but 10 bowler-credited dismissals
+  [batting_total] NEGERI SEMBILAN inn 1: batting (137) + extras (162) = 299, but total is 0 (+299)
+  [batting_total] NEGERI SEMBILAN inn 2: batting (0) + extras (84) = 84, but total is 0 (+84)
+  [batting_total] PERAK inn 2: batting (0) + extras (98) = 98, but total is 0 (+98)
+
+Page 320: PENANG v SELANGOR (July 9 and 10, 1955)
+  [batting_total] PENANG inn 2: batting (1) + extras (0) = 1, but total is 15 (-14)
+  [batting_total] SELANGOR inn 1: batting (98) + extras (8) = 106, but total is 126 (-20)
+
+Page 321: PENANG v KEDAH (July 16 and 17, 1955)
+  [batting_total] PENANG inn 1: batting (100) + extras (0) = 100, but total is 130 (-30)
+  [batting_total] KEDAH inn 1: batting (169) + extras (0) = 169, but total is 227 (-58)
+  [batting_total] PENANG inn 2: batting (34) + extras (0) = 34, but total is 117 (-83)
+  [batting_total] KEDAH inn 2: batting (0) + extras (0) = 0, but total is 22 (-22)
+
+Page 322: MELAKA v JOHOR (July 23 and 24, 1955)
+  [fow_count] MELAKA inn 1: 7 FOW entries but wickets=all out (10)
+  [fow_final_value] JOHOR inn 1: last FOW is 234 but all-out total is 76
+  [batting_total] JOHOR inn 2: batting (40) + extras (14) = 54, but total is 48 (+6)
+
+Page 323: Perak v Kedah (September 3 and 4, 1955)
+  [batting_total] Kedah inn 1: batting (129) + extras (8) = 137, but total is 71 (+66)
+  [batting_total] Perak inn 1: batting (188) + extras (0) = 188, but total is 224 (-36)
+
+Page 324: JOHOR v SINGAPORE (September 3 and 4, 1955)
+  [fow_final_value] JOHOR inn 1: last FOW is 104 but all-out total is 119
+  [batting_total] JOHOR inn 2: batting (1) + extras (0) = 1, but total is 0 (+1)
+  [batting_total] SINGAPORE inn 2: batting (60) + extras (0) = 60, but total is 96 (-36)
+  [dismissal_wickets] SINGAPORE inn 2: bowling figures total 0w but 5 bowler-credited dismissals
+
+Page 325: SELANGOR v PERAK (May 5 and 6, 1956)
+  [fow_count] SELANGOR inn 1: 9 FOW entries but wickets=10
+  [batting_total] PERAK inn 1: batting (81) + extras (2) = 83, but total is 85 (-2)
+  [fow_count] PERAK inn 1: 9 FOW entries but wickets=10
+  [fow_ascending] SELANGOR inn 2: FOW not ascending: [4, 11, 51, 93, 11, 44, 67]
+  [fow_count] PERAK inn 2: 9 FOW entries but wickets=10
+
+Page 326: SELANGOR v SINGAPORE (May 26, 27 and 28, 1956)
+  [batting_total] SINGAPORE inn 1: batting (126) + extras (2) = 128, but total is 126 (+2)
+  [fow_ascending] SINGAPORE inn 2: FOW not ascending: [11, 25, 8, 25, 39, 91, 91, 109, 126, 131]
+
+Page 328: NEGERI SEMBILAN v MELAKA (June 9 and 10, 1956)
+  [dismissal_wickets] NEGERI SEMBILAN inn 1: S Sequerah: bowling says 0w but dismissals say 3w
+  [dismissal_wickets] NEGERI SEMBILAN inn 1: J Sequerah: bowling says 0w but dismissals say 3w
+  [batting_total] MELAKA inn 2: batting (80) + extras (7) = 87, but total is 86 (+1)
+
+Page 329: PENANG v PERAK (June 9 and 10, 1956)
+  [fow_count] PENANG inn 1: 9 FOW entries but wickets=10
+  [fow_count] PENANG inn 2: 9 FOW entries but wickets=10
+
+Page 330: SELANGOR v PAHANG (June 9 and 10, 1956)
+  [fow_count] PAHANG inn 1: 7 FOW entries but wickets=9
+  [batting_total] SELANGOR inn 1: batting (189) + extras (6) = 195, but total is 204 (-9)
+  [fow_count] SELANGOR inn 1: 5 FOW entries but wickets=7
+
+Page 331: Negeri Sembilan v Selangor (June 23 and 24, 1956)
+  [fow_count] Negeri Sembilan inn 1: 3 FOW entries but wickets=10
+  [fow_count] Selangor inn 1: 9 FOW entries but wickets=10
+  [fow_count] Negeri Sembilan inn 2: 9 FOW entries but wickets=10
+
+Page 333: NEGERI SEMBILAN v PERAK (July 7 and 8, 1956)
+  [batting_total] PERAK inn 1: batting (159) + extras (4) = 163, but total is 166 (-3)
+
+Page 334: Selangor v Penang (July 7 and 8, 1956)
+  [fow_count] Selangor inn 2: 9 FOW entries but wickets=10
+  [fow_count] Penang inn 2: 9 FOW entries but wickets=10
+
+Page 335: SELANGOR v MELAKA (July 14 and 15, 1956)
+  [dismissal_wickets] SELANGOR inn 1: H Sequerah: bowling says 0w but dismissals say 1w
+
+Page 336: NEGERI SEMBILAN v SINGAPORE (July 14 and 15, 1956)
+  [fow_count] NEGERI SEMBILAN inn 1: 9 FOW entries but wickets=10
+  [fow_count] SINGAPORE inn 1: 9 FOW entries but wickets=10
+  [fow_count] NEGERI SEMBILAN inn 2: 9 FOW entries but wickets=10
+
+Page 337: PENANG v KEDAH (July 14 and 15, 1956)
+  [batting_total] PENANG inn 1: batting (129) + extras (0) = 129, but total is 154 (-25)
+  [batting_total] KEDAH inn 1: batting (48) + extras (0) = 48, but total is 98 (-50)
+
+Page 338: PERAK v PAHANG (July 21 and 22, 1956)
+  [batting_total] PERAK inn 2: batting (71) + extras (0) = 71, but total is 112 (-41)
+  [batting_total] PAHANG inn 1: batting (32) + extras (0) = 32, but total is 0 (+32)
+
+Page 339: JOHOR v MELAKA (July 28 and 29, 1956)
+  [dismissal_wickets] JOHOR inn 1: H Sequerah: bowling says 0w but dismissals say 4w
+  [dismissal_wickets] JOHOR inn 1: J Sequerah: bowling says 0w but dismissals say 4w
+  [batting_total] MELAKA inn 1: batting (62) + extras (2) = 64, but total is 72 (-8)
+  [batting_total] JOHOR inn 2: batting (47) + extras (7) = 54, but total is 47 (+7)
+  [dismissal_wickets] JOHOR inn 2: J Sequerah: bowling says 0w but dismissals say 3w
+  [dismissal_wickets] JOHOR inn 2: S Sequerah: bowling says 0w but dismissals say 3w
+
+Page 341: Singapore v Johor (September 1 and 2, 1956)
+  [fow_count] Singapore inn 1: 9 FOW entries but wickets=8
+  [fow_count] Johor inn 1: 9 FOW entries but wickets=10
+
+Page 344: SELANGOR v PERAK (June 1 and 2, 1957)
+  [fow_count] SELANGOR inn 1: 2 FOW entries but wickets=4
+  [fow_count] SELANGOR inn 2: 2 FOW entries but wickets=4
+  [fow_count] PERAK inn 1: 2 FOW entries but wickets=10
+
+Page 345: MELAKA v JOHOR (June 8 and 9, 1957)
+  [batting_total] MELAKA inn 1: batting (241) + extras (30) = 271, but total is 301 (-30)
+  [dismissal_wickets] JOHOR inn 1: H Sequerah: bowling says 0w but dismissals say 4w
+
+Page 346: PENANG v KEDAH (June 8 and 9, 1957)
+  [batting_total] PENANG inn 1: batting (0) + extras (6) = 6, but total is 213 (-207)
+  [dismissal_wickets] PENANG inn 2: bowling figures total 6w but 9 bowler-credited dismissals
+  [dismissal_wickets] PENANG inn 2: JP Augustin: bowling says 0w but dismissals say 3w
+
+Page 347: NEGERI SEMBILAN v MELAKA (June 22 and 23, 1957)
+  [batting_total] MELAKA inn 1: batting (107) + extras (5) = 112, but total is 137 (-25)
+  [dismissal_wickets] MELAKA inn 1: bowling figures total 7w but 9 bowler-credited dismissals
+  [fow_count] MELAKA inn 1: 7 FOW entries but wickets=6
+  [dismissal_wickets] NEGERI SEMBILAN inn 1: S Sequerah: bowling says 0w but dismissals say 2w
+  [dismissal_wickets] MELAKA inn 2: bowling figures total 5w but 6 bowler-credited dismissals
+  [fow_count] MELAKA inn 2: 7 FOW entries but wickets=all out (10)
+  [fow_final_value] MELAKA inn 2: last FOW is 82 but all-out total is 126
+  [dismissal_wickets] NEGERI SEMBILAN inn 2: H Sequerah: bowling says 0w but dismissals say 5w
+
+Page 348: PERAK v KEDAH (June 22 and 23, 1957)
+  [batting_total] PERAK inn 1: batting (134) + extras (15) = 149, but total is 153 (-4)
+  [batting_total] PERAK inn 2: batting (114) + extras (4) = 118, but total is 154 (-36)
+  [dismissal_wickets] PERAK inn 2: SE Augustin: bowling says 0w but dismissals say 1w
+
+Page 349: SELANGOR v SINGAPORE (June 22 and 23, 1957)
+  [fow_count] SELANGOR inn 1: 6 FOW entries but wickets=5
+  [fow_count] SELANGOR inn 2: 6 FOW entries but wickets=5
+
+Page 352: SINGAPORE v MELAKA (July 20 and 21, 1957)
+  [dismissal_wickets] SINGAPORE inn 1: J Sequerah: bowling says 0w but dismissals say 3w
+  [dismissal_wickets] SINGAPORE inn 2: J Sequerah: bowling says 0w but dismissals say 3w
+
+Page 353: Perak v Pahang (July 20, 21, 1957)
+  [batting_total] Pahang inn 1: batting (64) + extras (7) = 71, but total is 85 (-14)
+
+Page 354: PERAK v NEGERI SEMBILAN (July 28 and 29, 1957)
+  [batting_total] PERAK inn 1: batting (149) + extras (17) = 166, but total is 116 (+50)
+  [batting_total] NEGERI SEMBILAN inn 1: batting (101) + extras (4) = 105, but total is 197 (-92)
+
+Page 355: MELAKA v SELANGOR (August 10 and 11, 1957)
+  [fow_count] SELANGOR inn 1: 9 FOW entries but wickets=all out (10)
+  [fow_final_value] SELANGOR inn 1: last FOW is 73 but all-out total is 82
+  [fow_final_value] MELAKA inn 1: last FOW is 82 but all-out total is 118
+  [fow_count] SELANGOR inn 2: 8 FOW entries but wickets=all out (10)
+
+============================================================
+SUMMARY
+============================================================
+  batting_total               193
+  dismissal_wickets            81
+  batsmen_count                 3
+  fow_ascending                67
+  fow_count                   262
+  fow_final_value              27
+  TOTAL                       633
+
+Pages with both batting_total and dismissal_wickets issues (20):
+133,138,215,238,249,252,262,265,281,296,300,306,319,324,328,339,345,346,347,348

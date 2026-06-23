@@ -1,0 +1,15 @@
+Compared 10 pages
+  Candidate better: 4
+  Original better:  2
+  Tied:             4
+
+  = Page   1: original 1 issues, candidate 1 issues  (PERAK v SELANGOR (November 8 and 9, 1889))
+  = Page   2: original 0 issues, candidate 0 issues  (SELANGOR v PERAK (November 9 and 10, 1890))
+  + Page   3: original 3 issues, candidate 2 issues  (Penang v Selangor (May 16 and 18, 1891))
+  + Page   4: original 3 issues, candidate 2 issues  (SELANGOR v MELAKA & SUNGAI UJONG (August 8 and 10, 1891))
+  - Page   5: original 0 issues, candidate 2 issues  (PERAK v SELANGOR (November 7 and 8, 1891))
+  = Page   6: original 1 issues, candidate 1 issues  (Singapore v Penang (December 24 and 26, 1891))
+  - Page   7: original 1 issues, candidate 2 issues  (Selangor v Singapore (December 28 and 29, 1891))
+  + Page   8: original 4 issues, candidate 0 issues  (PERAK v PENANG (April 16 and 18, 1892))
+  = Page   9: original 0 issues, candidate 0 issues  (Selangor v Perak (June 27 and 28, 1892))
+  + Page  10: original 3 issues, candidate 2 issues  (Penang v Singapore (December 24 and 26, 1892))
