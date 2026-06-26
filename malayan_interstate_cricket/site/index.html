@@ -645,15 +645,18 @@ function renderPlayerCard(name) {
       ? p.batting.filter(b => dismissalType(b.dismissal) === dismissalFilter)
       : p.batting;
 
-    const totalRuns = p.batting.reduce((s, b) => s + (b.runs || 0), 0);
+    const dataInnings = p.batting.filter(b => b.runs != null);
+    const totalRuns = dataInnings.reduce((s, b) => s + b.runs, 0);
     const innCount = p.batting.length;
-    const notOuts = p.batting.filter(b => b.dismissal && b.dismissal.toLowerCase() === 'not out').length;
-    const dismissals = innCount - notOuts;
-    const hs = Math.max(...p.batting.map(b => b.runs || 0));
+    const batMatches = new Set(p.batting.map(b => b.sourceUrl)).size;
+    const notOuts = dataInnings.filter(b => b.dismissal && b.dismissal.toLowerCase() === 'not out').length;
+    const dismissals = dataInnings.length - notOuts;
+    const hs = dataInnings.length ? Math.max(...dataInnings.map(b => b.runs)) : '-';
     const avg = dismissals > 0 ? (totalRuns / dismissals).toFixed(2) : '-';
 
     html += `<h3 class="section-title">Batting</h3>`;
     html += `<div class="stat-grid">
+      <div class="stat-box"><div class="stat-value">${batMatches}</div><div class="stat-label">Matches</div></div>
       <div class="stat-box"><div class="stat-value">${innCount}</div><div class="stat-label">Innings</div></div>
       <div class="stat-box"><div class="stat-value">${totalRuns}</div><div class="stat-label">Runs</div></div>
       <div class="stat-box"><div class="stat-value">${hs}</div><div class="stat-label">High Score</div></div>
@@ -694,8 +697,10 @@ function renderPlayerCard(name) {
   if (p.bowling.length) {
     const cols = bowlingCols(p.bowling);
     const totalWickets = p.bowling.reduce((s, b) => s + (b.wickets || 0), 0);
-    const totalRuns = cols.runs ? p.bowling.reduce((s, b) => s + (b.runs || 0), 0) : null;
+    const dataSpells = p.bowling.filter(b => b.runs != null);
+    const totalRuns = cols.runs ? dataSpells.reduce((s, b) => s + b.runs, 0) : null;
     const spellCount = p.bowling.length;
+    const bowlMatches = new Set(p.bowling.map(b => b.sourceUrl)).size;
     const best = p.bowling.reduce((best, b) => {
       if (!best) return b;
       if ((b.wickets || 0) > (best.wickets || 0)) return b;
@@ -705,10 +710,12 @@ function renderPlayerCard(name) {
 
     html += `<h3 class="section-title">Bowling</h3>`;
     html += `<div class="stat-grid">
+      <div class="stat-box"><div class="stat-value">${bowlMatches}</div><div class="stat-label">Matches</div></div>
       <div class="stat-box"><div class="stat-value">${spellCount}</div><div class="stat-label">Innings</div></div>
       <div class="stat-box"><div class="stat-value">${totalWickets}</div><div class="stat-label">Wickets</div></div>`;
     if (totalRuns != null) {
-      const avg = totalWickets > 0 ? (totalRuns / totalWickets).toFixed(2) : '-';
+      const wicketsForAvg = dataSpells.reduce((s, b) => s + (b.wickets || 0), 0);
+      const avg = wicketsForAvg > 0 ? (totalRuns / wicketsForAvg).toFixed(2) : '-';
       html += `<div class="stat-box"><div class="stat-value">${totalRuns}</div><div class="stat-label">Runs Conc.</div></div>`;
       html += `<div class="stat-box"><div class="stat-value">${avg}</div><div class="stat-label">Average</div></div>`;
     }
