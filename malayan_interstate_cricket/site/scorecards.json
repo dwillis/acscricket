@@ -31206,29 +31206,22 @@
             "name": "EIM Barrett",
             "captain": false,
             "wicketkeeper": false,
-            "dismissal": "[unknown]",
+            "dismissal": null,
             "runs": 43
           },
           {
             "name": "A Stronach",
             "captain": false,
             "wicketkeeper": false,
-            "dismissal": "[unknown]",
+            "dismissal": null,
             "runs": 20
           },
           {
             "name": "FF Faithfull",
             "captain": false,
             "wicketkeeper": false,
-            "dismissal": "[unknown]",
+            "dismissal": null,
             "runs": 15
-          },
-          {
-            "name": "SCG Fox",
-            "captain": false,
-            "wicketkeeper": false,
-            "dismissal": "[unknown]",
-            "runs": 117
           }
         ],
         "extras": {
@@ -31241,17 +31234,7 @@
           "declared": false
         },
         "fow": null,
-        "bowling": [
-          {
-            "name": "[unknown]",
-            "overs": null,
-            "maidens": null,
-            "runs": null,
-            "wickets": 0,
-            "noballs": null,
-            "wides": null
-          }
-        ]
+        "bowling": []
       },
       {
         "team": "Selangor",
@@ -31261,14 +31244,14 @@
             "name": "AB Voules",
             "captain": false,
             "wicketkeeper": false,
-            "dismissal": "[unknown]",
+            "dismissal": null,
             "runs": 63
           },
           {
             "name": "EWN Wyatt",
             "captain": false,
             "wicketkeeper": false,
-            "dismissal": "[unknown]",
+            "dismissal": null,
             "runs": 25
           },
           {
@@ -31282,7 +31265,7 @@
             "name": "BW Elles",
             "captain": false,
             "wicketkeeper": false,
-            "dismissal": "[unknown]",
+            "dismissal": null,
             "runs": 10
           }
         ],
@@ -31302,45 +31285,40 @@
             "overs": null,
             "maidens": null,
             "runs": null,
-            "wickets": 0,
+            "wickets": null,
             "noballs": null,
             "wides": null
           }
         ]
       },
       {
-        "team": "Selangor",
+        "team": "Perak",
         "innings_number": 2,
         "batting": [
           {
-            "name": "AB Voules",
+            "name": "SCG Fox",
             "captain": false,
             "wicketkeeper": false,
-            "dismissal": "[unknown]",
-            "runs": null
-          },
-          {
-            "name": "EWN Wyatt",
-            "captain": false,
-            "wicketkeeper": false,
-            "dismissal": "[unknown]",
-            "runs": null
-          },
-          {
-            "name": "JH Tyte",
-            "captain": false,
-            "wicketkeeper": false,
-            "dismissal": "[unknown]",
-            "runs": null
-          },
-          {
-            "name": "BW Elles",
-            "captain": false,
-            "wicketkeeper": false,
-            "dismissal": "[unknown]",
-            "runs": null
+            "dismissal": null,
+            "runs": 117
           }
         ],
+        "extras": {
+          "total": null,
+          "detail": null
+        },
+        "total": {
+          "runs": 117,
+          "wickets": null,
+          "declared": false
+        },
+        "fow": null,
+        "bowling": []
+      },
+      {
+        "team": "Selangor",
+        "innings_number": 2,
+        "batting": [],
         "extras": {
           "total": null,
           "detail": null
@@ -31357,15 +31335,17 @@
             "overs": null,
             "maidens": null,
             "runs": null,
-            "wickets": 0,
+            "wickets": null,
             "noballs": null,
             "wides": null
           }
         ]
       }
     ],
-    "umpires": null,
-    "toss": null,
+    "umpires": [
+      "[unknown]"
+    ],
+    "toss": "[unknown]",
     "close_of_play": null,
     "balls_per_over": null,
     "notes": [
@@ -45332,15 +45312,15 @@
   },
   {
     "match": {
-      "team1": "NEGERI SEMBILAN",
-      "team2": "SELANGOR",
+      "team1": "Negeri Sembilan",
+      "team2": "Selangor",
       "venue": "Seremban Club, Seremban",
       "date": "September 30 and October 1, 1910",
       "result": "Selangor won by 257 runs"
     },
     "innings": [
       {
-        "team": "SELANGOR",
+        "team": "Selangor",
         "innings_number": 1,
         "batting": [
           {
@@ -45370,15 +45350,15 @@
           "detail": null
         },
         "total": {
-          "runs": 353,
-          "wickets": 4,
+          "runs": 328,
+          "wickets": 6,
           "declared": true
         },
         "fow": null,
-        "bowling": []
+        "bowling": null
       },
       {
-        "team": "NEGERI SEMBILAN",
+        "team": "Negeri Sembilan",
         "innings_number": 1,
         "batting": [],
         "extras": {
@@ -45391,10 +45371,26 @@
           "declared": false
         },
         "fow": null,
-        "bowling": []
+        "bowling": null
       },
       {
-        "team": "NEGERI SEMBILAN",
+        "team": "Selangor",
+        "innings_number": 2,
+        "batting": [],
+        "extras": {
+          "total": null,
+          "detail": null
+        },
+        "total": {
+          "runs": null,
+          "wickets": null,
+          "declared": false
+        },
+        "fow": null,
+        "bowling": null
+      },
+      {
+        "team": "Negeri Sembilan",
         "innings_number": 2,
         "batting": [],
         "extras": {
@@ -45407,16 +45403,17 @@
           "declared": false
         },
         "fow": null,
-        "bowling": []
+        "bowling": null
       }
     ],
-    "umpires": null,
-    "toss": null,
+    "umpires": [
+      "[unknown]"
+    ],
+    "toss": "[unknown]",
     "close_of_play": "1st day - Selangor (2) 25-0",
     "balls_per_over": null,
     "notes": [
-      "Selangor (6 wickets declared) with total 353 runs",
-      "Mustard took 11 wickets in the match",
+      "For Negeri Sembilan, Mustard took 11 wickets in the match",
       "Further details of this match are unknown"
     ],
     "page": 94,
@@ -45874,38 +45871,6 @@
       {
         "team": "Negeri Sembilan",
         "innings_number": 1,
-        "batting": [],
-        "extras": {
-          "total": null,
-          "detail": null
-        },
-        "total": {
-          "runs": null,
-          "wickets": null,
-          "declared": false
-        },
-        "fow": null,
-        "bowling": []
-      },
-      {
-        "team": "Selangor",
-        "innings_number": 2,
-        "batting": [],
-        "extras": {
-          "total": null,
-          "detail": null
-        },
-        "total": {
-          "runs": 105,
-          "wickets": null,
-          "declared": false
-        },
-        "fow": null,
-        "bowling": []
-      },
-      {
-        "team": "Negeri Sembilan",
-        "innings_number": 2,
         "batting": [
           {
             "name": "MK Foster",
@@ -45933,10 +45898,44 @@
         },
         "fow": null,
         "bowling": []
+      },
+      {
+        "team": "Selangor",
+        "innings_number": 2,
+        "batting": [],
+        "extras": {
+          "total": null,
+          "detail": null
+        },
+        "total": {
+          "runs": 105,
+          "wickets": null,
+          "declared": false
+        },
+        "fow": null,
+        "bowling": []
+      },
+      {
+        "team": "Negeri Sembilan",
+        "innings_number": 2,
+        "batting": [],
+        "extras": {
+          "total": null,
+          "detail": null
+        },
+        "total": {
+          "runs": 78,
+          "wickets": 0,
+          "declared": false
+        },
+        "fow": null,
+        "bowling": []
       }
     ],
-    "umpires": null,
-    "toss": null,
+    "umpires": [
+      "[unknown]"
+    ],
+    "toss": "[unknown]",
     "close_of_play": "1st day - Selangor (2) 78-6",
     "balls_per_over": null,
     "notes": [
@@ -50289,7 +50288,48 @@
             "wicketkeeper": false,
             "dismissal": null,
             "runs": 49
-          },
+          }
+        ],
+        "extras": {
+          "total": null,
+          "detail": null
+        },
+        "total": {
+          "runs": null,
+          "wickets": null,
+          "declared": false
+        },
+        "fow": null,
+        "bowling": []
+      },
+      {
+        "team": "Negeri Sembilan",
+        "innings_number": 1,
+        "batting": [
+          {
+            "name": "PH Hennessy",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": null,
+            "runs": null
+          }
+        ],
+        "extras": {
+          "total": null,
+          "detail": null
+        },
+        "total": {
+          "runs": 127,
+          "wickets": null,
+          "declared": false
+        },
+        "fow": null,
+        "bowling": []
+      },
+      {
+        "team": "Selangor",
+        "innings_number": 2,
+        "batting": [
           {
             "name": "RM McKenzie",
             "captain": false,
@@ -50308,31 +50348,7 @@
           "declared": true
         },
         "fow": null,
-        "bowling": null
-      },
-      {
-        "team": "Negeri Sembilan",
-        "innings_number": 1,
-        "batting": [
-          {
-            "name": "PH Hennessy",
-            "captain": false,
-            "wicketkeeper": false,
-            "dismissal": null,
-            "runs": 127
-          }
-        ],
-        "extras": {
-          "total": null,
-          "detail": null
-        },
-        "total": {
-          "runs": null,
-          "wickets": null,
-          "declared": false
-        },
-        "fow": null,
-        "bowling": null
+        "bowling": []
       },
       {
         "team": "Negeri Sembilan",
@@ -50343,7 +50359,7 @@
             "captain": false,
             "wicketkeeper": false,
             "dismissal": "lbw",
-            "runs": 112
+            "runs": null
           }
         ],
         "extras": {
@@ -50351,16 +50367,18 @@
           "detail": null
         },
         "total": {
-          "runs": null,
+          "runs": 112,
           "wickets": null,
           "declared": false
         },
         "fow": null,
-        "bowling": null
+        "bowling": []
       }
     ],
-    "umpires": null,
-    "toss": null,
+    "umpires": [
+      "[unknown]"
+    ],
+    "toss": "[unknown]",
     "close_of_play": null,
     "balls_per_over": null,
     "notes": [
@@ -135691,8 +135709,99 @@
             "name": "J Teale",
             "captain": false,
             "wicketkeeper": false,
-            "dismissal": "c Gould b Bluett",
+            "dismissal": null,
             "runs": 35
+          },
+          {
+            "name": "GD Fowler",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": null,
+            "runs": 14
+          }
+        ],
+        "extras": {
+          "total": null,
+          "detail": null
+        },
+        "total": {
+          "runs": 84,
+          "wickets": null,
+          "declared": false
+        },
+        "fow": null,
+        "bowling": [
+          {
+            "name": "MR de Witt",
+            "overs": "6",
+            "maidens": 4,
+            "runs": 6,
+            "wickets": 4,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "MC Kailasapathy",
+            "overs": "36",
+            "maidens": 4,
+            "runs": null,
+            "wickets": null,
+            "noballs": null,
+            "wides": null
+          }
+        ]
+      },
+      {
+        "team": "Melaka",
+        "innings_number": 1,
+        "batting": [
+          {
+            "name": "IBD Bluett",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": null,
+            "runs": 13
+          },
+          {
+            "name": "MR de Witt",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": null,
+            "runs": 13
+          }
+        ],
+        "extras": {
+          "total": null,
+          "detail": null
+        },
+        "total": {
+          "runs": 68,
+          "wickets": null,
+          "declared": false
+        },
+        "fow": null,
+        "bowling": [
+          {
+            "name": "BJ Dionysius",
+            "overs": "23",
+            "maidens": 6,
+            "runs": null,
+            "wickets": null,
+            "noballs": null,
+            "wides": null
+          }
+        ]
+      },
+      {
+        "team": "Negeri Sembilan",
+        "innings_number": 2,
+        "batting": [
+          {
+            "name": "J Teale",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c Gould b Bluett",
+            "runs": 3
           },
           {
             "name": "S Devendran",
@@ -135713,7 +135822,7 @@
             "captain": false,
             "wicketkeeper": false,
             "dismissal": "st Strivens b de Witt",
-            "runs": 14
+            "runs": 1
           },
           {
             "name": "MT Retnam",
@@ -135770,7 +135879,7 @@
           "detail": null
         },
         "total": {
-          "runs": 84,
+          "runs": 109,
           "wickets": null,
           "declared": false
         },
@@ -135782,7 +135891,7 @@
             "maidens": 3,
             "runs": 22,
             "wickets": 1,
-            "noballs": 1,
+            "noballs": null,
             "wides": null
           },
           {
@@ -135792,22 +135901,22 @@
             "runs": 11,
             "wickets": 0,
             "noballs": null,
-            "wides": 2
+            "wides": null
           },
           {
             "name": "MC Kailasapathy",
-            "overs": "36",
-            "maidens": 4,
+            "overs": "14.2",
+            "maidens": 2,
             "runs": 46,
             "wickets": 6,
             "noballs": null,
             "wides": null
           },
           {
-            "name": "de Witt",
-            "overs": "6",
-            "maidens": 4,
-            "runs": 6,
+            "name": "MR de Witt",
+            "overs": "11",
+            "maidens": 2,
+            "runs": 25,
             "wickets": 3,
             "noballs": null,
             "wides": null
@@ -135816,7 +135925,7 @@
       },
       {
         "team": "Melaka",
-        "innings_number": 1,
+        "innings_number": 2,
         "batting": [
           {
             "name": "PR Penn",
@@ -135830,14 +135939,14 @@
             "captain": false,
             "wicketkeeper": false,
             "dismissal": "b Egerton",
-            "runs": 13
+            "runs": 7
           },
           {
             "name": "MR de Witt",
             "captain": false,
             "wicketkeeper": false,
             "dismissal": "c Fowler b Egerton",
-            "runs": 13
+            "runs": 17
           },
           {
             "name": "H Sequerah",
@@ -135901,7 +136010,7 @@
           "detail": null
         },
         "total": {
-          "runs": 68,
+          "runs": 113,
           "wickets": null,
           "declared": false
         },
@@ -135927,9 +136036,9 @@
           },
           {
             "name": "BJ Dionysius",
-            "overs": "23",
-            "maidens": 6,
-            "runs": 14,
+            "overs": "14",
+            "maidens": 1,
+            "runs": 42,
             "wickets": 6,
             "noballs": null,
             "wides": null
@@ -135944,147 +136053,13 @@
             "wides": null
           }
         ]
-      },
-      {
-        "team": "Negeri Sembilan",
-        "innings_number": 2,
-        "batting": [
-          {
-            "name": "J Teale",
-            "captain": false,
-            "wicketkeeper": false,
-            "dismissal": "b Bluett",
-            "runs": 3
-          },
-          {
-            "name": "S Devendran",
-            "captain": false,
-            "wicketkeeper": false,
-            "dismissal": "not out",
-            "runs": 28
-          },
-          {
-            "name": "Boon Oon Lor",
-            "captain": false,
-            "wicketkeeper": false,
-            "dismissal": "not out",
-            "runs": null
-          }
-        ],
-        "extras": {
-          "total": null,
-          "detail": null
-        },
-        "total": {
-          "runs": 109,
-          "wickets": 1,
-          "declared": false
-        },
-        "fow": null,
-        "bowling": [
-          {
-            "name": "IBD Bluett",
-            "overs": null,
-            "maidens": null,
-            "runs": null,
-            "wickets": 1,
-            "noballs": null,
-            "wides": null
-          },
-          {
-            "name": "H Sequerah",
-            "overs": null,
-            "maidens": null,
-            "runs": null,
-            "wickets": 0,
-            "noballs": null,
-            "wides": null
-          },
-          {
-            "name": "MC Kailasapathy",
-            "overs": "14.2",
-            "maidens": null,
-            "runs": 25,
-            "wickets": 0,
-            "noballs": null,
-            "wides": null
-          },
-          {
-            "name": "de Witt",
-            "overs": null,
-            "maidens": 3,
-            "runs": null,
-            "wickets": 0,
-            "noballs": null,
-            "wides": null
-          }
-        ]
-      },
-      {
-        "team": "Melaka",
-        "innings_number": 2,
-        "batting": [
-          {
-            "name": "PR Penn",
-            "captain": false,
-            "wicketkeeper": false,
-            "dismissal": "not out",
-            "runs": 7
-          }
-        ],
-        "extras": {
-          "total": null,
-          "detail": null
-        },
-        "total": {
-          "runs": 113,
-          "wickets": null,
-          "declared": false
-        },
-        "fow": null,
-        "bowling": [
-          {
-            "name": "R Hoskins",
-            "overs": null,
-            "maidens": null,
-            "runs": null,
-            "wickets": 0,
-            "noballs": null,
-            "wides": null
-          },
-          {
-            "name": "GJB Egerton",
-            "overs": null,
-            "maidens": null,
-            "runs": null,
-            "wickets": 0,
-            "noballs": null,
-            "wides": null
-          },
-          {
-            "name": "BJ Dionysius",
-            "overs": "42",
-            "maidens": 6,
-            "runs": null,
-            "wickets": 0,
-            "noballs": null,
-            "wides": null
-          },
-          {
-            "name": "J Vanniasingham",
-            "overs": null,
-            "maidens": null,
-            "runs": null,
-            "wickets": 0,
-            "noballs": null,
-            "wides": null
-          }
-        ]
       }
     ],
-    "umpires": null,
-    "toss": null,
-    "close_of_play": null,
+    "umpires": [
+      "[unknown]"
+    ],
+    "toss": "[unknown]",
+    "close_of_play": "[unknown]",
     "balls_per_over": null,
     "notes": [
       "The full scores of this match are not known",
@@ -140290,15 +140265,15 @@
   },
   {
     "match": {
-      "team1": "PERAK",
-      "team2": "PENANG",
+      "team1": "Penang",
+      "team2": "Perak",
       "venue": "Penang Sports Club, Jalan Utama, George Town",
       "date": "April 17 and 18, 1954",
       "result": "Penang won by 6 wickets"
     },
     "innings": [
       {
-        "team": "PERAK",
+        "team": "Perak",
         "innings_number": 1,
         "batting": [
           {
@@ -140326,7 +140301,7 @@
             "name": "S Nalliah",
             "captain": false,
             "wicketkeeper": false,
-            "dismissal": "c Cheah Boy Eye b Andres",
+            "dismissal": "c Cheah Boh Eye b Andres",
             "runs": 6
           },
           {
@@ -140385,21 +140360,10 @@
         },
         "total": {
           "runs": 81,
-          "wickets": 10,
+          "wickets": null,
           "declared": false
         },
-        "fow": [
-          4,
-          27,
-          36,
-          42,
-          43,
-          44,
-          52,
-          55,
-          64,
-          70
-        ],
+        "fow": null,
         "bowling": [
           {
             "name": "Hayati Meah",
@@ -140421,9 +140385,9 @@
           },
           {
             "name": "Koay Khoon Leong",
-            "overs": "40",
-            "maidens": 3,
-            "runs": 4,
+            "overs": "4",
+            "maidens": 0,
+            "runs": 3,
             "wickets": 3,
             "noballs": null,
             "wides": null
@@ -140440,7 +140404,7 @@
         ]
       },
       {
-        "team": "PENANG",
+        "team": "Penang",
         "innings_number": 1,
         "batting": [
           {
@@ -140454,7 +140418,7 @@
             "name": "Noel Monerasinghe",
             "captain": false,
             "wicketkeeper": false,
-            "dismissal": "lbw b Koentiz",
+            "dismissal": "lbw b Koenitz",
             "runs": 1
           },
           {
@@ -140527,65 +140491,51 @@
         },
         "total": {
           "runs": 84,
-          "wickets": 4,
+          "wickets": null,
           "declared": false
         },
-        "fow": [
-          0,
-          1,
-          5,
-          11
-        ],
+        "fow": null,
         "bowling": [
           {
             "name": "MH Jerram",
-            "overs": "1",
-            "maidens": 0,
-            "runs": 5,
+            "overs": null,
+            "maidens": null,
+            "runs": null,
             "wickets": 1,
             "noballs": null,
             "wides": null
           },
           {
             "name": "TH Koenitz",
-            "overs": "2",
-            "maidens": 0,
-            "runs": 4,
-            "wickets": 1,
+            "overs": null,
+            "maidens": null,
+            "runs": null,
+            "wickets": 2,
             "noballs": null,
             "wides": null
           },
           {
             "name": "G Letchumanan",
-            "overs": "2",
-            "maidens": 0,
-            "runs": 6,
+            "overs": null,
+            "maidens": null,
+            "runs": null,
             "wickets": 2,
             "noballs": null,
             "wides": null
           },
           {
             "name": "HMS Samsuddin",
-            "overs": "5",
-            "maidens": 3,
-            "runs": 0,
+            "overs": null,
+            "maidens": null,
+            "runs": null,
             "wickets": 5,
-            "noballs": null,
-            "wides": null
-          },
-          {
-            "name": "RN Marshall",
-            "overs": "2.5",
-            "maidens": 0,
-            "runs": 7,
-            "wickets": 0,
             "noballs": null,
             "wides": null
           }
         ]
       },
       {
-        "team": "PERAK",
+        "team": "Perak",
         "innings_number": 2,
         "batting": [
           {
@@ -140617,18 +140567,18 @@
             "runs": 22
           },
           {
-            "name": "CAR Lawrence",
-            "captain": false,
-            "wicketkeeper": false,
-            "dismissal": "c CEA LaBrooy b Andres",
-            "runs": 1
-          },
-          {
             "name": "MH Jerram",
             "captain": false,
             "wicketkeeper": false,
             "dismissal": "c Hayati Meah b CEA LaBrooy",
             "runs": 12
+          },
+          {
+            "name": "HMS Samsuddin",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "st Lloyds b Andres",
+            "runs": 8
           },
           {
             "name": "TH Koenitz",
@@ -140645,11 +140595,11 @@
             "runs": 7
           },
           {
-            "name": "HMS Samsuddin",
+            "name": "CAR Lawrence",
             "captain": false,
             "wicketkeeper": false,
-            "dismissal": "st Lloyds b Andres",
-            "runs": 8
+            "dismissal": "c CEA LaBrooy b Andres",
+            "runs": 1
           },
           {
             "name": "RN Marshall",
@@ -140672,36 +140622,25 @@
         },
         "total": {
           "runs": 71,
-          "wickets": 10,
+          "wickets": null,
           "declared": false
         },
-        "fow": [
-          0,
-          0,
-          11,
-          33,
-          34,
-          46,
-          48,
-          55,
-          60,
-          60
-        ],
+        "fow": null,
         "bowling": [
           {
             "name": "Hayati Meah",
             "overs": "11",
             "maidens": 0,
-            "runs": 0,
+            "runs": 1,
             "wickets": 0,
             "noballs": null,
             "wides": null
           },
           {
             "name": "Koay Khoon Leong",
-            "overs": "18",
+            "overs": "4",
             "maidens": 0,
-            "runs": 0,
+            "runs": 18,
             "wickets": 0,
             "noballs": null,
             "wides": null
@@ -140736,7 +140675,7 @@
         ]
       },
       {
-        "team": "PENANG",
+        "team": "Penang",
         "innings_number": 2,
         "batting": [
           {
@@ -140761,18 +140700,18 @@
             "runs": 9
           },
           {
-            "name": "Eu Cheow Teik",
-            "captain": true,
-            "wicketkeeper": false,
-            "dismissal": "b Koenitz",
-            "runs": 0
-          },
-          {
             "name": "Koay Khoon Leong",
             "captain": false,
             "wicketkeeper": false,
             "dismissal": "not out",
             "runs": 19
+          },
+          {
+            "name": "Eu Cheow Teik",
+            "captain": true,
+            "wicketkeeper": false,
+            "dismissal": "b Koenitz",
+            "runs": 0
           },
           {
             "name": "Cheah Boh Eye",
@@ -140788,21 +140727,16 @@
         },
         "total": {
           "runs": 72,
-          "wickets": 6,
+          "wickets": 4,
           "declared": false
         },
-        "fow": [
-          25,
-          25,
-          34,
-          34
-        ],
+        "fow": null,
         "bowling": [
           {
             "name": "MH Jerram",
-            "overs": null,
-            "maidens": null,
-            "runs": null,
+            "overs": "5",
+            "maidens": 2,
+            "runs": 13,
             "wickets": 0,
             "noballs": null,
             "wides": null
@@ -140818,7 +140752,7 @@
           },
           {
             "name": "G Letchumanan",
-            "overs": "2",
+            "overs": "6",
             "maidens": 2,
             "runs": 19,
             "wickets": 2,
@@ -140830,6 +140764,15 @@
             "overs": "3",
             "maidens": 0,
             "runs": 10,
+            "wickets": 0,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "RN Marshall",
+            "overs": "2.5",
+            "maidens": 0,
+            "runs": 7,
             "wickets": 0,
             "noballs": null,
             "wides": null
@@ -143942,116 +143885,6 @@
         ]
       },
       {
-        "team": "Selangor",
-        "innings_number": 2,
-        "batting": [
-          {
-            "name": "NH Hobbs",
-            "captain": false,
-            "wicketkeeper": false,
-            "dismissal": "c&b Dexter",
-            "runs": 4
-          },
-          {
-            "name": "S Rajalingam",
-            "captain": false,
-            "wicketkeeper": false,
-            "dismissal": "c&b Dionysius",
-            "runs": 26
-          },
-          {
-            "name": "MF Shepherdson",
-            "captain": false,
-            "wicketkeeper": false,
-            "dismissal": "run out",
-            "runs": 9
-          },
-          {
-            "name": "HR Phillips",
-            "captain": false,
-            "wicketkeeper": false,
-            "dismissal": "b Dexter",
-            "runs": 9
-          },
-          {
-            "name": "Chua Eng Cheng",
-            "captain": false,
-            "wicketkeeper": false,
-            "dismissal": "b Dionysius",
-            "runs": 40
-          },
-          {
-            "name": "JL Parkes",
-            "captain": false,
-            "wicketkeeper": true,
-            "dismissal": "lbw b Ghosh",
-            "runs": 2
-          },
-          {
-            "name": "RE Wescoe",
-            "captain": false,
-            "wicketkeeper": false,
-            "dismissal": "c Dexter b Dionysius",
-            "runs": 0
-          },
-          {
-            "name": "S Sinnappah",
-            "captain": false,
-            "wicketkeeper": false,
-            "dismissal": "not out",
-            "runs": 6
-          }
-        ],
-        "extras": {
-          "total": 8,
-          "detail": null
-        },
-        "total": {
-          "runs": 104,
-          "wickets": 7,
-          "declared": true
-        },
-        "fow": null,
-        "bowling": [
-          {
-            "name": "ER Dexter",
-            "overs": "10",
-            "maidens": 3,
-            "runs": 29,
-            "wickets": 2,
-            "noballs": null,
-            "wides": null
-          },
-          {
-            "name": "D Ghosh",
-            "overs": "10",
-            "maidens": 3,
-            "runs": 32,
-            "wickets": 1,
-            "noballs": null,
-            "wides": null
-          },
-          {
-            "name": "BJ Dionysius",
-            "overs": "3.5",
-            "maidens": 0,
-            "runs": 19,
-            "wickets": 3,
-            "noballs": null,
-            "wides": null
-          },
-          {
-            "name": "J Vanniasingham",
-            "overs": "3",
-            "maidens": 0,
-            "runs": 16,
-            "wickets": 0,
-            "noballs": null,
-            "wides": null
-          }
-        ]
-      },
-      {
         "team": "Negeri Sembilan",
         "innings_number": 1,
         "batting": [
@@ -144142,18 +143975,7 @@
           "wickets": null,
           "declared": false
         },
-        "fow": [
-          null,
-          null,
-          22,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ],
+        "fow": null,
         "bowling": [
           {
             "name": "Duleep Singh",
@@ -144194,6 +144016,116 @@
         ]
       },
       {
+        "team": "Selangor",
+        "innings_number": 2,
+        "batting": [
+          {
+            "name": "NH Hobbs",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c&b Dexter",
+            "runs": 4
+          },
+          {
+            "name": "JL Parkes",
+            "captain": false,
+            "wicketkeeper": true,
+            "dismissal": "lbw b Ghosh",
+            "runs": 2
+          },
+          {
+            "name": "HR Phillips",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Dexter",
+            "runs": 9
+          },
+          {
+            "name": "MF Shepherdson",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "run out",
+            "runs": 9
+          },
+          {
+            "name": "Chua Eng Cheng",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "b Dionysius",
+            "runs": 40
+          },
+          {
+            "name": "S Rajalingam",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c&b Dionysius",
+            "runs": 26
+          },
+          {
+            "name": "RE Wescoe",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "c Dexter b Dionysius",
+            "runs": 0
+          },
+          {
+            "name": "S Sinnappah",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": "not out",
+            "runs": 6
+          }
+        ],
+        "extras": {
+          "total": 8,
+          "detail": null
+        },
+        "total": {
+          "runs": 104,
+          "wickets": 7,
+          "declared": true
+        },
+        "fow": null,
+        "bowling": [
+          {
+            "name": "ER Dexter",
+            "overs": "10",
+            "maidens": 3,
+            "runs": 29,
+            "wickets": 2,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "D Ghosh",
+            "overs": "10",
+            "maidens": 3,
+            "runs": 32,
+            "wickets": 1,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "BJ Dionysius",
+            "overs": "3.5",
+            "maidens": 0,
+            "runs": 19,
+            "wickets": 3,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "J Vanniasingham",
+            "overs": "3",
+            "maidens": 0,
+            "runs": 16,
+            "wickets": 0,
+            "noballs": null,
+            "wides": null
+          }
+        ]
+      },
+      {
         "team": "Negeri Sembilan",
         "innings_number": 2,
         "batting": [
@@ -144201,35 +144133,35 @@
             "name": "S Devendran",
             "captain": false,
             "wicketkeeper": true,
-            "dismissal": "[unknown]",
+            "dismissal": null,
             "runs": 25
           },
           {
             "name": "Boon Oon Lor",
             "captain": false,
             "wicketkeeper": false,
-            "dismissal": "[unknown]",
+            "dismissal": null,
             "runs": 25
           },
           {
             "name": "MT Retnam",
             "captain": false,
             "wicketkeeper": false,
-            "dismissal": "[unknown]",
+            "dismissal": null,
             "runs": 15
           },
           {
             "name": "GRC Hamlin",
             "captain": false,
             "wicketkeeper": false,
-            "dismissal": "[unknown]",
+            "dismissal": null,
             "runs": 27
           },
           {
             "name": "Ong Boon Bee",
             "captain": false,
             "wicketkeeper": false,
-            "dismissal": "[unknown]",
+            "dismissal": null,
             "runs": 40
           }
         ],
@@ -167906,6 +167838,213 @@
             "name": "A Santhanadoss",
             "captain": false,
             "wicketkeeper": false,
+            "dismissal": null,
+            "runs": null
+          },
+          {
+            "name": "A Augustine",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": null,
+            "runs": null
+          },
+          {
+            "name": "KK Selvaratnam",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": null,
+            "runs": null
+          },
+          {
+            "name": "PFG Allardyce",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": null,
+            "runs": 43
+          },
+          {
+            "name": "H Hollingworth",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": null,
+            "runs": null
+          },
+          {
+            "name": "AW Wanless",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": null,
+            "runs": null
+          },
+          {
+            "name": "TH Koenitz",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": null,
+            "runs": null
+          },
+          {
+            "name": "K Anandarajah",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": null,
+            "runs": null
+          },
+          {
+            "name": "HG Crutchley",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": null,
+            "runs": null
+          },
+          {
+            "name": "S Santhanadan",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": null,
+            "runs": null
+          },
+          {
+            "name": "Dershan Singh",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": null,
+            "runs": null
+          }
+        ],
+        "extras": {
+          "total": null,
+          "detail": null
+        },
+        "total": {
+          "runs": 116,
+          "wickets": null,
+          "declared": false
+        },
+        "fow": null,
+        "bowling": [
+          {
+            "name": "A Harding",
+            "overs": "38",
+            "maidens": 6,
+            "runs": null,
+            "wickets": null,
+            "noballs": null,
+            "wides": null
+          },
+          {
+            "name": "TJ Metcalfe",
+            "overs": "18",
+            "maidens": 4,
+            "runs": null,
+            "wickets": null,
+            "noballs": null,
+            "wides": null
+          }
+        ]
+      },
+      {
+        "team": "Negeri Sembilan",
+        "innings_number": 1,
+        "batting": [
+          {
+            "name": "S Gunendran",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": null,
+            "runs": null
+          },
+          {
+            "name": "Sheikh Mustapha",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": null,
+            "runs": null
+          },
+          {
+            "name": "W Ratnayake",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": null,
+            "runs": null
+          },
+          {
+            "name": "MT Retnam",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": null,
+            "runs": null
+          },
+          {
+            "name": "A Harding",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": null,
+            "runs": null
+          },
+          {
+            "name": "S Devendran",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": null,
+            "runs": null
+          },
+          {
+            "name": "C Stanislaus",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": null,
+            "runs": 61
+          },
+          {
+            "name": "TJ Metcalfe",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": null,
+            "runs": null
+          },
+          {
+            "name": "Baljit Singh",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": null,
+            "runs": null
+          },
+          {
+            "name": "[unknown]",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": null,
+            "runs": null
+          },
+          {
+            "name": "[unknown]",
+            "captain": false,
+            "wicketkeeper": false,
+            "dismissal": null,
+            "runs": null
+          }
+        ],
+        "extras": {
+          "total": null,
+          "detail": null
+        },
+        "total": {
+          "runs": 197,
+          "wickets": null,
+          "declared": false
+        },
+        "fow": null,
+        "bowling": null
+      },
+      {
+        "team": "Perak",
+        "innings_number": 2,
+        "batting": [
+          {
+            "name": "A Santhanadoss",
+            "captain": false,
+            "wicketkeeper": false,
             "dismissal": "run out",
             "runs": 9
           },
@@ -167927,8 +168066,8 @@
             "name": "PFG Allardyce",
             "captain": false,
             "wicketkeeper": false,
-            "dismissal": "not out",
-            "runs": 43
+            "dismissal": "c Metcalfe b Ratnayake",
+            "runs": 0
           },
           {
             "name": "H Hollingworth",
@@ -167985,7 +168124,7 @@
           "detail": null
         },
         "total": {
-          "runs": 116,
+          "runs": 123,
           "wickets": null,
           "declared": false
         },
@@ -167996,7 +168135,7 @@
             "overs": "16",
             "maidens": 4,
             "runs": 36,
-            "wickets": 2,
+            "wickets": 3,
             "noballs": null,
             "wides": null
           },
@@ -168011,18 +168150,18 @@
           },
           {
             "name": "A Harding",
-            "overs": "38",
-            "maidens": 6,
-            "runs": null,
+            "overs": "8.3",
+            "maidens": 0,
+            "runs": 25,
             "wickets": 1,
             "noballs": null,
             "wides": null
           },
           {
             "name": "TJ Metcalfe",
-            "overs": "18",
-            "maidens": 4,
-            "runs": 7,
+            "overs": "7",
+            "maidens": 2,
+            "runs": 10,
             "wickets": 2,
             "noballs": null,
             "wides": null
@@ -168030,69 +168169,8 @@
         ]
       },
       {
-        "team": "Perak",
-        "innings_number": 2,
-        "batting": [
-          {
-            "name": "PFG Allardyce",
-            "captain": false,
-            "wicketkeeper": false,
-            "dismissal": "c Metcalfe b Ratnayake",
-            "runs": 0
-          }
-        ],
-        "extras": {
-          "total": null,
-          "detail": null
-        },
-        "total": {
-          "runs": 123,
-          "wickets": null,
-          "declared": false
-        },
-        "fow": null,
-        "bowling": [
-          {
-            "name": "W Ratnayake",
-            "overs": null,
-            "maidens": null,
-            "runs": 1,
-            "wickets": 1,
-            "noballs": null,
-            "wides": null
-          },
-          {
-            "name": "Baljit Singh",
-            "overs": null,
-            "maidens": null,
-            "runs": 2,
-            "wickets": 0,
-            "noballs": null,
-            "wides": null
-          },
-          {
-            "name": "A Harding",
-            "overs": "8.3",
-            "maidens": 0,
-            "runs": 25,
-            "wickets": 0,
-            "noballs": null,
-            "wides": null
-          },
-          {
-            "name": "TJ Metcalfe",
-            "overs": "10",
-            "maidens": 2,
-            "runs": null,
-            "wickets": 0,
-            "noballs": null,
-            "wides": null
-          }
-        ]
-      },
-      {
         "team": "Negeri Sembilan",
-        "innings_number": 1,
+        "innings_number": 2,
         "batting": [
           {
             "name": "S Gunendran",
@@ -168135,27 +168213,6 @@
             "wicketkeeper": false,
             "dismissal": "not out",
             "runs": 11
-          },
-          {
-            "name": "C Stanislaus",
-            "captain": false,
-            "wicketkeeper": false,
-            "dismissal": "[unknown]",
-            "runs": 61
-          },
-          {
-            "name": "TJ Metcalfe",
-            "captain": false,
-            "wicketkeeper": false,
-            "dismissal": "[unknown]",
-            "runs": null
-          },
-          {
-            "name": "Baljit Singh",
-            "captain": false,
-            "wicketkeeper": false,
-            "dismissal": "[unknown]",
-            "runs": null
           }
         ],
         "extras": {
@@ -168163,7 +168220,7 @@
           "detail": null
         },
         "total": {
-          "runs": 197,
+          "runs": 44,
           "wickets": 4,
           "declared": false
         },
@@ -168206,31 +168263,16 @@
             "wides": null
           }
         ]
-      },
-      {
-        "team": "Negeri Sembilan",
-        "innings_number": 2,
-        "batting": [],
-        "extras": {
-          "total": null,
-          "detail": null
-        },
-        "total": {
-          "runs": 44,
-          "wickets": 4,
-          "declared": false
-        },
-        "fow": null,
-        "bowling": []
       }
     ],
-    "umpires": null,
-    "toss": null,
+    "umpires": [
+      "[unknown]"
+    ],
+    "toss": "[unknown]",
     "close_of_play": "1st day - Negeri Sembilan (1) 131-5 (Devandran 22*)",
     "balls_per_over": null,
     "notes": [
-      "The first day's play of this match was not published.",
-      "Orders of batting and bowling are those used in the second innings"
+      "The first day's play of this match was not published. Orders of batting and bowling are those used in the second innings"
     ],
     "page": 354,
     "source_url": "https://archive.acscricket.com/research/rm/malayan_interstate_cricket_1899-1957/rm_malayan_interstate_cricket_scorecards/354/index.html"

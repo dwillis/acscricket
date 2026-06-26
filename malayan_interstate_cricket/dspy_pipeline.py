@@ -173,7 +173,7 @@ def optimize(
 ):
     lm = dspy.LM(
         f"anthropic/{model_name}",
-        max_tokens=8000,
+        max_tokens=64000,
         temperature=0.0,
     )
     dspy.configure(lm=lm)
@@ -187,15 +187,19 @@ def optimize(
 
     optimizer = dspy.MIPROv2(
         metric=scorecard_metric,
+        auto=None,
         num_candidates=7,
         init_temperature=0.7,
         max_bootstrapped_demos=3,
         max_labeled_demos=3,
-        num_trials=num_trials,
+        num_threads=1,
     )
 
     parser = ScorecardParser()
-    optimized = optimizer.compile(parser, trainset=gold_train, valset=gold_dev)
+    optimized = optimizer.compile(
+        parser, trainset=gold_train, valset=gold_dev, num_trials=num_trials,
+        minibatch=False,
+    )
     optimized.save(str(output_path))
     print(f"Saved optimized program to {output_path}")
     return optimized
@@ -213,7 +217,7 @@ def run(
 ):
     lm = dspy.LM(
         f"anthropic/{model_name}",
-        max_tokens=8000,
+        max_tokens=64000,
         temperature=0.0,
     )
     dspy.configure(lm=lm)
@@ -276,7 +280,7 @@ def evaluate(
 ):
     lm = dspy.LM(
         f"anthropic/{model_name}",
-        max_tokens=8000,
+        max_tokens=64000,
         temperature=0.0,
     )
     dspy.configure(lm=lm)
