@@ -57,9 +57,22 @@ SEVERITY = {
     "extras_detail": 2,
     "invalid_dismissal": 1,
     "overs_sanity": 1,
+    "bowling_plausibility": 3,
+    "result_margin": 4,
 }
 
 ALL_CHECKS = list(SEVERITY)
+
+# Notes phrasing the archive uses to flag its own incomplete source material
+# (not a parse failure — the original scorecard never recorded this data).
+SPARSE_SOURCE_RE = re.compile(
+    r"not known|not published|not accurately kept|were not recorded",
+    re.IGNORECASE,
+)
+
+
+def is_sparse_source(match: dict) -> bool:
+    return any(SPARSE_SOURCE_RE.search(n or "") for n in (match.get("notes") or []))
 
 
 def _innings_label(innings: dict) -> str:
@@ -336,6 +349,59 @@ def check_fow_max(innings: dict) -> list[dict]:
     return []
 
 
+def check_bowling_plausibility(innings: dict) -> list[dict]:
+    """Per-bowler sanity bounds that catch column-shifted bowling figures:
+    maidens can't exceed overs bowled, and the sum of bowling runs/wickets
+    can't exceed what the innings itself produced."""
+    issues = []
+    bowling = innings.get("bowling") or []
+    for bw in bowling:
+        overs = bw.get("overs")
+        maidens = bw.get("maidens")
+        if overs is None or maidens is None:
+            continue
+        m = re.match(r"^(\d+)(?:\.(\d+))?$", str(overs).strip())
+        if not m:
+            continue
+        whole_overs = _int(m.group(1))
+        if _int(maidens) > whole_overs:
+            issues.append({
+                "check": "bowling_plausibility",
+                "message": f"{bw.get('name', '?')}: {maidens} maidens exceeds {overs} overs bowled",
+                "numeric": _int(maidens) - whole_overs,
+            })
+
+    runs = (innings.get("total") or {}).get("runs")
+    if runs is not None:
+        bowl_runs = sum(
+            _int(bw.get("runs")) for bw in bowling if bw.get("runs") is not None
+        )
+        if bowl_runs > _int(runs):
+            issues.append({
+                "check": "bowling_plausibility",
+                "message": f"bowling runs conceded ({bowl_runs}) exceed innings total ({runs})",
+                "numeric": bowl_runs - _int(runs),
+            })
+
+    batting = innings.get("batting") or []
+    if batting:
+        n_dismissed = sum(
+            1 for b in batting
+            if (b.get("dismissal") or "").strip().lower() not in NON_DISMISSALS
+        )
+        bowl_wkts = sum(
+            _int(bw.get("wickets")) for bw in bowling if bw.get("wickets") is not None
+        )
+        if bowl_wkts > n_dismissed:
+            issues.append({
+                "check": "bowling_plausibility",
+                "message": f"bowling wickets ({bowl_wkts}) exceed dismissed batsmen ({n_dismissed})",
+                "numeric": bowl_wkts - n_dismissed,
+            })
+
+    return issues
+
+
 def check_extras_detail(innings: dict) -> list[dict]:
     """When the extras breakdown is given, it must sum to the extras total."""
     extras = innings.get("extras") or {}
@@ -437,6 +503,88 @@ def check_innings_structure(match: dict) -> list[dict]:
     return issues
 
 
+RESULT_RUNS_RE = re.compile(
+    r"won by (?:an innings and )?(\d+) runs?", re.IGNORECASE
+)
+RESULT_WICKETS_RE = re.compile(r"won by (\d+) wickets?", re.IGNORECASE)
+DECIDED_ON_FIRST_INNINGS_RE = re.compile(
+    r"decided on (?:the )?first innings", re.IGNORECASE
+)
+
+
+def _decided_on_first_innings(match: dict) -> bool:
+    """Some one-day matches that ran out of time were awarded on the
+    first-innings result alone — any runs scored in a second innings don't
+    count toward the stated margin. The archive notes this explicitly."""
+    return any(
+        DECIDED_ON_FIRST_INNINGS_RE.search(n or "")
+        for n in (match.get("notes") or [])
+    )
+
+
+def check_result_margin(match: dict) -> list[dict]:
+    """Cross-check the stated result margin against team totals.
+
+    Catches the swapped-innings-totals failure mode directly: if a team's
+    two innings totals were assigned to the wrong columns, the derived
+    margin won't match the result string, regardless of which check
+    ("N runs" or "an innings and N runs") applies — for either, the margin
+    is simply the winner's summed runs minus the loser's summed runs.
+    """
+    info = match.get("match") or {}
+    result = info.get("result") or ""
+    team1 = info.get("team1")
+    team2 = info.get("team2")
+    if not team1 or not team2:
+        return []
+
+    first_innings_only = _decided_on_first_innings(match)
+    innings_list = match.get("innings") or []
+    totals: dict[str, int | None] = {normalize_name(team1): 0, normalize_name(team2): 0}
+    complete: dict[str, bool] = {normalize_name(team1): True, normalize_name(team2): True}
+    for innings in innings_list:
+        if first_innings_only and innings.get("innings_number") != 1:
+            continue
+        team = normalize_name(innings.get("team") or "")
+        if team not in totals:
+            continue
+        runs = (innings.get("total") or {}).get("runs")
+        if runs is None:
+            complete[team] = False
+        else:
+            totals[team] += _int(runs)
+
+    if not all(complete.values()):
+        return []
+
+    winner = None
+    for team_name in (team1, team2):
+        if result.lower().startswith(team_name.lower()):
+            winner = team_name
+            break
+    if winner is None:
+        return []
+    loser = team2 if winner == team1 else team1
+
+    m = RESULT_RUNS_RE.search(result)
+    if m:
+        stated_margin = int(m.group(1))
+        actual_margin = totals[normalize_name(winner)] - totals[normalize_name(loser)]
+        if actual_margin != stated_margin:
+            return [{
+                "check": "result_margin",
+                "innings": "match",
+                "message": (
+                    f"result \"{result}\" implies a {stated_margin}-run margin, "
+                    f"but totals give {winner} {totals[normalize_name(winner)]} "
+                    f"vs {loser} {totals[normalize_name(loser)]} "
+                    f"(margin {actual_margin})"
+                ),
+                "numeric": actual_margin - stated_margin,
+            }]
+    return []
+
+
 def check_overs_sanity(match: dict) -> list[dict]:
     """The fractional part of an overs figure must be a legal ball count
     for the era's balls-per-over (5, 6, or 8 in this dataset)."""
@@ -474,11 +622,23 @@ CHECK_FUNCS = {
     "fow_final_value": check_fow_final_value,
     "fow_max": check_fow_max,
     "extras_detail": check_extras_detail,
+    "bowling_plausibility": check_bowling_plausibility,
 }
 
 MATCH_CHECK_FUNCS = {
     "innings_structure": check_innings_structure,
     "overs_sanity": check_overs_sanity,
+    "result_margin": check_result_margin,
+}
+
+
+# Checks that measure arithmetic the source itself may never have recorded
+# (extras, wicket tallies, FOW) get their severity halved on sparse-source
+# pages, so an archive-side gap doesn't outweigh a genuine parse error.
+ARITHMETIC_CHECKS = {
+    "batting_total", "dismissal_wickets", "dismissed_count",
+    "fow_ascending", "fow_count", "fow_final_value", "fow_max",
+    "extras_detail", "result_margin",
 }
 
 
@@ -492,15 +652,21 @@ def validate(data: list[dict], checks: list[str]) -> list[dict]:
             f"{match_info.get('team1', '?')} v {match_info.get('team2', '?')} "
             f"({match_info.get('date', '?')})"
         )
+        sparse_source = is_sparse_source(match)
 
         def add(issue: dict, innings_label: str, sparseness):
+            check = issue.get("check")
+            severity = SEVERITY.get(check, 1)
+            if sparse_source and check in ARITHMETIC_CHECKS:
+                severity = max(1, severity // 2)
             all_issues.append({
                 "page": page,
                 "source_url": source_url,
                 "match": match_label,
                 "innings": innings_label,
                 "sparseness": sparseness,
-                "severity": SEVERITY.get(issue.get("check"), 1),
+                "sparse_source": sparse_source,
+                "severity": severity,
                 **issue,
             })
 
@@ -560,6 +726,16 @@ def print_report(issues: list[dict]):
     if reparse_pages:
         print(f"\nPages with both batting_total and dismissal_wickets issues ({len(reparse_pages)}):")
         print(",".join(str(p) for p in reparse_pages))
+
+    # Pages where the stated result margin doesn't match the totals — near
+    # certain sign of swapped/misassigned innings totals, not archive gaps.
+    margin_pages = sorted(
+        page for page, page_issues in by_page.items()
+        if any(i["check"] == "result_margin" for i in page_issues)
+    )
+    if margin_pages:
+        print(f"\nPages with result_margin mismatches ({len(margin_pages)}):")
+        print(",".join(str(p) for p in margin_pages))
 
 
 def main():

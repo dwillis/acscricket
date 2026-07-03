@@ -250,6 +250,86 @@ class TestValidateChecks:
         issues = validate.check_overs_sanity(match)
         assert issues and "12.7" in issues[0]["message"]
 
+    def test_bowling_plausibility_maidens_exceed_overs(self):
+        inn = _innings(bowling=[
+            {"name": "Fox", "overs": "2.0", "maidens": 5, "runs": 10, "wickets": 1},
+        ])
+        issues = validate.check_bowling_plausibility(inn)
+        assert any("maidens exceeds" in i["message"] for i in issues)
+
+    def test_bowling_plausibility_runs_exceed_total(self):
+        inn = _innings(bowling=[
+            {"name": "Fox", "overs": "10.0", "maidens": 0, "runs": 200, "wickets": 1},
+        ])
+        issues = validate.check_bowling_plausibility(inn)
+        assert any("runs conceded" in i["message"] for i in issues)
+
+    def test_bowling_plausibility_wickets_exceed_dismissed(self):
+        inn = _innings(bowling=[
+            {"name": "Fox", "overs": "10.0", "maidens": 0, "runs": 20, "wickets": 20},
+        ])
+        issues = validate.check_bowling_plausibility(inn)
+        assert any("exceed dismissed batsmen" in i["message"] for i in issues)
+
+    def test_bowling_plausibility_clean_passes(self):
+        assert validate.check_bowling_plausibility(_innings()) == []
+
+    def test_result_margin_runs_mismatch(self):
+        match = {
+            "match": {"team1": "A", "team2": "B", "result": "A won by 50 runs"},
+            "innings": [
+                _innings(team="A", innings_number=1, total={"runs": 100, "wickets": None}),
+                _innings(team="B", innings_number=1, total={"runs": 90, "wickets": None}),
+            ],
+        }
+        issues = validate.check_result_margin(match)
+        assert issues and "50-run margin" in issues[0]["message"]
+
+    def test_result_margin_innings_victory_uses_summed_totals(self):
+        match = {
+            "match": {"team1": "A", "team2": "B", "result": "A won by an innings and 10 runs"},
+            "innings": [
+                _innings(team="A", innings_number=1, total={"runs": 200, "wickets": None}),
+                _innings(team="B", innings_number=1, total={"runs": 90, "wickets": None}),
+                _innings(team="B", innings_number=2, total={"runs": 100, "wickets": None}),
+            ],
+        }
+        assert validate.check_result_margin(match) == []
+
+    def test_result_margin_decided_on_first_innings_ignores_second(self):
+        # Real shape from page 118: Singapore won by 50 runs on the first
+        # innings alone; Singapore's 2nd innings (125/7) must not count.
+        match = {
+            "match": {"team1": "Singapore", "team2": "Melaka", "result": "Singapore won by 50 runs"},
+            "notes": ["Match was played over one day with the result decided on the first innings"],
+            "innings": [
+                _innings(team="Singapore", innings_number=1, total={"runs": 147, "wickets": None}),
+                _innings(team="Melaka", innings_number=1, total={"runs": 97, "wickets": None}),
+                _innings(team="Singapore", innings_number=2, total={"runs": 125, "wickets": 7}),
+            ],
+        }
+        assert validate.check_result_margin(match) == []
+
+    def test_result_margin_skips_incomplete_totals(self):
+        match = {
+            "match": {"team1": "A", "team2": "B", "result": "A won by 50 runs"},
+            "innings": [
+                _innings(team="A", innings_number=1, total={"runs": None, "wickets": None}),
+                _innings(team="B", innings_number=1, total={"runs": 90, "wickets": None}),
+            ],
+        }
+        assert validate.check_result_margin(match) == []
+
+    def test_sparse_source_halves_arithmetic_severity(self):
+        match = {
+            "page": 1, "match": {}, "notes": ["Bowling analyses are not known"],
+            "innings": [_innings(total={"runs": 999, "wickets": None})],
+        }
+        issues = validate.validate([match], validate.ALL_CHECKS)
+        bt = [i for i in issues if i["check"] == "batting_total"]
+        assert bt and bt[0]["severity"] == 1  # halved from 3
+        assert bt[0]["sparse_source"] is True
+
     def test_validate_attaches_severity(self):
         match = {"page": 1, "match": {}, "innings": [_innings(batting=None)]}
         issues = validate.validate([match], validate.ALL_CHECKS)
@@ -266,6 +346,35 @@ class TestCompare:
         full = {"innings": [_innings()]}
         empty = {"innings": [{"team": "A", "batting": None, "bowling": None}]}
         assert compare.completeness(full) > compare.completeness(empty)
+
+    def test_duplicated_innings_does_not_win_on_completeness(self):
+        # Real page-58 shape: one parse duplicates a team's 2nd innings as a
+        # 3rd/4th object with identical data, inflating naive completeness.
+        # A correct, non-duplicated 4-innings parse must not lose to it.
+        duplicated = {
+            "page": 58, "match": {"team1": "A", "team2": "B", "result": "A won by 9 runs"},
+            "innings": [
+                _innings(team="A", innings_number=1, total={"runs": 168, "wickets": None}),
+                _innings(team="B", innings_number=2, total={"runs": 160, "wickets": None}),
+                _innings(team="A", innings_number=3, total={"runs": 148, "wickets": None}),
+                _innings(team="B", innings_number=3, total={"runs": 147, "wickets": None}),
+                _innings(team="A", innings_number=4, total={"runs": 148, "wickets": None}),
+            ],
+        }
+        correct = {
+            "page": 58, "match": {"team1": "A", "team2": "B", "result": "A won by 9 runs"},
+            "innings": [
+                _innings(team="A", innings_number=1, total={"runs": 168, "wickets": None}),
+                _innings(team="A", innings_number=2, total={"runs": 148, "wickets": None}),
+                _innings(team="B", innings_number=1, total={"runs": 160, "wickets": None}),
+                _innings(team="B", innings_number=2, total={"runs": 147, "wickets": None}),
+            ],
+        }
+        assert compare.structural_completeness(duplicated) == compare.structural_completeness(correct)
+        dup_issues = validate.validate([duplicated], validate.ALL_CHECKS)
+        correct_issues = validate.validate([correct], validate.ALL_CHECKS)
+        winner = compare.decide(duplicated, dup_issues, correct, correct_issues)
+        assert winner == "candidate"
 
     def test_omission_does_not_win(self):
         # Candidate dropped an innings entirely but has zero issues;

@@ -47,9 +47,19 @@ def structural_completeness(match: dict) -> int:
     vetoes the issue-count comparison. Optional sections (bowling, fow) are
     deliberately excluded: old cards legitimately omit them, and a model can
     inflate them by hallucinating rows (e.g. fow numbers misread as bowlers).
+
+    Innings are capped at 2 per team: a valid match never has more, so a
+    duplicated innings object (two entries with the same team, produced by
+    a model re-emitting a full parse attempt) must not outscore a correct,
+    non-duplicated parse.
     """
     score = 0
+    per_team: dict[str, int] = {}
     for inn in match.get("innings") or []:
+        team = (inn.get("team") or "").strip().lower()
+        per_team[team] = per_team.get(team, 0) + 1
+        if per_team[team] > 2:
+            continue
         score += 5  # the innings exists at all
         score += min(len(inn.get("batting") or []), 11)
     return score
@@ -58,7 +68,12 @@ def structural_completeness(match: dict) -> int:
 def completeness(match: dict) -> int:
     """Full count of checkable signals; used only for tie-breaking."""
     score = structural_completeness(match)
+    per_team: dict[str, int] = {}
     for inn in match.get("innings") or []:
+        team = (inn.get("team") or "").strip().lower()
+        per_team[team] = per_team.get(team, 0) + 1
+        if per_team[team] > 2:
+            continue
         score += min(len(inn.get("bowling") or []), 11)
         score += 3 if inn.get("fow") else 0
         score += 2 if (inn.get("total") or {}).get("runs") is not None else 0

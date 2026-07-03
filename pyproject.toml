@@ -6,7 +6,7 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "beautifulsoup4>=4.14.3",
-    "dspy>=3.2.1",
+    "dspy[optuna]>=3.2.1",
     "httpx>=0.28.1",
     "llm>=0.31",
     "sitemap-generator>=0.9.13",

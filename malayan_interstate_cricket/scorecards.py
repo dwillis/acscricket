@@ -15,6 +15,15 @@ Usage:
     uv run python malayan_interstate_cricket/scorecards.py --pages 2-5
     uv run python malayan_interstate_cricket/scorecards.py --model gemini-2.5-flash
     uv run python malayan_interstate_cricket/scorecards.py --output scorecards.json
+
+--vision parses the scanned page image instead of the flattened HTML text.
+The archive's FlippingBook viewer exposes full-resolution page scans at
+files/assets/common/page-textlayers/page{NNNN}_1.png (zero-padded to 4
+digits), which preserve the original table layout — this avoids the whole
+class of column-assignment errors (swapped innings totals, misattributed
+bowling figures) that come from reading a 2D scorecard as flattened text:
+    uv run python malayan_interstate_cricket/scorecards.py --vision --pages 302
+    uv run python malayan_interstate_cricket/scorecards.py --vision --batch --pages 94,106,302
 """
 
 import argparse
@@ -182,11 +191,145 @@ RAW SCORECARD TEXT:
 {text}"""
 
 
+VISION_SYSTEM_PROMPT = """\
+You are an expert cricket scorecard parser. You read a scanned image of a \
+historical cricket scorecard and extract structured data. Respond ONLY with \
+a JSON object — no markdown fences, no prose."""
+
+VISION_USER_PROMPT = """\
+The attached image is a scan of a historical cricket scorecard page. Its \
+layout is a real table: batting entries for one team form a column block, \
+extras and totals sit below each innings' batting, and bowling/fall-of-wickets \
+appear in a table below with separate columns per innings. Use the visual \
+layout to assign each number to the correct innings and column — do not treat \
+this as a flattened stream of numbers.
+
+RULES:
+- Players marked with * are captain, + are wicketkeeper
+- Dismissal methods: "b" = bowled, "c" = caught, "c&b" or "c ... b" = caught \
+and bowled, "lbw" = leg before wicket, "st" = stumped, "run out" = run out, \
+"ht wkt" = hit wicket, "not out" = not out, "retired" = retired
+- A "(N)" before a 2nd-innings dismissal indicates the batting position changed
+- Bowling columns are headed O M R W, sometimes with nb (no-balls) and w (wides)
+- fall of wickets (fow) values are CUMULATIVE RUN TOTALS at which each wicket \
+fell, one ascending sequence per innings — not wicket numbers
+- "[unknown]" means the information is not available in the source
+- IGNORE any "Made with FlippingBook" text — do NOT include it in notes
+- VALIDATE bowling wickets using this TWO-PASS approach:
+  PASS 1: Scan every batting dismissal in an innings to build a wicket tally \
+per bowler for that innings. Any dismissal containing "b <Bowler>" credits \
+that bowler with a wicket: "b Fox", "c X b Fox", "c&b Fox", "lbw b Fox", \
+"st X b Fox", "ht wkt b Fox" all give Fox one wicket. "run out" and "not out" \
+give no bowler a wicket.
+  PASS 2: Use the Pass 1 tally as the AUTHORITATIVE wicket count in the \
+bowling section. If the image's bowling figures are faint or ambiguous, set \
+overs/maidens/runs to null but ALWAYS set wickets from the dismissal tally.
+
+Return a JSON object with this structure:
+{
+  "match": {
+    "team1": "string",
+    "team2": "string",
+    "venue": "string",
+    "date": "string (as written)",
+    "result": "string"
+  },
+  "innings": [
+    {
+      "team": "string",
+      "innings_number": 1,
+      "batting": [
+        {
+          "name": "string",
+          "captain": true/false,
+          "wicketkeeper": true/false,
+          "dismissal": "string (e.g. 'c Fielder b Bowler', 'not out', 'b Bowler', 'run out')",
+          "runs": number
+        }
+      ],
+      "extras": {
+        "total": number,
+        "detail": "string or null (e.g. 'b 4, lb 2')"
+      },
+      "total": {
+        "runs": number,
+        "wickets": number or null (null if all out),
+        "declared": false
+      },
+      "fow": [number] or null,
+      "bowling": [
+        {
+          "name": "string",
+          "overs": "string (e.g. '12.3')",
+          "maidens": number,
+          "runs": number,
+          "wickets": number,
+          "noballs": number or null,
+          "wides": number or null
+        }
+      ]
+    }
+  ],
+  "umpires": ["string"] or null,
+  "toss": "string or null",
+  "close_of_play": "string or null",
+  "balls_per_over": number or null,
+  "notes": ["string"] or null
+}
+
+Rules:
+- Include ALL innings (some matches have 1, 2, 3, or 4 innings)
+- Extras "total" is the number shown; "detail" is the breakdown if available
+- For "total", wickets is null when team is all out (all 10 wickets fell)
+- Include umpires as an array, even if only one is known
+- Include all notes at the bottom of the scorecard
+- Do NOT include navigation text, FlippingBook text, or page numbers
+- If a section is not present in the image, use null"""
+
+
 PAGE_CACHE_DIR = Path(__file__).parent / "pages"
+PAGE_IMAGE_CACHE_DIR = Path(__file__).parent / "page_images"
+
+IMAGE_ASSET_BASE = (
+    "https://archive.acscricket.com/research/rm/"
+    "malayan_interstate_cricket_1899-1957/"
+    "rm_malayan_interstate_cricket_scorecards/files/assets/"
+    "common/page-textlayers"
+)
 
 
 def page_url(page: int) -> str:
     return f"{BASE_URL}/index.html" if page == 1 else f"{BASE_URL}/{page}/index.html"
+
+
+def page_image_url(page: int) -> str:
+    return f"{IMAGE_ASSET_BASE}/page{page:04d}_1.png"
+
+
+def fetch_page_image(client: httpx.Client, page: int) -> bytes | None:
+    """Fetch (or read cached) full-resolution scorecard image for a page.
+
+    These are the FlippingBook text-layer PNGs, which preserve the original
+    tabular layout that the flattened HTML text loses — batting columns,
+    interleaved-innings bowling tables, and fall-of-wickets grids.
+    """
+    cache_file = PAGE_IMAGE_CACHE_DIR / f"{page}.png"
+    if cache_file.exists():
+        data = cache_file.read_bytes()
+        return data if data else None
+
+    try:
+        resp = client.get(page_image_url(page), follow_redirects=True)
+        resp.raise_for_status()
+    except httpx.HTTPError as e:
+        print(f"  HTTP error fetching image for page {page}: {e}")
+        return None
+
+    data = resp.content
+    if data:
+        PAGE_IMAGE_CACHE_DIR.mkdir(parents=True, exist_ok=True)
+        cache_file.write_bytes(data)
+    return data if data else None
 
 
 def fetch_page_text(client: httpx.Client, page: int) -> str | None:
@@ -406,15 +549,52 @@ def normalize_match(scorecard: dict) -> dict:
     return scorecard
 
 
+def _top_level_objects(raw: str) -> list[str]:
+    """Find complete top-level {...} objects via brace-matching (string- and
+    escape-aware), so embedded braces inside quoted strings don't confuse
+    depth tracking."""
+    objs = []
+    depth = 0
+    start = None
+    in_string = False
+    escape = False
+    for i, ch in enumerate(raw):
+        if in_string:
+            if escape:
+                escape = False
+            elif ch == "\\":
+                escape = True
+            elif ch == '"':
+                in_string = False
+            continue
+        if ch == '"':
+            in_string = True
+        elif ch == "{":
+            if depth == 0:
+                start = i
+            depth += 1
+        elif ch == "}":
+            depth -= 1
+            if depth == 0 and start is not None:
+                objs.append(raw[start : i + 1])
+                start = None
+    return objs
+
+
 def _extract_json(raw: str) -> str:
     """Pull the JSON object out of a model response that may include prose
-    before/after it or wrap it in a markdown fence."""
+    before/after it, wrap it in a markdown fence, or (occasionally, in
+    vision mode) contain several full re-attempts in sequence — in which
+    case the last complete object is the model's final answer."""
     raw = raw.strip()
-    # Prefer a fenced ```json block anywhere in the response
-    m = re.search(r"```(?:json)?\s*(\{.*?\})\s*```", raw, re.DOTALL)
-    if m:
-        return m.group(1)
-    # Otherwise take everything from the first { to the last }
+    # Prefer fenced ```json blocks anywhere in the response; take the last
+    fences = re.findall(r"```(?:json)?\s*(\{.*?\})\s*```", raw, re.DOTALL)
+    if fences:
+        return fences[-1]
+    objs = _top_level_objects(raw)
+    if objs:
+        return objs[-1]
+    # Fallback: everything from the first { to the last }
     start = raw.find("{")
     end = raw.rfind("}")
     if start != -1 and end > start:
@@ -425,6 +605,20 @@ def _extract_json(raw: str) -> str:
 def parse_scorecard(model, text: str) -> dict:
     prompt = USER_PROMPT_TEMPLATE.format(text=text)
     response = model.prompt(prompt, system=SYSTEM_PROMPT, thinking=False)
+    scorecard = json.loads(_extract_json(response.text()))
+    scorecard = normalize_match(scorecard)
+    scorecard = normalize_player_names(scorecard)
+    return validate_bowling_wickets(scorecard)
+
+
+def parse_scorecard_vision(model, image_bytes: bytes) -> dict:
+    attachment = llm.Attachment(content=image_bytes, type="image/png")
+    response = model.prompt(
+        VISION_USER_PROMPT,
+        attachments=[attachment],
+        system=VISION_SYSTEM_PROMPT,
+        thinking=False,
+    )
     scorecard = json.loads(_extract_json(response.text()))
     scorecard = normalize_match(scorecard)
     scorecard = normalize_player_names(scorecard)
@@ -533,6 +727,7 @@ def run_batch(
     http_client: httpx.Client,
     force: bool = False,
     poll_interval: int = 60,
+    vision: bool = False,
 ) -> None:
     """Fetch pages, submit as an Anthropic Message Batch, poll, and collect."""
     try:
@@ -552,37 +747,76 @@ def run_batch(
     pages_to_fetch = [
         p for p in page_nums if force or p not in existing
     ]
-    print(f"Fetching text for {len(pages_to_fetch)} page(s)…")
     requests: list = []
-    for page_num in pages_to_fetch:
-        text = fetch_page_text(http_client, page_num)
-        if not text:
-            print(f"  page {page_num}: no text content — skipping")
-            continue
-        # Split the prompt so the ~2.5k-token instruction prefix is shared
-        # and cacheable across all requests; only the scorecard text varies.
-        instructions = USER_PROMPT_TEMPLATE.split("{text}")[0]
-        requests.append(
-            BatchRequest(
-                custom_id=f"page-{page_num}",
-                params=MessageCreateParamsNonStreaming(
-                    model=api_model_id,
-                    max_tokens=32000,
-                    system=SYSTEM_PROMPT,
-                    messages=[{
-                        "role": "user",
-                        "content": [
-                            {
-                                "type": "text",
-                                "text": instructions,
-                                "cache_control": {"type": "ephemeral"},
-                            },
-                            {"type": "text", "text": text},
-                        ],
-                    }],
-                ),
+
+    if vision:
+        import base64
+
+        print(f"Fetching images for {len(pages_to_fetch)} page(s)…")
+        for page_num in pages_to_fetch:
+            image_bytes = fetch_page_image(http_client, page_num)
+            if not image_bytes:
+                print(f"  page {page_num}: no image content — skipping")
+                continue
+            requests.append(
+                BatchRequest(
+                    custom_id=f"page-{page_num}",
+                    params=MessageCreateParamsNonStreaming(
+                        model=api_model_id,
+                        max_tokens=32000,
+                        system=VISION_SYSTEM_PROMPT,
+                        messages=[{
+                            "role": "user",
+                            "content": [
+                                {
+                                    "type": "text",
+                                    "text": VISION_USER_PROMPT,
+                                    "cache_control": {"type": "ephemeral"},
+                                },
+                                {
+                                    "type": "image",
+                                    "source": {
+                                        "type": "base64",
+                                        "media_type": "image/png",
+                                        "data": base64.b64encode(image_bytes).decode("ascii"),
+                                    },
+                                },
+                            ],
+                        }],
+                    ),
+                )
             )
-        )
+    else:
+        print(f"Fetching text for {len(pages_to_fetch)} page(s)…")
+        for page_num in pages_to_fetch:
+            text = fetch_page_text(http_client, page_num)
+            if not text:
+                print(f"  page {page_num}: no text content — skipping")
+                continue
+            # Split the prompt so the ~2.5k-token instruction prefix is shared
+            # and cacheable across all requests; only the scorecard text varies.
+            instructions = USER_PROMPT_TEMPLATE.split("{text}")[0]
+            requests.append(
+                BatchRequest(
+                    custom_id=f"page-{page_num}",
+                    params=MessageCreateParamsNonStreaming(
+                        model=api_model_id,
+                        max_tokens=32000,
+                        system=SYSTEM_PROMPT,
+                        messages=[{
+                            "role": "user",
+                            "content": [
+                                {
+                                    "type": "text",
+                                    "text": instructions,
+                                    "cache_control": {"type": "ephemeral"},
+                                },
+                                {"type": "text", "text": text},
+                            ],
+                        }],
+                    ),
+                )
+            )
 
     if not requests:
         print("Nothing to submit.")
@@ -676,6 +910,12 @@ def main():
         "--batch",
         action="store_true",
         help="Submit all pages as an Anthropic Message Batch (50%% cost, async).",
+    )
+    parser.add_argument(
+        "--vision",
+        action="store_true",
+        help="Parse from the scanned page image instead of flattened HTML text. "
+        "Preserves table layout for interleaved innings/bowling/fow.",
     )
     parser.add_argument(
         "--batch-id",
@@ -788,6 +1028,7 @@ def main():
             http_client,
             force=args.force,
             poll_interval=args.poll_interval,
+            vision=args.vision,
         )
         http_client.close()
         return
@@ -795,6 +1036,8 @@ def main():
     print(f"Model : {args.model}")
     print(f"Output: {output_path}")
     print(f"Pages : {len(page_nums)}")
+    if args.vision:
+        print("Mode  : vision (scanned page image)")
 
     total_parsed = 0
     total_errors = 0
@@ -804,11 +1047,18 @@ def main():
             print(f"  Skipping page {page_num} (already processed)")
             continue
 
-        print(f"  Fetching page {page_num} …", end=" ", flush=True)
-        text = fetch_page_text(http_client, page_num)
-        if not text:
-            print("no text content")
-            continue
+        if args.vision:
+            print(f"  Fetching image for page {page_num} …", end=" ", flush=True)
+            image_bytes = fetch_page_image(http_client, page_num)
+            if not image_bytes:
+                print("no image content")
+                continue
+        else:
+            print(f"  Fetching page {page_num} …", end=" ", flush=True)
+            text = fetch_page_text(http_client, page_num)
+            if not text:
+                print("no text content")
+                continue
 
         print("parsing …", end=" ", flush=True)
         error = None
@@ -816,7 +1066,10 @@ def main():
 
         for attempt in range(RETRY_ATTEMPTS + 1):
             try:
-                scorecard = parse_scorecard(model, text)
+                if args.vision:
+                    scorecard = parse_scorecard_vision(model, image_bytes)
+                else:
+                    scorecard = parse_scorecard(model, text)
                 break
             except json.JSONDecodeError as e:
                 error = f"JSON parse error: {e}"
